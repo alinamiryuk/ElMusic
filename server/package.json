@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server" : "nodemon server.js",
+    "server": "nodemon server.js",
     "client-install": "npm install --prefix ../client",
     "client": "npm run start --prefix ../client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -20,7 +20,7 @@
     "moment": "^2.28.0",
     "mongoose": "^5.10.5",
     "morgan": "^1.10.0",
-    "passport": "^0.4.1",
+    "passport": "^0.4.1"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
