@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {WelcomePage} from './components/WelcomePage/WelcomePage'
 
 
@@ -11,4 +11,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
