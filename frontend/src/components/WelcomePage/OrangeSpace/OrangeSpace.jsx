@@ -1,5 +1,6 @@
 import React from 'react'
 import './OrangeSpace.css'
+import { Link } from 'react-router-dom'
 
 export const OrangeSpace = () => {
 	return (
@@ -15,12 +16,9 @@ export const OrangeSpace = () => {
 										<h1 className="display-2">Go with us. El music.</h1>
 									</div>
 									<div className="col-xs-12 col-md-10 col-md-offset-1">
-										<a
-											href="https://yandex.ru"
-											className="btn btn-green btn-lg"
-										>
+										<Link to="/api/auth/login" className="btn btn-green btn-lg">
 											Login and discover
-										</a>
+										</Link>
 									</div>
 								</div>
 								<br />
