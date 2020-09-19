@@ -12,7 +12,9 @@ module.exports = function (app) {
 		pop: 'mongodb+srv://Flunt1k:spotify@cluster0.mbvia.mongodb.net/Pop?retryWrites=true&w=majority',
 	}
 
-	const controller = new dbController(dbConfig)
+	const controller = new dbController()
+	controller.start(dbConfig)
+
 
 	mongoose.connect('mongodb://localhost/spotify', {
 		useNewUrlParser: true,

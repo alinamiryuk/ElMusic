@@ -11,7 +11,7 @@ module.exports.register = async function (req, res) {
 		const newUserEmailCheck = await User.findOne({ email })
 		if (newUserNameCheck) {
 			res.status(409).json({
-				message: 'User already exists. Change your username!',
+				message: 'User already exists. aChange your username!',
 			})
 		} else if (newUserEmailCheck) {
 			res.status(409).json({
@@ -59,7 +59,7 @@ module.exports.login = async function (req, res) {
 }
 
 
-module.exports.check = 
+module.exports.check =
 	passport.authenticate('jwt', { session: false }), (req, res) => {
     res.status(200).json({ success: true, msg: "You are successfully authenticated to this route!"})
 }
