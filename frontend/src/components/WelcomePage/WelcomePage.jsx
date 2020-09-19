@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../../components/WelcomePage/WelcomePage.css'
+import '../../components/WelcomePage/WelcomePage.css'
 import { Albums } from './albumResult/Albums'
 import { Footer } from './Footer/Footer'
 import { OrangeSpace } from './OrangeSpace/OrangeSpace'

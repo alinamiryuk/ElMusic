@@ -5,7 +5,7 @@ import {WelcomePage} from './components/WelcomePage/WelcomePage'
 function App() {
   return (
     <>
-    App
+    
     <WelcomePage/>
     </>
   );
