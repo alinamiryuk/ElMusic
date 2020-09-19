@@ -1,0 +1,14 @@
+.whole-footer {
+	background-color: black;
+	height: 19em;
+	color: aliceblue;
+	font: x-large;
+}
+.card-footer {
+	margin: 2em;
+}
+.list-footer {
+	font: x-large;
+	margin: 2em;
+	margin-left: 10em;
+}
