@@ -1,0 +1,40 @@
+.hero-main {
+  padding-top: 20vh;
+  background: linear-gradient(rgb(244, 191, 96), rgb(255, 195, 98));
+  height: 80vh;
+}
+
+.if-ls {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.center-white {
+  display: flex;
+  justify-content: center;
+}
+.row {
+  height: 600px;
+}
+.row-white {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+}
+.termsBottom {
+  display: flex;
+  margin-top: 8%;
+  color: aliceblue;
+}
+.Footer {
+  margin-top: 20em;
+  height: 15em;
+}
