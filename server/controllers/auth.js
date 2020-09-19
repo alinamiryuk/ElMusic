@@ -23,8 +23,7 @@ module.exports.register = async function (req, res) {
 				email: req.body.email,
 				password: bcrypt.hashSync(req.body.password, 10),
 			}).then((user) => {
-        req.session.user = user
-				res.json({ success: true, user: user })
+        				res.json({ success: true, user: user })
 			})
 		}
 	} catch (e) {
@@ -43,8 +42,7 @@ module.exports.login = async function (req, res) {
 			}
 			if (bcrypt.compareSync(password, user.password)) {
         const tokenObject = issueJWT(user)
-        req.session.user = user
-				res.status(200).json({
+        				res.status(200).json({
 					success: true,
 					token: tokenObject.token,
 					expiresIn: tokenObject.expires,
@@ -60,13 +58,6 @@ module.exports.login = async function (req, res) {
 	}
 }
 
-module.exports.logout = function (req, res) {
-	req.logout()
-	res.clearCookie("user_sid")
-	res.status(200).json({
-		message: "user logout",
-	})
-}
 
 module.exports.check = 
 	passport.authenticate('jwt', { session: false }), (req, res) => {
