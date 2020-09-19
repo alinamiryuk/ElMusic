@@ -11,7 +11,7 @@ module.exports.register = async function (req, res) {
 		const newUserEmailCheck = await User.findOne({ email })
 		if (newUserNameCheck) {
 			res.status(409).json({
-				message: 'User already exists. aChange your username!',
+				message: 'User already exists. Change your username!',
 			})
 		} else if (newUserEmailCheck) {
 			res.status(409).json({
