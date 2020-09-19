@@ -4,9 +4,7 @@ module.exports = function (app) {
 	const morgan = require('morgan')
 	const passport = require('passport')
 	const cors = require('cors')
-	const session = require('express-session')
-  const FileStore = require('session-file-store')(session)
-  
+
 	mongoose.connect('mongodb://localhost/spotify', {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
@@ -21,16 +19,4 @@ module.exports = function (app) {
 
 	app.use(morgan('dev'))
 
-	app.use(
-		session({
-			store: new FileStore(),
-			key: 'user_sid',
-			secret: 'anything here',
-			resave: false,
-			saveUninitialized: false,
-			cookie: {
-				expires: 6000000,
-			},
-		})
-	)
 }
