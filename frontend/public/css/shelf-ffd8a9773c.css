@@ -1,0 +1,172 @@
+@media screen and (max-width: 767px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (max-width: 991px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 991px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 992px) {
+}
+.shelves-container {
+  background-color: #FFF;
+}
+.shelves-container .shelves {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #FFF;
+  padding-top: 24px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+@media (min-width: 1200px) {
+  .shelves-container .shelves {
+    padding: 3%;
+  }
+}
+.shelves-container .shelves > .shelf {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #1E3264;
+  color: #FFF;
+  text-align: center;
+  width: 100%;
+  min-height: 480px;
+}
+.shelves-container .shelves > .shelf .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  padding: 48px 24px 0;
+}
+.shelves-container .shelves > .shelf .content .headline {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+.shelves-container .shelves > .shelf .content .subheadline {
+  margin: 0;
+  font-size: 18px;
+}
+.shelves-container .shelves > .shelf .content .legal_disclaimer {
+  font-size: 12px;
+  margin-top: 16px;
+}
+.shelves-container .shelves > .shelf .content .legal_disclaimer > a {
+  text-decoration: underline;
+  color: inherit;
+}
+.shelves-container .shelves > .shelf .content .subheadline {
+  margin-top: 8px;
+}
+.shelves-container .shelves > .shelf .content .btn-shelf {
+  margin-top: 24px;
+}
+.shelves-container .shelves > .shelf .content .btn-shelf {
+  background-color: #B49BC8;
+  color: #1E3264;
+}
+.shelves-container .shelves > .shelf .default_background {
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 256px;
+}
+.shelves-container .shelves > .shelf.layout-left .default_background {
+  background-size: auto 256px;
+}
+.shelves-container .shelves > .shelf:nth-child(2) {
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  .shelves-container .shelves > .shelf.layout-left {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .shelves-container .shelves > .shelf.layout-left .content {
+    padding: 48px 48px 0;
+  }
+  .shelves-container .shelves > .shelf.layout-left .content.has-background {
+    width: 50%;
+  }
+  .shelves-container .shelves > .shelf.layout-left .default_background {
+    width: 50%;
+    height: 480px;
+    background-size: contain;
+    background-position: bottom right;
+  }
+}
+.shelves-container .shelves > .shelf.premium-in-hulu {
+  color: #000;
+}
+.shelves-container .shelves > .shelf.premium-in-hulu .headline {
+  font-size: 32px;
+}
+.shelves-container .shelves > .shelf.premium-in-hulu .default_background {
+  margin-top: 20px;
+  background-position: bottom center;
+}
+@media (min-width: 768px) {
+  .shelves-container .shelves > .shelf.premium-in-hulu .default_background {
+    margin-top: 0;
+  }
+}

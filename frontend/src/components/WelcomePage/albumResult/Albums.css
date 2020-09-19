@@ -1,0 +1,9 @@
+
+.card-free-album {
+	margin: 10px;
+}
+@media (max-width: 768px) {
+	.album-results {
+		margin: 4px;
+	}
+}

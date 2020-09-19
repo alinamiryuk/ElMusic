@@ -59,7 +59,7 @@ module.exports.login = async function (req, res) {
 }
 
 
-module.exports.check = 
+module.exports.check =
 	passport.authenticate('jwt', { session: false }), (req, res) => {
     res.status(200).json({ success: true, msg: "You are successfully authenticated to this route!"})
 }
