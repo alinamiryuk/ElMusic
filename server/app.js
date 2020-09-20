@@ -1,7 +1,7 @@
 const express = require('express')
+const app = express()
 const middleware = require('./middleware/index')
 const authRouter = require('./routes/auth')
-const app = express()
 
 const controller = middleware(app)
 
