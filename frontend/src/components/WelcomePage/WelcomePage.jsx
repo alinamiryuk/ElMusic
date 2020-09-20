@@ -1,8 +1,10 @@
+import { Button } from '@material-ui/core'
 import React from 'react'
 import '../../components/WelcomePage/WelcomePage.css'
 import { Albums } from './albumResult/Albums'
 import { Footer } from './Footer/Footer'
 import { OrangeSpace } from './OrangeSpace/OrangeSpace'
+import {MainComponentPage} from '../WelcomeListOfArtists/MainComponentPage'
 
 export const WelcomePage = (params) => {
 	return (
@@ -22,6 +24,7 @@ export const WelcomePage = (params) => {
 							data-tracking='{"category": "home", "action": "play"}'
 						>
 							Launch Web Player
+            <MainComponentPage/>
 						</a>
 						<Albums />
 					</div>
@@ -30,6 +33,7 @@ export const WelcomePage = (params) => {
 			{/* end of white space */}
 			<section className="Footer">
 				<Footer />
+
 			</section>
 		</>
 	)
