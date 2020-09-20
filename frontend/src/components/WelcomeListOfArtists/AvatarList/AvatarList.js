@@ -61,6 +61,13 @@ export const avatar = [
     author: "zivert",
     genre: "pop",
     sub_genre: "pop-pop",
+    img: "https://e-cdns-images.dzcdn.net/images/artist/55376e1f5f999cbbef845dc9f52b2afd/242x242-000000-80-0-0.jpg",
+    hide: true,
+  }
+  , {
+    author: "zivert",
+    genre: "pop",
+    sub_genre: "pop-pop",
     img: "https://e-cdns-images.dzcdn.net/images/artist/657713a4b8f9ba6e18b0e5a4914b6f5f/242x242-000000-80-0-0.jpg",
     hide: true,
 
