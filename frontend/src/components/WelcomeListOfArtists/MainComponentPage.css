@@ -26,7 +26,7 @@
 .onboarding-screen-grid {
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   justify-content: center ;
   margin-top: 3em;
   margin-left: 10%;
@@ -34,30 +34,46 @@
   margin-bottom: 3em;
 }
 .artistAvatar {
+  display: inline-block;
   align-items: center;
-  
+  width: 150px;
+  height: 150px;
+  margin-top: 3em;
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-bottom: 0em;
+  position: relative;
 }
 .artist {
   border-radius: 50%;
   border: 0.5px solid grey;
-  width: 150px;
-  margin-top: 3em;
-  margin-left: 3em;
-  margin-right: 3em;
-  margin-bottom: 0em;
 }
-.artist :hover {
-  display: block;
+.artist-choose{
+  border-radius: 50%;
+  border: 0.5px solid grey;
+  color: aliceblue;
+  image-rendering: rgba(0, 0, 0, 0.5);
+  opacity: 0.2;
 }
+
 .artistName {
   text-align: center;
   color: white;
 }
-.dark-hover{
+
+.artistAvatar:hover .dark-hover{
+  background-color: rgba(0, 50, 50, 0.5);
   color: white;
-  width: 150px;
-  margin-top: 3em;
-  margin-left: 3em;
-  margin-right: 3em;
-  margin-bottom: 0em;
+  border-radius: 50%;
+  border: 0.5px solid grey;
+  width: 150px; 
+  height: 150px;
+  text-align: center;
+  padding-top: 4em;
+  position: absolute;
 }
+
+.dark-hover{
+  color:#121212 ;
+  /* display: none; */
+} 

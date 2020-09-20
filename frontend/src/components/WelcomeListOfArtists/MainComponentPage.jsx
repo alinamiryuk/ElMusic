@@ -1,8 +1,12 @@
 import React from "react";
 import "./MainComponentPage.css";
-import {avatar} from './AvatarList/AvatarList'
+import { avatar } from "./AvatarList/AvatarList";
+import { useState } from "react";
 
 export const MainComponentPage = () => {
+  const [hoverFlag,setHoverFlag] = useState(true);
+  console.log(avatar);
+  const fla = true;
   return (
     <>
       <div className="full-screen-for-choose-artists">
@@ -14,17 +18,15 @@ export const MainComponentPage = () => {
           чтобы помочь нам лучше угадать ваше настроение
         </div>
         <div className="onboarding-screen-grid">
-          {avatar.map((ava)=>(
-            <div className="artistAvatar">
-              <div className="dark-hover">
-              <span className="love">Love</span>
-              </div>
-              <img className="artist" src={ava.img}/>
-              <div className="artistName">{ava.author}</div>
+        
+          {avatar.map((ava) => (
+            <div onClick={()=>(fla = setHoverFlag(!hoverFlag))} className="artistAvatar">
+            {  console.log('status', fla)}
+              <div  className="dark-hover">Love </div>
+              {ava.hide ? <img  className="artist" src={ava.img} /> : <img  className="artist-choose" src={ava.img}/>} 
               
-                
+              <div className="artistName">{ava.author}</div>
             </div>
-            
           ))}
         </div>
       </div>
