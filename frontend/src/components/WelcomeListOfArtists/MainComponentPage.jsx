@@ -16,11 +16,13 @@ export const MainComponentPage = () => {
         <div className="onboarding-screen-grid">
           {avatar.map((ava)=>(
             <div className="artistAvatar">
-              <img
-                className="artist"
-                src={ava.img}
-              />
+              <div className="dark-hover">
+              <span className="love">Love</span>
+              </div>
+              <img className="artist" src={ava.img}/>
               <div className="artistName">{ava.author}</div>
+              
+                
             </div>
             
           ))}

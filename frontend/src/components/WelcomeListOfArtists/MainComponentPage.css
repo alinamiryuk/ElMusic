@@ -1,6 +1,6 @@
 .full-screen-for-choose-artists {
   background-color: #121212;
-  height: 100rem;
+  height: 100em;
 }
 .full-screen-header {
   color: white;
@@ -11,7 +11,7 @@
   line-height: 32px;
   margin-bottom: 35px;
   margin-top: 5px;
-  padding: 0 50px;
+  padding: 50px;
   text-align: center;
 }
 .onboarding-screen-artists-sub-title {
@@ -26,7 +26,6 @@
 .onboarding-screen-grid {
   display: flex;
   flex-wrap: wrap;
-  /* grid-template-columns: repeat(6, 16.66667%); */
   border: 1px solid white;
   justify-content: center ;
   margin-top: 3em;
@@ -36,16 +35,29 @@
 }
 .artistAvatar {
   align-items: center;
+  
 }
 .artist {
   border-radius: 50%;
-  width: 120px;
+  border: 0.5px solid grey;
+  width: 150px;
   margin-top: 3em;
   margin-left: 3em;
   margin-right: 3em;
   margin-bottom: 0em;
 }
+.artist :hover {
+  display: block;
+}
 .artistName {
   text-align: center;
   color: white;
+}
+.dark-hover{
+  color: white;
+  width: 150px;
+  margin-top: 3em;
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-bottom: 0em;
 }
