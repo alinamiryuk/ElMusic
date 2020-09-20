@@ -1,0 +1,114 @@
+.onboarding-screen-grid-wrapper {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+}
+.onboarding-screen-grid-scroller {
+  height: 100%;
+}
+.onboarding-screen-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 16.66667%);
+  margin-top: 3em;
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-bottom: 3em;
+
+}
+.full-screen-for-choose-artists{
+  background-color:#121212;
+  height: 100em;
+}
+.artistAvatar{
+  border-radius:50%;
+}
+  .full-screen-header {
+    color: white;
+    background-color:#121212;
+    /* color: var(--text-primary); */
+    font-family: Circular, spotify-circular, Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 35px;
+    margin-top: 5px;
+    padding: 0 50px;
+    text-align: center;
+  }
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      .full-screen-header {
+        text-align: left;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      .full-screen-header {
+        text-align: left;
+      }
+  
+    }
+    .onboarding-screen-artists-header {
+      height: 97px;
+      margin: 0 0 20px;
+    font-family: Circular, spotify-circular, Helvetica, Arial, sans-serif;
+      padding-top: 85px;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: padding, margin, height, opacity;
+      transition-property: padding, margin, height, opacity;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      .onboarding-screen-artists-header {
+        height: auto;
+        padding: 10px 20px 0;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      .onboarding-screen-artists-header {
+        font-size: 25px;
+        height: auto;
+        margin: 0 0 10px;
+        padding: 10px 20px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .onboarding-screen-artists-sub-title {
+      color: white;
+      /* color: var(--text-primary); */
+      font-size: 15px;
+      height: 18px;
+      margin-bottom: 10px;
+      padding-top: 2em;
+      text-align: center;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: padding, margin, height, opacity;
+      transition-property: padding, margin, height, opacity;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      .onboarding-screen-artists-sub-title {
+        height: auto;
+        padding: 0 20px;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      .onboarding-screen-artists-sub-title {
+        height: auto;
+        margin: 0 0 10px;
+        padding: 0 20px;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+.choose-singer{
+  margin-top: 20px;
+}
