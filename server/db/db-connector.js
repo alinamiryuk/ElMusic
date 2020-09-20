@@ -11,7 +11,7 @@ module.exports = (path) => {
   })
 
   connection.on('connected', () => {
-    console.log('[1]Mongoose connection open to ' + route.split('/').pop())
+    console.log('[1]Mongoose connection open to ' + path.split('/').pop())
   })
 
   connection.once('open', () => {
