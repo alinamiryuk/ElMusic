@@ -10,6 +10,8 @@ const generateGenrePlaylists = require(
     './playlist.utils/genrePlayListGenerator',
 )
 
+const Author = require('../models/Author')
+
 module.exports.createPlayList = async function(req, res) {
   const {likedAuthorsArray} = req.body
 
@@ -45,5 +47,10 @@ module.exports.createPlayList = async function(req, res) {
         maybeInterestedPlaylists,
         genrePlaylists,
       })
+}
+
+module.exports.getAuthors = async function(req, res){
+  const authors = await Author.find({})
+  res.status(200).json(authors)
 }
 
