@@ -15,7 +15,7 @@ export const WelcomePage = (params) => {
 			<section className="album-results-free">
 				<div className="container center-white">
 					<div className="row row-white">
-						<h2 className="h1">Looking for music?</h2>
+						<h2 className="h1">Looking for a music?</h2>
 						<p className="lead">Start diving to the world of new emotions.</p>
 						<a
 							id="segmented-desktop-launch"

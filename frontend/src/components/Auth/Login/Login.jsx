@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import useForm from '../../../hooks/useForm'
 import {useDispatch} from 'react-redux'
@@ -11,6 +11,7 @@ export const Login = () => {
  	return (
 		<>
 			<label htmlFor="userName-login">Username:</label>
+
 			<input
 				id="userName-login"
 				type="text"
@@ -29,6 +30,7 @@ export const Login = () => {
 				onChange={setState}
 			/>
        {/* change to content page */}
+
 			<a
 					className="btn btn-green btn-lg"
 					onClick={() => dispatch(fetchUserLogin(state))}

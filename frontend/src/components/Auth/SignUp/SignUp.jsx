@@ -5,6 +5,7 @@ import {useDispatch} from 'react-redux'
 import {fetchUserRegistration} from '../../../redux/actionType'
 
 export const SignUp = () => {
+
 		const [state, useState] = useForm({email: '', password: '', userName: ''})
 		const dispatch = useDispatch()
   return (

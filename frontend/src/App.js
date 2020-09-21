@@ -12,7 +12,7 @@ function App() {
 		<>
 			<BrowserRouter>
 				<Switch>
-        <Route path="/signup">
+					<Route path="/signup">
 						<SignUp />
 					</Route>
 
@@ -29,7 +29,7 @@ function App() {
     <Route path="/choose-artists-first">
     <MainComponentPage/>
     </Route>
-    
+
 					<Route path="/">
 						<WelcomePage />
 					</Route>

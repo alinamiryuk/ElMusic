@@ -7,6 +7,9 @@ import {
 	Divider,
 	ListItemText,
 	makeStyles,
+	ListItemAvatar,
+  Avatar,
+  TableContainer,
 } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
@@ -29,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
 	fontSize: {
 		font: 100,
 	},
+	large: {
+		width: theme.spacing(5),
+		height: theme.spacing(5),
+	},
 }))
 
 export const Footer = () => {
@@ -36,6 +43,7 @@ export const Footer = () => {
 
 	return (
 		<>
+    
 			<div className="whole-footer">
 				<Grid
 					container
@@ -46,12 +54,20 @@ export const Footer = () => {
 					<div className="list-footer">
 						<List component="nav" aria-label="main mailbox folders">
 							<ListItem button>
+								<ListItemAvatar>
+									<Avatar
+										alt="El music"
+										src="/images/logo-192x192.png"
+										className={classes.large}
+									/>
+								</ListItemAvatar>
 								<ListItemText primary="" />
-								LOGO
+								El music
 							</ListItem>
+
 							<ListItem button>
 								<ListItemText primary="" />
-								All about us
+								About us
 							</ListItem>
 						</List>
 						<Divider />
