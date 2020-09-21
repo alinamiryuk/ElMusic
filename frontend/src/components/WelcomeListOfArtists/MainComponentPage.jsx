@@ -2,12 +2,14 @@ import React from "react";
 import "./MainComponentPage.css";
 import { avatar } from "./AvatarList/AvatarList";
 import { useState } from "react";
+import { ArtistImage } from "./AvatarList/ArtistImage";
 
 export const MainComponentPage = () => {
-  const [hoverFlag, setHoverFlag] = useState(true);
+  
   const [counter, setCounter] = useState(0);
-  console.log(avatar);
-  console.log("counter>>>>", counter);
+  console.log('массив объектов,',avatar);
+  // console.log("counter>>>>", counter);
+  const appear = 0;
   return (
     <>
       <div className="full-screen-for-choose-artists">
@@ -20,22 +22,12 @@ export const MainComponentPage = () => {
         </div>
         <div className="onboarding-screen-grid">
           {avatar.map((ava) => (
-            <div
-              onClick={() => (
-                (ava.hide = setHoverFlag(!hoverFlag)), setCounter(counter + 1)
-              )}
-              className="artistAvatar"
-            >
-              <div className="dark-hover"> ❤ </div>
-              {ava.hide ? (
-                <img className="artist" src={ava.img} />
-              ) : (
-                <img className="artist-choose" src={ava.img} />
-              )}
-              <div className="artistName">{ava.author}</div>
-            </div>
+            <ArtistImage ava={ava}/>
+            
           ))}
         </div>
+      { console.log('массив объектов after >>>,',avatar)}
+        {/* {avatar.forEach(el=> (el.hide ? setCounter(counter+1) : setCounter(counter))) } */}
         {counter >= 3 ? (
           <div className="choosenList">
             <a href="/MainPlayList" className="btn btn-green btn-lg">
