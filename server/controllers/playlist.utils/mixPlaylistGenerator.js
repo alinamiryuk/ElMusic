@@ -33,7 +33,7 @@ async function generateMixPlaylist(likedAuthorsArray) {
   } else if (hardPlaylist.length !== 9) {
     await addOtherSongs(authorsForException, 'hard', hardPlaylist)
   }
-  return [chillPlaylist, hardPlaylist, eliminatedAuthors]
+  return [chillPlaylist, hardPlaylist, eliminatedAuthors, eliminatedAuthors]
 }
 
 async function addAuthorsSongs(authorsForPlaylist, playlists) {
