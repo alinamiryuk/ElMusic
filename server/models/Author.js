@@ -1,4 +1,4 @@
-const { controller } = require('../db/db-controller')
+const  controller  = require('../db/db-controller')
 const mongoose = require('mongoose')
 const {main} = controller.getConnections
 const Schema = mongoose.Schema

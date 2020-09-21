@@ -1,33 +1,43 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import useForm from '../../../hooks/useForm'
+import {useDispatch} from 'react-redux'
+import {fetchUserLogin} from '../../../redux/actionType'
 
 export const Login = () => {
+	const [state, setState] = useForm({userName: '', password: ''})
+	const dispatch = useDispatch()
 
  	return (
 		<>
-			{/* continue witn facebook/gogle etc will be here later */}
-			or
-			<label for="userName-login">Username:</label>
+			<label htmlFor="userName-login">Username:</label>
 			<input
 				id="userName-login"
 				type="text"
 				name="userName"
 				placeholder="Username"
+				value={state.userName}
+				onChange={setState}
 			/>
-			<label for="password-login">Password:</label>
+			<label htmlFor="password-login">Password:</label>
 			<input
 				id="password-login"
 				type="password"
 				name="password"
 				placeholder="Password"
+				value={state.password}
+				onChange={setState}
 			/>
        {/* change to content page */}
-			<Link to="/" className="btn btn-green btn-lg">
+			<a
+					className="btn btn-green btn-lg"
+					onClick={() => dispatch(fetchUserLogin(state))}
+			>
 				LOG IN
-			</Link>
+			</a>
 
 			Don't have an account?
-      
+
 			<Link to="/signup">
 				Sign Up for El Music
 			</Link>
