@@ -27,15 +27,15 @@ export const MainComponentPage = () => {
         </div>
       { console.log('массив объектов after >>>,',avatar)}
         {/* {avatar.forEach(el=> (el.hide ? setCounter(counter+1) : setCounter(counter))) } */}
-        {counter >= 3 ? (
+        {/* {counter >= 3 ? ( */}
           <div className="choosenList">
             <a href="/MainPlayList" className="btn btn-green btn-lg">
               Продолжить
             </a>
           </div>
-        ) : (
+        {/* ) : (
           <div> </div>
-        )}
+        )} */}
       </div>
     </>
   )
