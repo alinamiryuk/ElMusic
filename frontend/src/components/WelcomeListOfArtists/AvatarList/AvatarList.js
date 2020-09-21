@@ -1,17 +1,17 @@
 
 export const avatar = [
   {
-    author: "zivert",
+    author: "Camilla Cabello",
     genre: "pop",
     sub_genre: "pop-pop",
-    img: "https://e-cdns-images.dzcdn.net/images/artist/55376e1f5f999cbbef845dc9f52b2afd/242x242-000000-80-0-0.jpg",
+    img: "https://images-na.ssl-images-amazon.com/images/I/61uoEbq4viL._AC_.jpg",
     hide: true,
   },
   {
     author: "zivert",
     genre: "pop",
     sub_genre: "pop-pop",
-    img: "https://e-cdns-images.dzcdn.net/images/artist/aaa15d668fb06f9e02816f606b6122b8/242x242-000000-80-0-0.jpg",
+    img: "https://i.pinimg.com/originals/44/27/46/442746c46251cd0ad2e6206115aa1dba.jpg",
     hide: true,
   },
   {
@@ -25,14 +25,14 @@ export const avatar = [
     author: "zivert",
     genre: "pop",
     sub_genre: "pop-pop",
-    img: "https://e-cdns-images.dzcdn.net/images/artist/4ee6e8e0dcdece98291101f73f1b1a38/242x242-000000-80-0-0.jpg",
+    img: "https://i.pinimg.com/originals/4e/b4/f8/4eb4f8a7e04b57e74914fc46e013ac40.jpg",
     hide: true,
   },
   {
     author: "zivert",
     genre: "pop",
     sub_genre: "pop-pop",
-    img: "https://e-cdns-images.dzcdn.net/images/artist/55376e1f5f999cbbef845dc9f52b2afd/242x242-000000-80-0-0.jpg",
+    img: "https://i.pinimg.com/originals/44/27/46/442746c46251cd0ad2e6206115aa1dba.jpg",
     hide: true,
 
   },
@@ -125,7 +125,7 @@ export const avatar = [
     author: "zivert",
     genre: "pop",
     sub_genre: "pop-pop",
-    img: "https://e-cdns-images.dzcdn.net/images/artist/55376e1f5f999cbbef845dc9f52b2afd/242x242-000000-80-0-0.jpg",
+    img: "https://secondhandsongs.com/picture/46443",
     hide: true,
   }
   , {
@@ -139,7 +139,7 @@ export const avatar = [
     author: "zivert",
     genre: "pop",
     sub_genre: "pop-pop",
-    img: "https://e-cdns-images.dzcdn.net/images/artist/55376e1f5f999cbbef845dc9f52b2afd/242x242-000000-80-0-0.jpg",
+    img: "https://i.pinimg.com/originals/d6/d2/ca/d6d2ca287dbe84d95f915f1c7e16ad54.jpg",
     hide: true,
 
   },

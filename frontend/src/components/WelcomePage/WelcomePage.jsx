@@ -4,8 +4,8 @@ import '../../components/WelcomePage/WelcomePage.css'
 import { Albums } from './albumResult/Albums'
 import { Footer } from './Footer/Footer'
 import { OrangeSpace } from './OrangeSpace/OrangeSpace'
-import {MainComponentPage} from '../WelcomeListOfArtists/MainComponentPage'
-import {Link} from 'react-router-dom'
+import { MainComponentPage } from '../WelcomeListOfArtists/MainComponentPage'
+import { Link } from 'react-router-dom'
 
 export const WelcomePage = (params) => {
 	return (
@@ -25,7 +25,7 @@ export const WelcomePage = (params) => {
 							data-tracking='{"category": "home", "action": "play"}'
 						>
 							Launch Web Player
-            {/* <Link to ='/choose-artists-first'>
+							{/* <Link to ='/choose-artists-first'>
             <MainComponentPage/>
             </Link> */}
 						</a>
@@ -36,7 +36,6 @@ export const WelcomePage = (params) => {
 			{/* end of white space */}
 			<section className="Footer">
 				<Footer />
-
 			</section>
 		</>
 	)

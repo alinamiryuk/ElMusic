@@ -1,0 +1,22 @@
+.header-play{
+  background-color: rgb(65, 61, 61);
+  width: 100%;
+  height: 25em;
+  opacity: 0.4;
+  /* margin-left: 5em; */
+  background-image: url(https://scontent-arn2-1.xx.fbcdn.net/v/t31.0-8/26233047_1682836278406509_8396573607744155292_o.jpg?_nc_cat=110&_nc_sid=e3f864&_nc_ohc=cV8VjEjl2wUAX_Mem75&_nc_ht=scontent-arn2-1.xx&oh=66b45c635e6f85b515f15ca92ec1fd9c&oe=5F8D2A33);
+  /* background-repeat: no-repeat; */
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.artist-information{
+  color: aliceblue;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-left: 5em;
+  margin-bottom: 2em;
+}

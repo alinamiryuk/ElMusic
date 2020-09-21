@@ -5,6 +5,7 @@ import { SignUp } from './components/Auth/SignUp/SignUp'
 import { MainComponentPage } from './components/WelcomeListOfArtists/MainComponentPage'
 import { MainPlayList } from './components/MainPlayList/MainPlayList'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import { ChoosenPlayList } from './components/ChoosenPlayList/ChoosenPlayList'
 
 function App() {
 	return (
@@ -22,7 +23,9 @@ function App() {
       <Route path="/MainPlayList">
     <MainPlayList/>
     </Route>
-    
+    <Route path="/ChoosenPlayList">
+    <ChoosenPlayList/>
+    </Route>
     <Route path="/choose-artists-first">
     <MainComponentPage/>
     </Route>
@@ -35,5 +38,4 @@ function App() {
 		</>
 	)
 }
-
 export default App
