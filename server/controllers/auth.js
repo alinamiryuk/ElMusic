@@ -1,6 +1,6 @@
 const errorHandler = require('../utils/errorHandler')
 const bcrypt = require('bcrypt')
-const User = require('../models/user')
+const User = require('../models/User')
 const issueJWT = require('../utils/issueJWT')
 const passport = require('passport')
 

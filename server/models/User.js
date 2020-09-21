@@ -1,6 +1,9 @@
+const mongoose = require('mongoose')
 const controller = require('../db/db-controller')
 const {main} = controller.getConnections
-module.exports = main.model('user', {
+
+const Schema = mongoose.Schema
+const userSchema = Schema({
   userName: {
     type: String,
     required: true,
@@ -15,4 +18,7 @@ module.exports = main.model('user', {
     type: String,
     required: true,
   },
+  playlist: [Object]
 })
+module.exports = main.model('user', userSchema)
+
