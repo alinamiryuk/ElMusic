@@ -4,7 +4,7 @@ const User = require('../models/user')
 const issueJWT = require('../utils/issueJWT')
 const passport = require('passport')
 
-module.exports.signout = async function (req, res) {
+module.exports.signup = async function (req, res) {
 	try {
 		const { userName, email } = req.body
 		const newUserNameCheck = await User.findOne({ userName })
