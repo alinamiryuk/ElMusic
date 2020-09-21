@@ -192,3 +192,4 @@ fabric.properties
 
 .idea/*
 .prettierrc
+id_rsa_priv.pem
