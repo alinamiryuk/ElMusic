@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export const Login = () => {
-	return (
+
+ 	return (
 		<>
 			{/* continue witn facebook/gogle etc will be here later */}
 			or
-			<label for="userName-login">Username:</label>
+      
+<label for="userName-login">Username:</label>
 			<input
 				id="userName-login"
 				type="text"
@@ -21,13 +23,16 @@ export const Login = () => {
 				placeholder="Password"
 			/>
        {/* change to content page */}
-			<Link to="/" className="btn btn-green btn-lg">
+			<button type="submit" className="btn btn-green btn-lg">
 				LOG IN
-			</Link>
+			</button>
+
+      
+			
 
 			Don't have an account?
       
-			<Link to="/api/auth/signup">
+			<Link to="/signup">
 				Sign Up for El Music
 			</Link>
 		</>

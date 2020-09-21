@@ -1,3 +1,4 @@
+
 .hero-main {
   padding-top: 20vh;
   background: linear-gradient(rgb(244, 191, 96), rgb(255, 195, 98));
@@ -37,4 +38,7 @@
 .Footer {
   margin-top: 20em;
   height: 15em;
+}
+.album-results-free{
+  background-color: white;
 }

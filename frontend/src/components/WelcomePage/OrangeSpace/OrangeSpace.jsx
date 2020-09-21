@@ -16,7 +16,7 @@ export const OrangeSpace = () => {
 										<h1 className="display-2">Go with us. El music.</h1>
 									</div>
 									<div className="col-xs-12 col-md-10 col-md-offset-1">
-										<Link to="/api/auth/login" className="btn btn-green btn-lg">
+										<Link to="/login" className="btn btn-green btn-lg">
 											Login and discover
 										</Link>
 									</div>
