@@ -9,11 +9,11 @@ function App() {
 		<>
 			<BrowserRouter>
 				<Switch>
-        <Route path="/api/auth/signup">
+        <Route path="/signup">
 						<SignUp />
 					</Route>
 
-					<Route path="/api/auth/login">
+					<Route path="/login">
 						<Login />
 					</Route>
 

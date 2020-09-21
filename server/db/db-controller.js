@@ -2,6 +2,7 @@ const connection = require('./db-connector')
 
 class DbController {
   constructor() {
+    this.mainConnection = null
     this.jazzConnection = null
     this.rockConnection = null
     this.metalConnection = null
@@ -9,6 +10,7 @@ class DbController {
   }
 
   start(config) {
+    this.mainConnection = connection(config.main)
     this.jazzConnection = connection(config.jazz)
     this.rockConnection = connection(config.rock)
     this.metalConnection = connection(config.metal)
@@ -17,6 +19,7 @@ class DbController {
 
   get getConnections() {
     return {
+      main: this.mainConnection,
       jazz: this.jazzConnection,
       rock: this.rockConnection,
       metal: this.metalConnection,
@@ -25,4 +28,5 @@ class DbController {
   }
 }
 
-module.exports = DbController
+const controller = new DbController()
+module.exports = controller

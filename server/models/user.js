@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
-
-module.exports = mongoose.model('user', {
+const controller = require('../db/db-controller')
+const {main} = controller.getConnections
+module.exports = main.model('user', {
   userName: {
     type: String,
     required: true,

@@ -34,7 +34,7 @@ export const SignUp = () => {
 		
 			Have an account?
 
-			<Link to="/api/auth/login">
+			<Link to="/login">
 				Log in
 			</Link>
 		</>

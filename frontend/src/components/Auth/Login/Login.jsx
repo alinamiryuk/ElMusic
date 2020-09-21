@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const Login = () => {
-	return (
+
+ 	return (
 		<>
 			{/* continue witn facebook/gogle etc will be here later */}
 			or
@@ -27,7 +28,7 @@ export const Login = () => {
 
 			Don't have an account?
       
-			<Link to="/api/auth/signup">
+			<Link to="/signup">
 				Sign Up for El Music
 			</Link>
 		</>
