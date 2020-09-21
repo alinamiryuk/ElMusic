@@ -1,13 +1,13 @@
-import React from "react";
-import "./MainComponentPage.css";
-import { avatar } from "./AvatarList/AvatarList";
-import { useState } from "react";
+import React from "react"
+import "./MainComponentPage.css"
+import { avatar } from "./AvatarList/AvatarList"
+import { useState } from "react"
 
 export const MainComponentPage = () => {
-  const [hoverFlag, setHoverFlag] = useState(true);
-  const [counter, setCounter] = useState(0);
-  console.log(avatar);
-  console.log("counter>>>>", counter);
+  const [hoverFlag, setHoverFlag] = useState(true)
+  const [counter, setCounter] = useState(0)
+  console.log(avatar)
+  console.log("counter>>>>", counter)
   return (
     <>
       <div className="full-screen-for-choose-artists">
@@ -47,5 +47,5 @@ export const MainComponentPage = () => {
         )}
       </div>
     </>
-  );
-};
+  )
+}
