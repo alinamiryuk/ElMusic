@@ -2,6 +2,7 @@ import React from "react"
 import "./MainComponentPage.css"
 import { avatar } from "./AvatarList/AvatarList"
 import { useState } from "react"
+import {ArtistImage} from './AvatarList/ArtistImage'
 
 export const MainComponentPage = () => {
   const [hoverFlag, setHoverFlag] = useState(true)
