@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const {controller} = require('../app')
+const controller = require('../db/db-controller')
 
 const Schema = mongoose.Schema
 const {jazz, pop, rock, metal} = controller.getConnections
