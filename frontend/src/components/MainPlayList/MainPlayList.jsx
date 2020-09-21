@@ -1,5 +1,5 @@
-import React from "react";
-import "./MainPlayList.css";
+import React from "react"
+import "./MainPlayList.css"
 import {
   Card,
   CardContent,
@@ -9,7 +9,7 @@ import {
   CardMedia,
   CardActions,
   makeStyles,
-} from "@material-ui/core";
+} from "@material-ui/core"
 
 const useStyles = makeStyles({
   root: {
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 });
 
 export const MainPlayList = () => {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <>
       <div className="play-list">
@@ -41,5 +41,5 @@ export const MainPlayList = () => {
 
       </div>
     </>
-  );
-};
+  )
+}
