@@ -1,27 +1,18 @@
 module.exports = function (app) {
 	const express = require('express')
-	const mongoose = require('mongoose')
 	const morgan = require('morgan')
 	const passport = require('passport')
+	const keys = require('../config/keys')
 	const cors = require('cors')
-	const dbController = require('../db/db-controller')
+	const controller = require('../db/db-controller')
 	const dbConfig ={
-		jazz: 'mongodb+srv://Flunt1k:spotify@cluster0.bmspk.mongodb.net/Jazz?retryWrites=true&w=majority',
-		rock: 'mongodb+srv://Flunt1k:spotify@cluster0.cgxn4.mongodb.net/Rock?retryWrites=true&w=majority',
-		metal: 'mongodb+srv://Flunt1k:spotify@cluster0.7spax.mongodb.net/Metal?retryWrites=true&w=majority',
-		pop: 'mongodb+srv://Flunt1k:spotify@cluster0.mbvia.mongodb.net/Pop?retryWrites=true&w=majority',
+		main: keys.MONGODB_KEYS.main,
+		jazz: keys.MONGODB_KEYS.jazz,
+		rock: keys.MONGODB_KEYS.rock,
+		metal: keys.MONGODB_KEYS.metal,
+		pop: keys.MONGODB_KEYS.pop,
 	}
-
-	const controller = new dbController()
 	controller.start(dbConfig)
-
-
-	mongoose.connect('mongodb://localhost/spotify', {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-		useFindAndModify: false,
-		useCreateIndex: true,
-	})
 
 	app.use(express.urlencoded({ extended: true }))
 	app.use(express.json())
@@ -29,5 +20,4 @@ module.exports = function (app) {
 	app.use(cors())
 
 	app.use(morgan('dev'))
-	return controller
 }
