@@ -2,6 +2,7 @@ import React from 'react'
 import '../albumResult/Albums.css'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Card, CardActionArea, CardMedia } from '@material-ui/core'
+import { blue } from '@material-ui/core/colors'
 
 const useStyles = makeStyles((theme) => ({
 	root: {

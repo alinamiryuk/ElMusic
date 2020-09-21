@@ -1,10 +1,10 @@
 const errorHandler = require('../utils/errorHandler')
 const bcrypt = require('bcrypt')
-const User = require('../models/user')
+const User = require('../models/User')
 const issueJWT = require('../utils/issueJWT')
 const passport = require('passport')
 
-module.exports.register = async function (req, res) {
+module.exports.signup = async function (req, res) {
 	try {
 		const { userName, email } = req.body
 		const newUserNameCheck = await User.findOne({ userName })
@@ -59,7 +59,7 @@ module.exports.login = async function (req, res) {
 }
 
 
-module.exports.check = 
+module.exports.check =
 	passport.authenticate('jwt', { session: false }), (req, res) => {
     res.status(200).json({ success: true, msg: "You are successfully authenticated to this route!"})
 }
