@@ -1,5 +1,5 @@
-const crypto = require('crypto');
-const fs = require('fs');
+const crypto = require('crypto')
+const fs = require('fs')
 
 function genKeyPair() {
     
@@ -13,12 +13,12 @@ function genKeyPair() {
             type: 'pkcs1', 
             format: 'pem' 
         }
-    });
+    })
 
-    fs.writeFileSync(__dirname + '/id_rsa_pub.pem', keyPair.publicKey); 
+    fs.writeFileSync(__dirname + '/id_rsa_pub.pem', keyPair.publicKey)
     
-    fs.writeFileSync(__dirname + '/id_rsa_priv.pem', keyPair.privateKey);
+    fs.writeFileSync(__dirname + '/id_rsa_priv.pem', keyPair.privateKey)
 
 }
 
-genKeyPair();
+genKeyPair()
