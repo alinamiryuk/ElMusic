@@ -1,8 +1,8 @@
-import React from "react";
-import "../albumResult/Albums.css";
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Card, CardActionArea, CardMedia } from "@material-ui/core";
-import { blue } from "@material-ui/core/colors";
+import React from "react"
+import "../albumResult/Albums.css"
+import { makeStyles } from "@material-ui/core/styles"
+import { Grid, Card, CardActionArea, CardMedia } from "@material-ui/core"
+import { blue } from "@material-ui/core/colors"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,10 +29,10 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     color: "rgba(255, 255, 255, 0.54)",
   },
-}));
+}))
 
 export const Albums = () => {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <>
@@ -121,5 +121,5 @@ export const Albums = () => {
         </Grid>
       </div>
     </>
-  );
-};
+  )
+}
