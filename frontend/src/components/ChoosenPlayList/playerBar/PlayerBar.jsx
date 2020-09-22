@@ -4,12 +4,13 @@ import './PlayerBar.css'
 
 
 
+
 export default function Player({music}) {
 	return (
 		<>
     <div className="player-audio">
 
-			<audio onClick={()=>(console.log('audio'))}
+			<audio id="player-main-main" onClick={()=>(console.log('audio'))}
         className="audio"
         autoplay
 				controls
