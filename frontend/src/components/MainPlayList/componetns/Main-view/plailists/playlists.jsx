@@ -21,6 +21,7 @@ export const PlayingPlaylists = () => {
 	const classes = useStyles()
 	return (
 		<>
+
 			<Card className={classes.root}>
 				<CardActionArea>
 					<CardMedia
@@ -31,83 +32,12 @@ export const PlayingPlaylists = () => {
 						title="Contemplative Reptile"
 					/>
 					<Button size="small" color="secondary">
-						<a href="https://www.youtube.com/watch?v=2yy100V7u3Y&list=PUlkRzsdvg7_RKVhwDwiDZOA&index=25">
+						<a href="/ChoosenPlayList">
 							play
 						</a>
 					</Button>
 				</CardActionArea>
-			</Card>{' '}
-			<Card className={classes.root}>
-				<CardActionArea>
-					<CardMedia
-						component="img"
-						alt="Contemplative Reptile"
-						height="20"
-						image="https://cdn1.ozone.ru/multimedia/1019138176.jpg"
-						title="Contemplative Reptile"
-					/>
-					<Button size="small" color="primary">
-						play
-					</Button>
-				</CardActionArea>
-			</Card>{' '}
-			<Card className={classes.root}>
-				<CardActionArea>
-					<CardMedia
-						component="img"
-						alt="Contemplative Reptile"
-						height="20"
-						image="https://cdn1.ozone.ru/multimedia/1019138176.jpg"
-						title="Contemplative Reptile"
-					/>
-					<Button size="small" color="primary">
-						play
-					</Button>
-				</CardActionArea>
-			</Card>{' '}
-			<Card className={classes.root}>
-				<CardActionArea>
-					<CardMedia
-						component="img"
-						alt="Contemplative Reptile"
-						height="20"
-						image="https://cdn1.ozone.ru/multimedia/1019138176.jpg"
-						title="Contemplative Reptile"
-					/>
-					<Button size="small" color="primary">
-						play
-					</Button>
-				</CardActionArea>
-			</Card>{' '}
-			<Card className={classes.root}>
-				<CardActionArea>
-					<CardMedia
-						component="img"
-						alt="Contemplative Reptile"
-						height="20"
-						image="https://cdn1.ozone.ru/multimedia/1019138176.jpg"
-						title="Contemplative Reptile"
-					/>
-					<Button size="small" color="primary">
-						play
-					</Button>
-				</CardActionArea>
-			</Card>{' '}
-			<Card className={classes.root}>
-				<CardActionArea>
-					<CardMedia
-						component="img"
-						alt="Contemplative Reptile"
-						height="20"
-						image="https://cdn1.ozone.ru/multimedia/1019138176.jpg"
-						title="Contemplative Reptile"
-					/>
-					<Button size="small" color="primary">
-						play
-					</Button>
-				</CardActionArea>
-			</Card>
-
+			</Card>{'  '}
 		</>
 	)
 }
