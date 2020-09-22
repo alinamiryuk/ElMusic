@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client-install": "npm install --prefix ../client",
-    "client": "npm run start --prefix ../client",
+    "client-install": "npm install --prefix ../frontend",
+    "client": "npm run start --prefix ../frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
