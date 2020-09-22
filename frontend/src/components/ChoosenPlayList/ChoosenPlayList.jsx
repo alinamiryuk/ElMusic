@@ -24,15 +24,13 @@ export const ChoosenPlayList = () => {
 								{i + 1}. Исполнитель {song.author} {'  '}
 								Жанр {song.genre}
 								Песня {song.sub_genre}
-								<Button variant="outlined"> Play </Button>
+								<Button onClick={()=>(console.log(12312313))}  variant="outlined">  Play </Button>
 							</div>
 						))}
 					</ul>
 				</div>
-		
-
-        <Player/>
 			</div>
+        <Player />
 		</>
 	)
 }

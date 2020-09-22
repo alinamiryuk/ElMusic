@@ -34,15 +34,6 @@ export const OrangeSpace = () => {
 								<br />
 								<br />
 								<br />
-								<div className="if-ls termsBottom">
-									<p className="small">
-										*{' '}
-										<a href="/us/legal/end-user-agreement/">
-											Terms and conditions
-										</a>{' '}
-										apply. Open only to users who haven't already tried Premium.
-									</p>
-								</div>
 							</div>
 						</div>
 					</div>

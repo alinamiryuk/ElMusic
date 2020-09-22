@@ -4,17 +4,20 @@ import './PlayerBar.css'
 
 
 
-export default function Player() {
+export default function Player({music}) {
 	return (
 		<>
+    <div className="player-audio">
+
 			<audio
 				className="audio"
 				controls
-				src="https://cdndl.zaycev.net/track/3129736/6oYDTtLSuwTmSyYEDtiCMgF8LHv2bfW1dhoU7dJJSD4cn8utt7Ki9hDYM5osbknyncxwA8v31xgLnkNP66dddDcakqY9WeSD2oiXPgHe6ggvUoYw7Pn9GQVxCCX5oMQfDcdvxXsX3R8xeWyD7eJN2XUo1R787b8ArFYFp6jbn1LUqbovm8FzkdgzNpUzCidJa8yy6jjPep8Yzra6VppPaR6mpADd4YTgzZy466tLU4owUqEBY1bEeyWfjeDzL2n9zGkskoVe5yvYnK95VebVYwCVSupguDYhcks2Zqvrc25tRimGjtnguy7twcUYLNnLPErsB5CksCCN8uB5Ezy5yCtdxH1kK8ABwrqE9HnVw7yYCiHHj3Hh"
-			>
+				src="https://cdndl.zaycev.net/track/16591984/7CNHd5sc2BQgY3jShGFJP86i61UVDigAKWWJJDfMubt6eU72h6s6EiagTYRXZLqpYghwb13yBZftwY2LU4VyCYEkmzGic8Zzn9Ej5YYWhZWxCrhoptn9ydiv5syAsKNhCr1o46nnZit5SVin8g5ady2xxwxUnoTErRmZL7JrTueMaomiFeFS3dpJXjPpvmiTx9PGUft6b52sFzK5JWR3DbWrjbXZCzb1m1f8kPrqoBeJhu3gDAjztayQPAQiSpeEZ2uuk5EjqpGAXonTdDNAfQ11Pmb2whfPQfV9HJBPdbryJJSxTw2AHuhmNiQ1ne2CMES19vHwCaZbPbnJpjv1crBAeAbBkuoLcQPS4Lm3kP5AhTC3ffWX"
+        >
 				Your browser does not support the
 				<code>audio</code> element.
 			</audio>
+        </div>
 		</>
 	)
 }
