@@ -16,14 +16,13 @@ export const SignUp = () => {
 		const dispatch = useDispatch()
   return (
       <>
+
             <Grid class="signup-collumn"
   container
-  direction="column"
-  justify="space-between"
-  alignItems="stretch"
+  
 >
-        Sign up with your email address
-        <label htmlFor="email-signup">What should we call you?</label>
+        <h3>Sign up with your email address</h3>
+        <label htmlFor="email-signup">What's your email?</label>
         <input
             id="email-signup"
             type="email"
