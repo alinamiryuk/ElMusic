@@ -1,14 +1,20 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './MainComponentPage.css'
-import { avatar } from './AvatarList/AvatarList'
 import { useState } from 'react'
 import { ArtistImage } from './AvatarList/ArtistImage'
+import {fetchAuthors} from '../../redux/actionType'
+import {useDispatch, useSelector} from 'react-redux'
+import {avatar} from './AvatarList/AvatarList'
 
 export const MainComponentPage = () => {
+	const dispatch = useDispatch()
+	const authors = useSelector(state => state.authors)
 	const [hoverFlag, setHoverFlag] = useState(true)
 	const [counter, setCounter] = useState(0)
-	console.log(avatar)
-	console.log('counter>>>>', counter)
+	const avatar = []
+	useEffect(() => {
+		dispatch(fetchAuthors())
+	}, [])
 	return (
 		<>
 			<div className="full-screen-for-choose-artists">
@@ -20,21 +26,18 @@ export const MainComponentPage = () => {
 					чтобы помочь нам лучше угадать ваше настроение
 				</div>
 				<div className="onboarding-screen-grid">
-					{avatar.map((ava) => (
-						<ArtistImage ava={ava} />
+					{authors.map((ava) => (
+						<ArtistImage ava={ava} onCounter={setCounter} />
 					))}
 				</div>
+				{counter >= 3 ? (
+						<div className="choosenList">
+							<a href="/MainPlayList" className="btn btn-green btn-lg">
+								Продолжить
+							</a>
+						</div>
+				) : null}
 				{console.log('массив объектов after >>>,', avatar)}
-				{/* {avatar.forEach(el=> (el.hide ? setCounter(counter+1) : setCounter(counter))) } */}
-				{/* {counter >= 3 ? ( */}
-				<div className="choosenList">
-					<a href="/MainPlayList" className="btn btn-green btn-lg">
-						Продолжить
-					</a>
-				</div>
-				{/* ) : (
-          <div> </div>
-        )} */}
 			</div>
 		</>
 	)
