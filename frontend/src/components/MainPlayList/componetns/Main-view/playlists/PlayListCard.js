@@ -7,6 +7,9 @@ import {
   makeStyles,
 } from '@material-ui/core'
 import CardActions from '@material-ui/core/CardActions'
+import {Link} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
+import {addPlaylist} from '../../../../../redux/actionType'
 
 const useStyles = makeStyles({
   root: {
@@ -16,6 +19,7 @@ const useStyles = makeStyles({
 })
 
 const PlayListCard = ({playlist}) => {
+  const dispatch = useDispatch()
   const classes = useStyles()
   return(
       <Card className={classes.root}>
@@ -31,10 +35,10 @@ const PlayListCard = ({playlist}) => {
           {playlist.type || playlist.author}
         </CardContent>
         <CardActions>
-          <Button size="small" color="secondary">
-            <a href="/ChoosenPlayList">
+          <Button size="small" color="secondary" onClick={() => dispatch(addPlaylist(playlist))}>
+            <Link to={`/playlist/${playlist.id}`}>
               play
-            </a>
+            </Link>
           </Button>
         </CardActions>
       </Card>

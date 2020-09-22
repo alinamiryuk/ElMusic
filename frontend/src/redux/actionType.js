@@ -1,4 +1,5 @@
 import {
+  ADD_PLAYLIST_REDUCER,
   GENERATE_PLAYLISTS, GET_USER_PLAYLISTS,
   LOG_IN_USER,
   REGISTER_USER,
@@ -27,7 +28,15 @@ export const generatedPlaylists = (playlists) => ({
 
 export const showUserPlaylist = (playlists) => ({
   type: GET_USER_PLAYLISTS,
-  payload: playlists
+  payload: playlists.playlists
+})
+
+export const addPlaylist = (playlist) => ({
+  type: ADD_PLAYLIST_REDUCER,
+  payload: {
+    id: playlist.id,
+    data: playlist
+  }
 })
 
 export const fetchUserLogin = (body) => async (dispatch) => {
