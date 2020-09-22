@@ -10,7 +10,6 @@ export const MainComponentPage = () => {
 	const dispatch = useDispatch()
 	const authors = useSelector(state => state.authors)
 	const [counter, setCounter] = useState(0)
-	const avatar = []
 	useEffect(() => {
 		dispatch(fetchAuthors())
 	}, [])
