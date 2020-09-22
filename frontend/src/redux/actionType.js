@@ -53,3 +53,19 @@ export const fetchAuthors = () => async (dispatch) => {
   authors.forEach(obj => obj.hide = true)
   dispatch(showAuthors(authors))
 }
+
+export const fetchGeneratePlaylists = (likedAuthorsArray) => async (dispatch) => {
+  const token = JSON.parse(localStorage.getItem('user')).token
+  const res = await fetch('/api/playlist', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': token
+    },
+    body: JSON.stringify({
+      likedAuthorsArray
+    })
+  })
+  const playlists = await res.json()
+  console.log(playlists)
+}

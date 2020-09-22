@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import './MainComponentPage.css'
 import {ArtistImage} from './AvatarList/ArtistImage'
-import {fetchAuthors} from '../../redux/actionType'
+import {fetchAuthors, fetchGeneratePlaylists} from '../../redux/actionType'
 import {useDispatch, useSelector} from 'react-redux'
-import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 export const MainComponentPage = () => {
   const dispatch = useDispatch()
+  const history = useHistory()
   const authors = useSelector(state => state.authors)
   const [counter, setCounter] = useState(0)
   useEffect(() => {
@@ -29,9 +30,13 @@ export const MainComponentPage = () => {
           </div>
           {counter >= 3 ? (
               <div className="choosenList">
-                <Link to={'/MainPlayList'} className="btn btn-green btn-lg">
+                <button className="btn btn-green btn-lg" onClick={(e) => {
+                  e.preventDefault()
+                  const selected = authors.filter(element => !element.hide)
+                  dispatch(fetchGeneratePlaylists(selected))
+                }}>
                   Продолжить
-                </Link>
+                </button>
               </div>
           ) : null}
         </div>
