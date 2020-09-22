@@ -1,0 +1,90 @@
+
+.frame {
+
+  position: relative;
+	top: 60px;
+	margin: 0 auto;
+	width: 420px;
+	height: 250px;
+	border-radius: 5px;
+	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	background: green;
+	color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	z-index: 0;
+}
+
+.center {
+	position: absolute;
+	top: 10px;
+	width: 100%;
+	z-index: 1;
+}
+.main {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ffbcbe;
+}
+.artwork-cover {
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.play-artwork {
+	-webkit-animation: rotation 3s infinite linear;
+}
+.play-artwork-cover {
+	-webkit-animation: scaleUp 3s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(359deg);
+	}
+}
+
+@-webkit-keyframes scaleUp {
+	from {
+		-webkit-transform: scale(1.1);
+	}
+	to {
+		-webkit-transform: scale(1);
+	}
+}
+
+.player-controls {
+	display: flex;
+	justify-content: space-between;
+}
+.player-control {
+	width: 60px;
+	display: flex;
+	justify-content: center;
+	height: 60px;
+	align-items: center;
+  border-radius: 5px;
+  color: #ffbcbe;
+}
+.right {
+	margin-right: 40px;
+	margin-left: 40px;
+	margin-top: 30px;
+}
+.fas {
+	color: #4acbe9;
+	transition: all 0.3s ease-in-out;
+}
+.player-control:hover {
+	background: #ffbcbe;
+	.fas {
+		color: #fff;
+	}
+}

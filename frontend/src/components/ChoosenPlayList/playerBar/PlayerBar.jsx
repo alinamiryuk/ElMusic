@@ -12,8 +12,8 @@ export default function Player({music}) {
 			<audio onClick={()=>(console.log('audio'))}
         className="audio"
         autoplay
-				// controls
-				src="https://cdndl.zaycev.net/track/17897115/7CNHd5sc2BQgY3jShGFJP843jpCZxUXmqN8ogb7o1EXbdFyLUvGKDExGcKFGKvqS1w8uQz8xsvJUgS7QBeYnpoJzZ9G3DRkdRK3bxRNfFXPQSqwRPrDYaC5sHPx7gXpxmFTgULH7gWEe9RYVXT2bxf7CaqUTFhZyJggUGeKsR1ARTnveQLz6cUgSu1dZP7wJLfQeHjZVm2DCssvpXEWEketR9tbZLJb8Gz6zbUo7ngmFZaSxH44TxfpeEwaePap4vdsZNnXyuMbV4sCYEoivKMcEjfad3uzxJYdCv59NKGsyJxiebCtxHsNarhL75C1jMu6rJbacqFbmvtBn3tzS26jgyaqda6eEULu4gMLG6p2f9FKzqp1X"
+				controls
+				src="https://cdndl.zaycev.net/track/7154974/4Ehsii9FgoD6ZoprRLM9h3r96fHuHrsvKJDwaG5izygS9cqyDaqibMjPwGZ7iVYMT66MvHsx8bZiMx3bxZUnyJBZ61nYMnxHVMUifubWTaT91bNmBP3fVW3KeP92pt4Tupch9xQVmpZhZupAhDjXYEhdGYyMEadhJZFjyvRdNDxpcvT3GmNmEFiF3VUL6SV59Qy7CWBRJ6DpzhHqdx67N6QkUXj98PtL2aqxkDgFeSXgX1jsy2aGMLRwSzRXKBp5HKtpVtM3CCkBcjbzhxM8jLkW6NXXhKZf2EZ82psNfxVdDjy9GwJh7uDVwabg6GMXHqc26ANjGKFDZZeE6yTpTrMdgz3nkBSJsnJ6VEMn2Q4Rgz3Kseey"
         >
 				Your browser does not support the
 				<code>audio</code> element.

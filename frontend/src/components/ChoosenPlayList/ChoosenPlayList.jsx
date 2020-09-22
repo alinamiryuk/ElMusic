@@ -5,7 +5,7 @@ import { avatar } from '../WelcomeListOfArtists/AvatarList/AvatarList'
 import { Button } from '@material-ui/core'
 import { Deck } from '../CardAnimation'
 import Player from './playerBar/PlayerBar'
-import { Music } from './playSong'
+import { CardPlayer, Music } from './playSong'
 
 export const ChoosenPlayList = () => {
 	const [state, setState] = useState('11')
@@ -25,14 +25,13 @@ export const ChoosenPlayList = () => {
 								{i + 1}. Исполнитель {song.author} {'  '}
 								Жанр {song.genre}
 								Песня {song.sub_genre}
-                <Music/>
 							</div>
 						))}
 					</ul>
 				</div>
 			</div>
         <Player />
-      
+      <CardPlayer/>
 		</>
 	)
 }
