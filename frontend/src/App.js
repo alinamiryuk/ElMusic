@@ -2,6 +2,7 @@ import React from 'react'
 import {WelcomePage} from './components/WelcomePage/WelcomePage'
 import {Login} from './components/Auth/Login/Login'
 import {SignUp} from './components/Auth/SignUp/SignUp'
+import {AboutUs} from './components/WelcomePage/Footer/AboutUs/AboutUs'
 import {MainComponentPage} from './components/WelcomeListOfArtists/MainComponentPage'
 import {MainPlayList} from './components/MainPlayList/MainPlayList'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
@@ -28,6 +29,9 @@ function App() {
             <ProtectedRouter path="/choose-artists-first">
               <MainComponentPage/>
             </ProtectedRouter>
+            <Route path="/about-us">
+              <AboutUs/>
+            </Route>
             <Route path="/">
               <WelcomePage/>
             </Route>

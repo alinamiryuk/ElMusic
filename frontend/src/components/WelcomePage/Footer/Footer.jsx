@@ -66,7 +66,7 @@ export const Footer = () => {
 
 							<ListItem button>
 								<ListItemText primary="" />
-								<Link to="/">About us</Link>
+								<Link to="/about-us">About us</Link>
 							</ListItem>
 						</List>
 						<Divider />
@@ -75,23 +75,29 @@ export const Footer = () => {
 							className={classes.fontSize}
 							aria-label="secondary mailbox folders"
 						>
-							<ListItem button>
+							<ListItem>
 								<ListItemText primary="" />
-								<Avatar
-									alt="IG"
-									src="/images/IG.png"
-									className={classes.large}
-								/>
-								<Avatar
-									alt="FB"
-									src="/images/FB.png"
-									className={classes.large}
-								/>
-								<Avatar
-									alt="VK"
-									src="/images/VK.png"
-									className={classes.large}
-								/>
+								<Link to="/">
+									<Avatar
+										alt="IG"
+										src="/images/IG.png"
+										className={classes.large}
+									/>
+								</Link>
+								<Link to="/">
+									<Avatar
+										alt="FB"
+										src="/images/FB.png"
+										className={classes.large}
+									/>
+								</Link>
+								<Link to="/">
+									<Avatar
+										alt="VK"
+										src="/images/VK.png"
+										className={classes.large}
+									/>
+								</Link>
 							</ListItem>
 						</List>
 					</div>
