@@ -13,11 +13,11 @@ export const MainComponentPage = () => {
 		<>
 			<div className="full-screen-for-choose-artists">
 				<h3 className="full-screen-header onboarding-screen-artists-header ">
-					Помогите нам подобрать идеальный плейлист
+					Help us to create a perfect playlist just for you!
 				</h3>
 				<div className="onboarding-screen-artists-sub-title">
-					Кто вам нравится больше всего? Выберите не менее трех исполнителей,
-					чтобы помочь нам лучше угадать ваше настроение
+					Who would you like most? Choose at least 3 artists to get your first
+					playlist:
 				</div>
 				<div className="onboarding-screen-grid">
 					{avatar.map((ava) => (
@@ -29,7 +29,7 @@ export const MainComponentPage = () => {
 				{/* {counter >= 3 ? ( */}
 				<div className="choosenList">
 					<a href="/MainPlayList" className="btn btn-green btn-lg">
-						Продолжить
+						Let's start
 					</a>
 				</div>
 				{/* ) : (

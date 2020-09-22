@@ -8,9 +8,9 @@ import {
 	ListItemText,
 	makeStyles,
 	ListItemAvatar,
-  Avatar,
-  TableContainer,
+	Avatar,
 } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -43,11 +43,10 @@ export const Footer = () => {
 
 	return (
 		<>
-    
 			<div className="whole-footer">
 				<Grid
 					container
-					direction="column"
+					direction="row"
 					justify="flex-start"
 					alignItems="flex-start"
 				>
@@ -62,12 +61,12 @@ export const Footer = () => {
 									/>
 								</ListItemAvatar>
 								<ListItemText primary="" />
-								El music
+								<Link to="/">El music</Link>
 							</ListItem>
 
 							<ListItem button>
 								<ListItemText primary="" />
-								About us
+								<Link to="/">About us</Link>
 							</ListItem>
 						</List>
 						<Divider />
@@ -78,11 +77,26 @@ export const Footer = () => {
 						>
 							<ListItem button>
 								<ListItemText primary="" />
-								Social Network
+								<Avatar
+									alt="IG"
+									src="/images/IG.png"
+									className={classes.large}
+								/>
+								<Avatar
+									alt="FB"
+									src="/images/FB.png"
+									className={classes.large}
+								/>
+								<Avatar
+									alt="VK"
+									src="/images/VK.png"
+									className={classes.large}
+								/>
 							</ListItem>
 						</List>
 					</div>
 				</Grid>
+				<ListItemText primary=" © 2020 El music" />
 			</div>
 		</>
 	)
