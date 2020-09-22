@@ -32,6 +32,7 @@ export const MainView = () => {
 					justify="flex-start"
 					alignItems="center"
 				>
+          {/*  Ваш выбор */}
 					<PlayingPlaylists />
 				</Grid>
 			</div>
@@ -43,6 +44,30 @@ export const MainView = () => {
 					justify="flex-start"
 					alignItems="center"
 				>
+          {/*  Вам будет интересно */}
+					<SmthNewPlayLists />
+				</Grid>
+			</div>
+      <div className="Information">Наши Жанры</div>
+			<div className="albumsWantsTo">
+				<Grid
+					container
+					direction="row"
+					justify="flex-start"
+					alignItems="center"
+				>
+          {/*  Наши Жанры */}
+					<SmthNewPlayLists />
+				</Grid>
+			</div>	<div className="Information">Наши исполнители</div>
+			<div className="albumsWantsTo">
+				<Grid
+					container
+					direction="row"
+					justify="flex-start"
+					alignItems="center"
+				>
+          {/*  Наши исполнители */}
 					<SmthNewPlayLists />
 				</Grid>
 			</div>
