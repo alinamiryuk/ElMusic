@@ -17,6 +17,7 @@ module.exports = function (app) {
 	app.use(express.urlencoded({ extended: true }))
 	app.use(express.json())
 	app.use(passport.initialize())
+	require('../config/passport')
 	app.use(cors())
 
 	app.use(morgan('dev'))

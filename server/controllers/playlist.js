@@ -11,6 +11,8 @@ const generateGenrePlaylists = require(
 )
 
 const Author = require('../models/Author')
+const User = require('../models/User')
+const jwt = require('jsonwebtoken')
 
 module.exports.createPlayList = async function(req, res) {
   const {likedAuthorsArray} = req.body
