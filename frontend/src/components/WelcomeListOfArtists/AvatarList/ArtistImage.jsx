@@ -7,7 +7,6 @@ export const ArtistImage = ({ ava, onCounter }) => {
 			<div
 				onClick={() => {
 					setHoverFlag(!hoverFlag)
-					console.log('hoverFlag>>>>', hoverFlag)
 					if (ava.hide) {
 						onCounter(state => state + 1)
 					} else {

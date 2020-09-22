@@ -18,7 +18,7 @@ const userSchema = Schema({
     type: String,
     required: true,
   },
-  playlist: [Object]
+  playlists: Array
 })
 module.exports = main.model('user', userSchema)
 

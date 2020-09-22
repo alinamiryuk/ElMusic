@@ -1,10 +1,12 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import useForm from '../../../hooks/useForm'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {fetchUserRegistration} from '../../../redux/actionType'
 
 export const SignUp = () => {
+    const status = useSelector(state => state.user.registered)
+  const history = useHistory()
 		const [state, useState] = useForm({email: '', password: '', userName: ''})
 		const dispatch = useDispatch()
   return (
@@ -42,6 +44,9 @@ export const SignUp = () => {
 						onClick={(e) => {
 						  e.preventDefault()
 						  dispatch(fetchUserRegistration(state))
+              if (status) {
+                history.push('/')
+              }
 						}}
         >
           Sign up
