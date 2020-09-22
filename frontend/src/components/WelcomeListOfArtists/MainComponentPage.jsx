@@ -5,10 +5,7 @@ import { useState } from 'react'
 import { ArtistImage } from './AvatarList/ArtistImage'
 
 export const MainComponentPage = () => {
-	const [hoverFlag, setHoverFlag] = useState(true)
-	const [counter, setCounter] = useState(0)
 	console.log(avatar)
-	console.log('counter>>>>', counter)
 	return (
 		<>
 			<div className="full-screen-for-choose-artists">
@@ -25,8 +22,7 @@ export const MainComponentPage = () => {
 					))}
 				</div>
 				{console.log('массив объектов after >>>,', avatar)}
-				{/* {avatar.forEach(el=> (el.hide ? setCounter(counter+1) : setCounter(counter))) } */}
-				{/* {counter >= 3 ? ( */}
+
 				<div className="choosenList">
 					<a href="/MainPlayList" className="btn btn-green btn-lg">
 						Продолжить

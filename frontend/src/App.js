@@ -6,36 +6,39 @@ import { MainComponentPage } from './components/WelcomeListOfArtists/MainCompone
 import { MainPlayList } from './components/MainPlayList/MainPlayList'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 import { ChoosenPlayList } from './components/ChoosenPlayList/ChoosenPlayList'
+import { Deck } from './components/CardAnimation'
 
 function App() {
-	return (
-		<>
-			<BrowserRouter>
-				<Switch>
-        <Route path="/signup">
-						<SignUp />
-					</Route>
+  return (
+    <>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
 
-					<Route path="/login">
-						<Login />
-					</Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/CardAnimation">
+            {/* <Deck />   */}
+          </Route>
+          <Route path="/MainPlayList">
+            <MainPlayList />
+          </Route>
+          <Route path="/ChoosenPlayList">
+            <ChoosenPlayList />
+          </Route>
+          <Route path="/choose-artists-first">
+            <MainComponentPage />
+          </Route>
 
-      <Route path="/MainPlayList">
-    <MainPlayList/>
-    </Route>
-    <Route path="/ChoosenPlayList">
-    <ChoosenPlayList/>
-    </Route>
-    <Route path="/choose-artists-first">
-    <MainComponentPage/>
-    </Route>
-    
-					<Route path="/">
-						<WelcomePage />
-					</Route>
-				</Switch>
-			</BrowserRouter>
-		</>
-	)
+          <Route path="/">
+            <WelcomePage />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </>
+  )
 }
 export default App

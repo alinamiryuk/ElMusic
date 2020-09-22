@@ -1,11 +1,8 @@
-import { Button } from '@material-ui/core'
 import React from 'react'
 import '../../components/WelcomePage/WelcomePage.css'
 import { Albums } from './albumResult/Albums'
 import { Footer } from './Footer/Footer'
 import { OrangeSpace } from './OrangeSpace/OrangeSpace'
-import { MainComponentPage } from '../WelcomeListOfArtists/MainComponentPage'
-import { Link } from 'react-router-dom'
 
 export const WelcomePage = (params) => {
 	return (
