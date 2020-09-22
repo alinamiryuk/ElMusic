@@ -13362,7 +13362,7 @@ body {
   top: 25%;
   z-index: 1;
 }
-@-webkit-keyframes "rotate" {
+/* @-webkit-keyframes "rotate" {
   from {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -13383,7 +13383,7 @@ body {
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
+} */
 .premium-menu .premium-menu-dropdown {
   display: none;
   position: absolute;

@@ -29,7 +29,6 @@ export const ChosenPlayList = () => {
 				</div>
 			</div>
         <Player />
-
 		</>
 	)
 }
