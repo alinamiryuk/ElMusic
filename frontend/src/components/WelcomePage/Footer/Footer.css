@@ -2,7 +2,8 @@
 	background-color: black;
 	height: 19em;
 	color: aliceblue;
-	font: x-large;
+  font: x-large;
+  /* position: sticky; */
 }
 .card-footer {
 	margin: 2em;
