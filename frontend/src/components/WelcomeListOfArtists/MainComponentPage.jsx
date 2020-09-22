@@ -9,7 +9,6 @@ import {avatar} from './AvatarList/AvatarList'
 export const MainComponentPage = () => {
 	const dispatch = useDispatch()
 	const authors = useSelector(state => state.authors)
-	const [hoverFlag, setHoverFlag] = useState(true)
 	const [counter, setCounter] = useState(0)
 	const avatar = []
 	useEffect(() => {
