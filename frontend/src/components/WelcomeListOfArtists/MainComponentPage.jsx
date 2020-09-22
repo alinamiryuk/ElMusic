@@ -35,7 +35,6 @@ export const MainComponentPage = () => {
 							</a>
 						</div>
 				) : null}
-				{console.log('массив объектов after >>>,', avatar)}
 			</div>
 		</>
 	)
