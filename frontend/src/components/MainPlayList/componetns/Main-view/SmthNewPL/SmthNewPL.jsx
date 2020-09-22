@@ -86,6 +86,8 @@ export const SmthNewPlayLists = () => {
 					</Button>
 				</CardActionArea>
 			</Card>{' '}
+  
 		</>
 	)
 }
+

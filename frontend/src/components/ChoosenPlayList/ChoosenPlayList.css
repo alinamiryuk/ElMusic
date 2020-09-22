@@ -1,11 +1,14 @@
 .main-view-playing{
-  height: 70em;
+  display: flex;
+  flex-wrap: wrap;
+  height: 94vh;
   width: 100%;
-  background: linear-gradient(to top, #375379,rgba(88, 46, 46, 0.904))
+  color: white;
+  background: linear-gradient(to bottom, #375379,rgba(243, 234, 234, 0.904));
+  
   
 }
 
 .list-songs{
-  margin: 0.5em;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }

@@ -1078,7 +1078,7 @@ html {
 body {
   font-family: Circular, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 0.5;
   color: #222326;
   background-color: #FFF;
 }
@@ -1574,27 +1574,27 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
-.container {
+/* .container {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
-}
-@media (min-width: 768px) {
+} */
+/* @media (min-width: 768px) {
   .container {
     width: 750px;
   }
-}
-@media (min-width: 992px) {
+} */
+/* @media (min-width: 992px) {
   .container {
     width: 970px;
   }
-}
-@media (min-width: 1200px) {
+} */
+/* @media (min-width: 1200px) {
   .container {
     width: 1170px;
   }
-}
+} */
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
@@ -4305,7 +4305,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     max-height: 200px;
   }
 }
-.container > .navbar-header,
+/* .container > .navbar-header,
 .container-fluid > .navbar-header,
 .container > .navbar-collapse,
 .container-fluid > .navbar-collapse {
@@ -4320,7 +4320,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
     margin-left: 0;
   }
-}
+} */
 .navbar-static-top {
   z-index: 1000;
   border-width: 0 0 1px;
