@@ -48,7 +48,7 @@ export const SignUp = () => {
 						e.preventDefault()
 						dispatch(fetchUserRegistration(state))
 						if (status) {
-							history.push('/')
+							history.push('/choose-artists-first')
 						}
 					}}
 				>

@@ -6,7 +6,7 @@ import {AboutUs} from './components/WelcomePage/Footer/AboutUs/AboutUs'
 import {MainComponentPage} from './components/WelcomeListOfArtists/MainComponentPage'
 import {MainPlayList} from './components/MainPlayList/MainPlayList'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import {ChoosenPlayList} from './components/ChoosenPlayList/ChosenPlayList'
+import {ChosenPlayList} from './components/ChoosenPlayList/ChosenPlayList'
 import ProtectedRouter from './components/shared/ProtectedRouter'
 
 function App() {
@@ -20,11 +20,11 @@ function App() {
             <Route path="/login">
               <Login/>
             </Route>
-            <ProtectedRouter path="/MainPlayList">
+            <ProtectedRouter path="/main">
               <MainPlayList/>
             </ProtectedRouter>
-            <ProtectedRouter path="/ChoosenPlayList">
-              <ChoosenPlayList/>
+            <ProtectedRouter path="/playlist/:id">
+              <ChosenPlayList/>
             </ProtectedRouter>
             <ProtectedRouter path="/choose-artists-first">
               <MainComponentPage/>

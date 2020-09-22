@@ -9,7 +9,6 @@ export const WelcomePage = (params) => {
 	return (
 		<>
 			<OrangeSpace />
-			{/* White Space down */}
 			<section className="album-results-free">
 				<div className="container center-white">
 					<div className="row row-white">
@@ -19,7 +18,7 @@ export const WelcomePage = (params) => {
 							id="segmented-desktop-launch"
 							className="btn btn-stroked-dark"
 							role="button"
-							to={'/MainPlayList'}
+							to={'/main'}
 							data-tracking='{"category": "home", "action": "play"}'
 						>
 							Launch Web Player
@@ -28,7 +27,6 @@ export const WelcomePage = (params) => {
 					</div>
 				</div>
 			</section>
-			{/* end of white space */}
 			<section className="Footer">
 				<Footer />
 			</section>

@@ -48,7 +48,7 @@ export const MainComponentPage = () => {
                   e.preventDefault()
                   const selected = authors.filter(element => !element.hide)
                   dispatch(fetchGeneratePlaylists(selected))
-                  history.push('/MainPlayList')
+                  history.push('/main')
                 }}>
                   Let's start
                 </button>

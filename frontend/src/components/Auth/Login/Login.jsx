@@ -39,7 +39,7 @@ export const Login = () => {
 						e.preventDefault()
 						dispatch(fetchUserLogin(state))
 						if (user.success) {
-							history.push('/choose-artists-first')
+							history.push('/main')
 						}
 					}}
 				>
