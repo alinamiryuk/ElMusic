@@ -1,6 +1,6 @@
 import {LOG_IN_USER, REGISTER_USER} from './action'
 
-const initialState = localStorage.getItem('user') || {
+const initialState = JSON.parse(localStorage.getItem('user')) || {
   success: false,
   registered: false
 }
