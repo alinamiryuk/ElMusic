@@ -45,7 +45,6 @@ module.exports.login = async function (req, res) {
         				res.status(200).json({
 					success: true,
 					token: tokenObject.token,
-					expiresIn: tokenObject.expires,
 				})
 			} else {
 				res

@@ -7,7 +7,10 @@ import {
 	Divider,
 	ListItemText,
 	makeStyles,
+	ListItemAvatar,
+	Avatar,
 } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -29,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
 	fontSize: {
 		font: 100,
 	},
+	large: {
+		width: theme.spacing(5),
+		height: theme.spacing(5),
+	},
 }))
 
 export const Footer = () => {
@@ -39,19 +46,27 @@ export const Footer = () => {
 			<div className="whole-footer">
 				<Grid
 					container
-					direction="column"
+					direction="row"
 					justify="flex-start"
 					alignItems="flex-start"
 				>
 					<div className="list-footer">
 						<List component="nav" aria-label="main mailbox folders">
 							<ListItem button>
+								<ListItemAvatar>
+									<Avatar
+										alt="El music"
+										src="/images/logo-192x192.png"
+										className={classes.large}
+									/>
+								</ListItemAvatar>
 								<ListItemText primary="" />
-								LOGO
+								<Link to="/">El music</Link>
 							</ListItem>
+
 							<ListItem button>
 								<ListItemText primary="" />
-								All about us
+								<Link to="/">About us</Link>
 							</ListItem>
 						</List>
 						<Divider />
@@ -62,11 +77,26 @@ export const Footer = () => {
 						>
 							<ListItem button>
 								<ListItemText primary="" />
-								Social Network
+								<Avatar
+									alt="IG"
+									src="/images/IG.png"
+									className={classes.large}
+								/>
+								<Avatar
+									alt="FB"
+									src="/images/FB.png"
+									className={classes.large}
+								/>
+								<Avatar
+									alt="VK"
+									src="/images/VK.png"
+									className={classes.large}
+								/>
 							</ListItem>
 						</List>
 					</div>
 				</Grid>
+				<ListItemText primary=" © 2020 El music" />
 			</div>
 		</>
 	)
