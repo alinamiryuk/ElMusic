@@ -26,9 +26,9 @@ function App() {
     <Route path="/ChoosenPlayList">
     <ChoosenPlayList/>
     </Route>
-    <Route path="/choose-artists-first">
+    < path="/choose-artists-first">
     <MainComponentPage/>
-    </Route>
+    </>
 
 					<Route path="/">
 						<WelcomePage />

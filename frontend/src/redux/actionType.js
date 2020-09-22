@@ -42,7 +42,13 @@ export const fetchUserRegistration = (body) => async (dispatch) => {
 }
 
 export const fetchAuthors = () => async (dispatch) => {
-  const res = await fetch('/api/playlist/authors')
+  const token = JSON.parse(localStorage.getItem('user')).token
+  const res = await fetch('/api/playlist/authors', {
+    method: 'GET',
+    headers: {
+      'Authorization': token
+    }
+  })
   const authors = await res.json()
   authors.forEach(obj => obj.hide = true)
   dispatch(showAuthors(authors))
