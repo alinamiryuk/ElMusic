@@ -1,41 +1,63 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './MainComponentPage.css'
-import { avatar } from './AvatarList/AvatarList'
-import { useState } from 'react'
-import { ArtistImage } from './AvatarList/ArtistImage'
+import {ArtistImage} from './AvatarList/ArtistImage'
+import {fetchAuthors, fetchGeneratePlaylists} from '../../redux/actionType'
+import {useDispatch, useSelector} from 'react-redux'
+import {useHistory} from 'react-router-dom'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 export const MainComponentPage = () => {
-	const [hoverFlag, setHoverFlag] = useState(true)
-	const [counter, setCounter] = useState(0)
-	console.log(avatar)
-	console.log('counter>>>>', counter)
-	return (
-		<>
-			<div className="full-screen-for-choose-artists">
-				<h3 className="full-screen-header onboarding-screen-artists-header ">
-					Help us to create a perfect playlist just for you!
-				</h3>
-				<div className="onboarding-screen-artists-sub-title">
-					Who would you like most? Choose at least 3 artists to get your first
-					playlist:
-				</div>
-				<div className="onboarding-screen-grid">
-					{avatar.map((ava) => (
-						<ArtistImage ava={ava} />
-					))}
-				</div>
-				{console.log('массив объектов after >>>,', avatar)}
-				{/* {avatar.forEach(el=> (el.hide ? setCounter(counter+1) : setCounter(counter))) } */}
-				{/* {counter >= 3 ? ( */}
-				<div className="choosenList">
-					<a href="/MainPlayList" className="btn btn-green btn-lg">
-						Let's start
-					</a>
-				</div>
-				{/* ) : (
-          <div> </div>
-        )} */}
-			</div>
-		</>
-	)
+  const dispatch = useDispatch()
+  const history = useHistory()
+  const authors = useSelector(state => state.authors)
+  const playlists = useSelector(state => state.playlists)
+  const [loading, setLoading] = useState(false)
+  const [counter, setCounter] = useState(0)
+  useEffect(() => {
+    dispatch(fetchAuthors())
+  }, [])
+  useEffect(() => {
+    setLoading(state => !state)
+  }, [authors])
+  return (
+      <>
+        <div className="full-screen-for-choose-artists">
+          <h3 className="full-screen-header onboarding-screen-artists-header ">
+            Help us to create a perfect playlist just for you!
+          </h3>
+          <div className="onboarding-screen-artists-sub-title">
+            Who would you like most? Choose at least 3 artists to get your first
+          </div>
+          {loading ?
+              <>
+                <div className={'onboarding-screen-artists-sub-title'} style={{fontSize: 30, marginBottom: 100}}> Данные подгружаются !</div>
+                <div className={'onboarding-screen-grid'}>
+                  <CircularProgress size={120} color={'secondary'}/>
+                </div>
+              </> :
+              <div className="onboarding-screen-grid">
+                {authors.map((ava) => (
+                    <ArtistImage key={ava._id} ava={ava}
+                                 onCounter={setCounter}/>
+                ))}
+              </div>}
+          {counter >= 3 ? (
+              <div className="choosenList">
+                <button className="btn btn-green btn-lg" onClick={(e) => {
+                  e.preventDefault()
+                  const selected = authors.filter(element => !element.hide)
+                  dispatch(fetchGeneratePlaylists(selected))
+                  if (Object.keys(playlists).length !== 0) {
+                    history.push('/MainPlayList')
+                  } else {
+                    console.log('error')
+                  }
+                }}>
+                  Let's start
+                </button>
+              </div>
+          ) : null}
+        </div>
+      </>
+  )
 }
