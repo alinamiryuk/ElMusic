@@ -25,13 +25,12 @@ export const MainComponentPage = () => {
             Help us to create a perfect playlist just for you!
           </h3>
           <div className="onboarding-screen-artists-sub-title">
-            Who would you like most? Choose at least 3 artists to get your first
+            Who would you like most? Choose at least 3 artists to get your first playlist:
           </div>
           {loading ?
               <>
                 <div className={'onboarding-screen-artists-sub-title'}
-                     style={{fontSize: 30, marginBottom: 100}}> Данные
-                  подгружаются !
+                     style={{fontSize: 30, marginBottom: 100}}> Loading!
                 </div>
                 <div className={'onboarding-screen-grid'}>
                   <CircularProgress size={120} color={'secondary'}/>

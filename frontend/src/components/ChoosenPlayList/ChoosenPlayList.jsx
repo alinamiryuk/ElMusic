@@ -22,9 +22,9 @@ export const ChoosenPlayList = () => {
 					<ul className="table-songs">
 						{avatar.map((song, i) => (
 							<div className="list-songs">
-								{i + 1}. Исполнитель {song.author} {'  '}
-								Жанр {song.genre}
-								Песня {song.sub_genre}
+								{i + 1}. Artist {song.author} {'  '}
+								Genre {song.genre}
+								Song {song.sub_genre}
                 <Music/>
 							</div>
 						))}
