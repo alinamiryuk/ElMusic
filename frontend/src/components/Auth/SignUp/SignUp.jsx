@@ -5,12 +5,10 @@ import {useDispatch} from 'react-redux'
 import {fetchUserRegistration} from '../../../redux/actionType'
 
 export const SignUp = () => {
-
 		const [state, useState] = useForm({email: '', password: '', userName: ''})
 		const dispatch = useDispatch()
   return (
       <>
-        {/* sign up witn facebook/gogle etc will be here later */}
         Sign up with your email address
         <label htmlFor="email-signup">What should we call you?</label>
         <input
@@ -39,13 +37,15 @@ export const SignUp = () => {
 						value={state.userName}
 						onChange={useState}
         />
-        {/* change to content page */}
-        <a
+        <button
             className="btn btn-green btn-lg"
-						onClick={() => dispatch(fetchUserRegistration(state))}
+						onClick={(e) => {
+						  e.preventDefault()
+						  dispatch(fetchUserRegistration(state))
+						}}
         >
           Sign up
-        </a>
+        </button>
 
         Have an account?
 

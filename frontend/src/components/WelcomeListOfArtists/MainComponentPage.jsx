@@ -25,7 +25,7 @@ export const MainComponentPage = () => {
 				</div>
 				<div className="onboarding-screen-grid">
 					{authors.map((ava) => (
-						<ArtistImage ava={ava} onCounter={setCounter} />
+						<ArtistImage key={ava._id} ava={ava} onCounter={setCounter} />
 					))}
 				</div>
 				{counter >= 3 ? (
