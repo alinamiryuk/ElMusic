@@ -24,7 +24,7 @@ export const MainView = () => {
 	const classes = useStyles()
 	return (
 		<div>
-			<div className="Information">Мы подобрали кое-что интересное</div>
+			<div className="Information">Playlists for you</div>
 			<div className="albumsRecommend">
 				<Grid
 					container
@@ -35,7 +35,7 @@ export const MainView = () => {
 					<PlayingPlaylists />
 				</Grid>
 			</div>
-			<div className="Information">Попробуем что-нибудь еще?</div>
+			<div className="Information">Based on your recent listening</div>
 			<div className="albumsWantsTo">
 				<Grid
 					container

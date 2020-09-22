@@ -3,6 +3,11 @@ import {Link, useHistory} from 'react-router-dom'
 import useForm from '../../../hooks/useForm'
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchUserRegistration} from '../../../redux/actionType'
+import '../SignUp/SignUp.css'
+        import {
+  Divider,
+  Grid,
+} from '@material-ui/core'
 
 export const SignUp = () => {
     const status = useSelector(state => state.user.registered)
@@ -11,6 +16,12 @@ export const SignUp = () => {
 		const dispatch = useDispatch()
   return (
       <>
+            <Grid class="signup-collumn"
+  container
+  direction="column"
+  justify="space-between"
+  alignItems="stretch"
+>
         Sign up with your email address
         <label htmlFor="email-signup">What should we call you?</label>
         <input
@@ -51,12 +62,9 @@ export const SignUp = () => {
         >
           Sign up
         </button>
-
-        Have an account?
-
-        <Link to="/login">
-          Log in
-        </Link>
-      </>
-  )
+			</Grid>
+			Have an account?
+			<Link to="/login">Log in</Link>
+		</>
+	)
 }
