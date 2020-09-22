@@ -1,0 +1,8 @@
+.navbar{
+  background-color: black;
+  color: white;
+  height: 5%;
+  width: 100%;
+  /* position: fixed; */
+  opacity: 0.2;
+}
