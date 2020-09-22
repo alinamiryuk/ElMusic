@@ -1,4 +1,3 @@
-
 import React from 'react'
 import {Link, useHistory} from 'react-router-dom'
 import useForm from '../../../hooks/useForm'
@@ -8,7 +7,6 @@ import {fetchUserLogin} from '../../../redux/actionType'
 export const Login = () => {
   const [state, setState] = useForm({userName: '', password: ''})
   const user = useSelector(state => state.user)
-  console.log(user.success)
   const history = useHistory()
   const dispatch = useDispatch()
 
@@ -33,10 +31,10 @@ export const Login = () => {
             value={state.password}
             onChange={setState}
         />
-        {/* change to content page */}
-        <a
+        <button
             className="btn btn-green btn-lg"
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault()
               dispatch(fetchUserLogin(state))
               if (user.success){
               history.push('/choose-artists-first')
@@ -44,7 +42,7 @@ export const Login = () => {
             }}
         >
           LOG IN
-        </a>
+        </button>
 
 
         Don't have an account?

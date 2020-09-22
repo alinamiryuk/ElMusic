@@ -1,4 +1,4 @@
-import {LOG_IN_USER, REGISTER_USER} from './action'
+import {LOG_IN_USER, REGISTER_USER, SHOW_AUTHORS} from './action'
 
 export const loginUser = (user) => ({
   type: LOG_IN_USER,
@@ -8,6 +8,11 @@ export const loginUser = (user) => ({
 export const registerUser = (status) => ({
   type: REGISTER_USER,
   payload: status
+})
+
+export const showAuthors = (authors) => ({
+  type: SHOW_AUTHORS,
+  payload: authors
 })
 
 export const fetchUserLogin = (body) => async (dispatch) => {
@@ -34,4 +39,11 @@ export const fetchUserRegistration = (body) => async (dispatch) => {
   })
   const result = await response.json()
   dispatch(registerUser(result.success))
+}
+
+export const fetchAuthors = () => async (dispatch) => {
+  const res = await fetch('/api/playlist/authors')
+  const authors = await res.json()
+  authors.forEach(obj => obj.hide = true)
+  dispatch(showAuthors(authors))
 }
