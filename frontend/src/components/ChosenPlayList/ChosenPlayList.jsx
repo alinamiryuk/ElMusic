@@ -18,12 +18,21 @@ export const ChosenPlayList = () => {
   const songs = playlist[params]?.songs || playlist[params]?.music
   const audio = document.getElementById('player-main-main')
 
+  // useEffect(() => {
+	// 	const audio = document.getElementById('player-main-main')
+	// 	console.log(toggle)
+	// 	if (toggle) {
+	// 		audio.play()
+	// 	} else {
+	// 		audio.pause()
+	// 	}
+	// 	// audio.play()
+	// }, [toggle])
+	// console.log('toggle>>>>', toggle)
+  
   useEffect(() => {
     setState(music[id])
   }, [music])
-
-
-  if (toggle) { audio.play() }
 
   const shuffledSongs = (array) => {
     let i = array.length - 1;
@@ -48,6 +57,7 @@ export const ChosenPlayList = () => {
                     Song: {song.song_name}
                     <Button onClick={() => {
                       dispatch(fetchMusic(song._id, song.genre))
+                      setToggle(() => !toggle)
                       setId(song._id)
                     }} variant='contained'>Play</Button>
                   </div>
@@ -58,4 +68,5 @@ export const ChosenPlayList = () => {
         <Player toggle={toggle} id={state}/>
       </>
   )
+
 }
