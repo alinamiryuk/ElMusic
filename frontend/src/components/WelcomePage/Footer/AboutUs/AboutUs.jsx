@@ -8,8 +8,8 @@ import {
 	CardContent,
 	Typography,
 	Divider,
-  Avatar,
-  IconButton,
+	Avatar,
+	IconButton,
 } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import GitHubIcon from '@material-ui/icons/GitHub'
@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 		// flexGrow: 1,
 		maxWidth: 265,
 		maxHeight: 500,
+		fontFamily: 'Circular, Helvetica, Arial, sans-serif, IosFix',
 	},
 	// gridList: {
 	// 	width: 600,
@@ -50,7 +51,6 @@ export const AboutUs = () => {
 				<Grid container direction="row" justify="center" alignItems="center">
 					<div>
 						<Card className={classes.root}>
-              
 							<CardActionArea>
 								<CardMedia
 									component="img"
@@ -59,15 +59,14 @@ export const AboutUs = () => {
 									title="ALINA MIRYUK"
 								/>
 								<CardContent>
-
-                 <Link to="https://github.com/alinamiryuk"> 
+																	<Typography gutterBottom variant="h3" component="h2" style={{
+												fontFamily:
+													'Circular, Helvetica, Arial, sans-serif, IosFix',
+											}}>
+										ALINA 	<a href="https://github.com/alinamiryuk" target="_blank">
 										<GitHubIcon fontSize="large" />
-									</Link>
-
-									<Typography gutterBottom variant="h3" component="h2"  >
-										ALINA <Divider /> MIRYUK
+									</a><Divider /> MIRYUK
 									</Typography>
-									
 								</CardContent>
 							</CardActionArea>
 						</Card>
@@ -82,10 +81,15 @@ export const AboutUs = () => {
 									title="VLADIMIR CHERNITSYN"
 								/>
 								<CardContent>
-									<Typography gutterBottom variant="h3" component="h2">
-										VLADIMIR <Link to="https://github.com/Flunt1k">
-										<GitHubIcon fontSize="large" />
-									</Link><Divider />
+									<Typography gutterBottom variant="h3" component="h2" style={{
+												fontFamily:
+													'Circular, Helvetica, Arial, sans-serif, IosFix',
+											}}>
+										VLADIMIR{' '}
+										<a href="https://github.com/Flunt1k" target="_blank">
+											<GitHubIcon fontSize="large" />
+										</a>
+										<Divider />
 										CHERNITSYN
 									</Typography>
 								</CardContent>
@@ -102,10 +106,19 @@ export const AboutUs = () => {
 									title="BORIS MESHERYAKOV"
 								/>
 								<CardContent>
-									<Typography gutterBottom variant="h3" component="h2">
-										BORIS <Link to="https://github.com/meshbor">
-										<GitHubIcon fontSize="large" />
-									</Link><Divider /> MESHERYAKOV
+									<Typography gutterBottom variant="h3" component="h2" style={{
+												fontFamily:
+													'Circular, Helvetica, Arial, sans-serif, IosFix',
+											}}>
+										BORIS{' '}
+										<a
+											href="https://github.com/meshbor"
+											target="_blank"
+											
+										>
+											<GitHubIcon fontSize="large" />
+										</a>
+										<Divider /> MESHERYAKOV
 									</Typography>
 								</CardContent>
 							</CardActionArea>

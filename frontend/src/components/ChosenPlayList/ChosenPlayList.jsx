@@ -17,8 +17,6 @@ export const ChosenPlayList = () => {
   const music = useSelector(state => state.music)
   const playlist = useSelector(state => state.playlists)
   const songs = playlist[params]?.songs || playlist[params]?.music
-  const audio = document.getElementById('player-main-main')
-
 
   useEffect(() => {
     setState(music[id])
@@ -34,6 +32,7 @@ export const ChosenPlayList = () => {
             {console.log('songs array',songs)}
             <ul className="table-songs">
               {songs ? songs.map((song, i) => (
+
                 <div className="list-songs" key={song._id}>
                     {i + 1}. Author: {song.author} {'  '}
                     Genre: {song.genre}
