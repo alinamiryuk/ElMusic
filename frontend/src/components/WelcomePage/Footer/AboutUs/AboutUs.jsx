@@ -13,6 +13,7 @@ import {
 } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import GitHubIcon from '@material-ui/icons/GitHub'
+import {Footer} from '../Footer'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -24,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
 		// flexGrow: 1,
 		maxWidth: 265,
 		maxHeight: 500,
-		fontFamily: 'Circular, Helvetica, Arial, sans-serif, IosFix',
+    fontFamily: 'Circular, Helvetica, Arial, sans-serif, IosFix',
+    
 	},
 	// gridList: {
 	// 	width: 600,
@@ -126,6 +128,9 @@ export const AboutUs = () => {
 					</div>
 				</Grid>
 			</div>
+      <section className="footerUs">
+      <Footer />
+      </section>
 		</>
 	)
 }
