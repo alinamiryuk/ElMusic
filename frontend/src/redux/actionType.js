@@ -1,6 +1,6 @@
 import {
   ADD_PLAYLIST_REDUCER,
-  GENERATE_PLAYLISTS, GET_USER_PLAYLISTS,
+  GENERATE_PLAYLISTS, GET_MUSIC, GET_USER_PLAYLISTS,
   LOG_IN_USER,
   REGISTER_USER,
   SHOW_AUTHORS,
@@ -36,6 +36,14 @@ export const addPlaylist = (playlist) => ({
   payload: {
     id: playlist.id,
     data: playlist
+  }
+})
+
+export const getMusic = (music, id) => ({
+  type: GET_MUSIC,
+  payload: {
+    id: id,
+    song: music
   }
 })
 
@@ -111,4 +119,16 @@ export const fetchUserPlaylists = () => async (dispatch) => {
   const playlists = await response.json()
   console.log(playlists)
   dispatch(showUserPlaylist(playlists))
+}
+
+export const fetchMusic = (id, genre) => async (dispatch) => {
+  const token = JSON.parse(localStorage.getItem('user')).token
+  const response = await fetch(`/api/playlist/${id}?genre=${genre}`, {
+    method: 'GET',
+    headers: {
+      'Authorization': token
+    }
+  })
+  const music = await response.json()
+  dispatch(getMusic(music, id))
 }
