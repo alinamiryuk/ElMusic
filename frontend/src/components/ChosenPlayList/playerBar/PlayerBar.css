@@ -1,6 +1,7 @@
 .audio{
+  /* position: absolute; */
   background:#f1f3f4;
   color: black;
-  height: 4em;
+  /* height: 4em; */
   width: 100%;
 }
