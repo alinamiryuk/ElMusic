@@ -3,6 +3,7 @@ module.exports = function (app) {
 	const morgan = require('morgan')
 	const passport = require('passport')
 	const keys = require('../config/keys')
+	const path = require('path')
 	const cors = require('cors')
 	const controller = require('../db/db-controller')
 	const dbConfig ={
@@ -16,6 +17,7 @@ module.exports = function (app) {
 
 	app.use(express.urlencoded({ extended: true }))
 	app.use(express.json())
+	app.use(express.static(path.join(__dirname, '..', 'public')))
 	app.use(passport.initialize())
 	require('../config/passport')
 	app.use(cors())

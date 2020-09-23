@@ -13,6 +13,8 @@ const generateGenrePlaylists = require(
 const Author = require('../models/Author')
 const User = require('../models/User')
 const errorHandler = require('../utils/errorHandler')
+const fs = require('fs').promises
+const path = require('path')
 const {rockModel, metalModel, popModel, jazzModel} = require('../models/Music')
 
 module.exports.createPlayList = async function(req, res) {
@@ -81,23 +83,33 @@ module.exports.getUserPlayLists = async function(req, res) {
 module.exports.getMusic = async function(req, res) {
   const {id} = req.params
   const {genre} = req.query
-  let songBuffer
-  switch (genre) {
-    case 'Jazz':
-      songBuffer = await jazzModel.findOne({_id: id})
-      break
-    case 'Rock':
-      songBuffer = await rockModel.findOne({_id: id})
-      break
-    case 'Pop':
-      songBuffer = await popModel.findOne({_id: id})
-      break
-    case 'Metal':
-      songBuffer = await metalModel.findOne({_id: id})
-      break
+  const pathToMusic = path.join(__dirname, '..', 'public', 'music')
+  const files = await fs.readdir(`${pathToMusic}`)
+  if (files.includes(`${id}.mp3`)) {
+    return res.json({
+      status: 'play'
+    })
+  } else {
+    let songBuffer
+    switch (genre) {
+      case 'Jazz':
+        songBuffer = await jazzModel.findOne({_id: id})
+        break
+      case 'Rock':
+        songBuffer = await rockModel.findOne({_id: id})
+        break
+      case 'Pop':
+        songBuffer = await popModel.findOne({_id: id})
+        break
+      case 'Metal':
+        songBuffer = await metalModel.findOne({_id: id})
+        break
+    }
+    await fs.writeFile(`${pathToMusic}/${id}.mp3`, songBuffer.data)
+    res.status(200).json({
+      [id]: true
+    })
   }
-  const songBase64 = songBuffer.data.toString('base64')
-  res.json(songBase64)
 
 }
 

@@ -39,12 +39,9 @@ export const addPlaylist = (playlist) => ({
   }
 })
 
-export const getMusic = (music, id) => ({
+export const getMusic = (id) => ({
   type: GET_MUSIC,
-  payload: {
-    id: id,
-    song: music
-  }
+  payload: id
 })
 
 export const fetchUserLogin = (body) => async (dispatch) => {
@@ -123,6 +120,7 @@ export const fetchUserPlaylists = () => async (dispatch) => {
 
 export const fetchMusic = (id, genre) => async (dispatch) => {
   const token = JSON.parse(localStorage.getItem('user')).token
+  console.log(id, genre)
   const response = await fetch(`/api/playlist/${id}?genre=${genre}`, {
     method: 'GET',
     headers: {
@@ -130,5 +128,5 @@ export const fetchMusic = (id, genre) => async (dispatch) => {
     }
   })
   const music = await response.json()
-  dispatch(getMusic(music, id))
+  dispatch(getMusic(id))
 }
