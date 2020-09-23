@@ -16,7 +16,7 @@ export const ArtistImage = ({ ava, onCounter }) => {
 				}}
 				className="artistAvatar"
 			>
-				<div className="dark-hover"> ❤ </div>
+				<div className="dark-hover"></div>
 				{ava.hide ? (
 					<img className="artist" src={ava.avatar} alt={'author'}/>
 				) : (
