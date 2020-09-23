@@ -11,31 +11,35 @@ import {
 	Avatar,
 } from '@material-ui/core'
 import { Link } from 'react-router-dom'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const useStyles = makeStyles((theme) => ({
-	root: {
-		display: 'flex',
-		flexWrap: 'wrap',
-		justifyContent: 'space-around',
-		overflow: 'hidden',
-		backgroundColor: theme.palette.background.paper,
-		flexGrow: 1,
-	},
-	gridList: {
-		width: 600,
-		height: 450,
-	},
-
-	control: {
-		padding: theme.spacing(20),
-	},
 	fontSize: {
-		font: 100,
+		fontSize: '0.7em',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    paddingRight: '2em',
 	},
 	large: {
-		width: theme.spacing(5),
-		height: theme.spacing(5),
+		width: theme.spacing(6),
+		height: theme.spacing(6),
 	},
+	socialMediaLinks: {
+    fontSize: '2em',
+    margin: '0.2em'
+	},
+	footerGrid: {
+		direction: 'row',
+		justify: 'center',
+		alignItems: 'center',
+	},
+	footerList: {
+    display: 'flex'
+  },
+  listItemWidth: {
+    width: '5em',
+  }
 }))
 
 export const Footer = () => {
@@ -44,68 +48,42 @@ export const Footer = () => {
 	return (
 		<>
 			<div className="whole-footer">
-				<Grid
-					container
-					direction="row"
-					justify="flex-start"
-					alignItems="flex-start"
-				>
-					<div className="list-footer">
-						<List component="nav" aria-label="main mailbox folders">
-							<ListItem button>
-								<ListItemAvatar>
-									<Avatar
-										alt="El music"
-										src="/images/logo-192x192.png"
-										className={classes.large}
-									/>
-								</ListItemAvatar>
-								<ListItemText primary="" />
-								<Link to="/">El music</Link>
-							</ListItem>
+				{/* <Grid container className="footerGrid"> */}
+					<List className={classes.footerList}>
+						<ListItem button>
+							<ListItemAvatar>
+								<Avatar
+									alt="El music"
+									src="/images/logo-192x192.png"
+									className={classes.large}
+								/>
+							</ListItemAvatar>
+							<a href="/" className={classes.listItemWidth}>
+                
+                El music</a>
+						</ListItem>
 
-							<ListItem button>
-								<ListItemText primary="" />
-								<Link to="/about-us">About us</Link>
-							</ListItem>
-						</List>
-						<Divider />
-						<List
-							component="nav"
-							className={classes.fontSize}
-							aria-label="secondary mailbox folders"
-						>
-							<ListItem>
-								<ListItemText primary="" />
-								<Link to="/">
-									<Avatar
-										alt="IG"
-										src="/images/IG.png"
-										className={classes.large}
-									/>
-								</Link>
-								<Link to="/">
-									<Avatar
-										alt="FB"
-										src="/images/FB.png"
-										className={classes.large}
-									/>
-								</Link>
-								<Link to="/">
-									<Avatar
-										alt="VK"
-										src="/images/VK.png"
-										className={classes.large}
-									/>
-								</Link>
-							</ListItem>
-						</List>
-					</div>
-				</Grid>
-				<Grid container
-					justify="center"
-					alignItems="center">
-					<ListItemText primary=" © 2020 El music" />
+						<ListItem button>
+							<a href="/about-us" className={classes.listItemWidth}>About us</a>
+						</ListItem>
+
+						<ListItem>
+							<a className={classes.socialMediaLinks} href="/">
+								<i class="fab fa-facebook"></i>
+							</a>
+							<ListItemText primary="" />
+							<a className={classes.socialMediaLinks} href="/">
+								<i class="fab fa-instagram"></i>
+							</a>
+							<ListItemText primary="" />
+							<a className={classes.socialMediaLinks} href="/">
+								<i class="fab fa-vk"></i>
+							</a>
+						</ListItem>
+					</List>
+				{/* </Grid> */}
+				<Grid className={classes.fontSize} container>
+					<div>© 2020 El music</div>
 				</Grid>
 			</div>
 		</>
