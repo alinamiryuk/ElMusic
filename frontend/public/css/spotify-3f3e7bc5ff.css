@@ -30,18 +30,18 @@ section,
 summary {
   display: block;
 }
-audio,
+/* audio,
 canvas,
 progress,
 video {
   display: inline-block;
   vertical-align: baseline;
-}
-audio:not([controls]) {
+} */
+/* audio:not([controls]) {
   display: none;
   height: 0;
 }
-[hidden],
+[hidden], */
 template {
   display: none;
 }

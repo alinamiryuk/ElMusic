@@ -6,6 +6,8 @@ import { OrangeSpace } from './OrangeSpace/OrangeSpace'
 import { Link } from 'react-router-dom'
 
 export const WelcomePage = (params) => {
+  
+  
 	return (
 		<>
 			<OrangeSpace />
