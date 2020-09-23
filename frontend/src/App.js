@@ -5,7 +5,7 @@ import {SignUp} from './components/Auth/SignUp/SignUp'
 import {MainComponentPage} from './components/WelcomeListOfArtists/MainComponentPage'
 import {MainPlayList} from './components/MainPlayList/MainPlayList'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import {ChoosenPlayList} from './components/ChoosenPlayList/ChoosenPlayList'
+import {ChoosenPlayList} from './components/ChoosenPlayList/ChosenPlayList'
 import ProtectedRouter from './components/shared/ProtectedRouter'
 
 function App() {

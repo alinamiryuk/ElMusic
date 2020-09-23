@@ -7,14 +7,10 @@ import { Deck } from '../CardAnimation'
 import Player from './playerBar/PlayerBar'
 
 export const ChoosenPlayList = () => {
-	const [state, setState] = useState('11')
+	const [state, setState] = useState('')
 	const [toggle, setToggle] = useState(false)
-  
-  console.log('toggle>>>>',toggle);
 
-  const audio = document.getElementById('player-main-main')
-
-  if (toggle) { audio.play() } 
+	console.log('toggle>>>>', toggle)
 
 	return (
 		<>
@@ -27,13 +23,22 @@ export const ChoosenPlayList = () => {
 								{i + 1}. Author {song.author} {'  '}
 								Genre {song.genre}
 								Song {song.sub_genre}
-							<Button onClick={()=>(setToggle(!toggle))} variant='contained'> Play</Button>
-              </div>
+								<Button
+									onClick={() => {
+										setToggle(!toggle)
+										// setState(song.song)
+									}}
+									variant="contained"
+								>
+									{' '}
+									Play
+								</Button>
+							</div>
 						))}
 					</ul>
 				</div>
 			</div>
-        <Player toggle={toggle} />
+			<Player state={state} toggle={toggle} />
 		</>
 	)
 }
