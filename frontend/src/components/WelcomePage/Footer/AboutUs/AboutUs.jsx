@@ -7,10 +7,11 @@ import {
 	CardMedia,
 	CardContent,
 	Typography,
-  Divider,
-  Avatar,
+	Divider,
+	Avatar,
 } from '@material-ui/core'
 import { Link } from 'react-router-dom'
+import GitHubIcon from '@material-ui/icons/GitHub'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -57,11 +58,11 @@ export const AboutUs = () => {
 								/>
 								<CardContent>
 									<Typography gutterBottom variant="h3" component="h2">
-										ALINA <Divider /> MIRYUK
+										ALINA <Link to="https://github.com/alinamiryuk">
+										<GitHubIcon fontSize="large" />
+									</Link><Divider /> MIRYUK
 									</Typography>
-									<Link to="https://github.com/alinamiryuk">
-										<Avatar alt="GH" src="/images/GH.png" />
-									</Link>
+									
 								</CardContent>
 							</CardActionArea>
 						</Card>
@@ -77,7 +78,9 @@ export const AboutUs = () => {
 								/>
 								<CardContent>
 									<Typography gutterBottom variant="h3" component="h2">
-										VLADIMIR <Divider />
+										VLADIMIR <Link to="https://github.com/Flunt1k">
+										<GitHubIcon fontSize="large" />
+									</Link><Divider />
 										CHERNITSYN
 									</Typography>
 								</CardContent>
@@ -95,7 +98,9 @@ export const AboutUs = () => {
 								/>
 								<CardContent>
 									<Typography gutterBottom variant="h3" component="h2">
-										BORIS <Divider /> MESHERYAKOV
+										BORIS <Link to="https://github.com/meshbor">
+										<GitHubIcon fontSize="large" />
+									</Link><Divider /> MESHERYAKOV
 									</Typography>
 								</CardContent>
 							</CardActionArea>
