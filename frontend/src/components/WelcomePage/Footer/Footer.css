@@ -1,14 +1,9 @@
 .whole-footer {
 	background-color: black;
-	height: 19em;
+	height: 5em;
 	color: aliceblue;
-	font: x-large;
+  font: x-large;
+  display: flex;
+  justify-self: center;
 }
-.card-footer {
-	margin: 2em;
-}
-.list-footer {
-	font: x-large;
-	margin: 2em;
-	margin-left: 10em;
-}
+

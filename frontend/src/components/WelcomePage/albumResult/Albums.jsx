@@ -2,7 +2,6 @@ import React from 'react'
 import '../albumResult/Albums.css'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Card, CardActionArea, CardMedia } from '@material-ui/core'
-import { blue } from '@material-ui/core/colors'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -17,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	gridList: {
 		width: 600,
-		height: 450,
+		// height: 450,
 	},
 	paper: {
 		height: 140,
@@ -120,6 +119,7 @@ export const Albums = () => {
 					</div>
 				</Grid>
 			</div>
+      
 		</>
 	)
 }

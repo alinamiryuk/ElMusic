@@ -1,0 +1,24 @@
+.header-play{
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  background-color: rgb(65, 61, 61);
+  width: 100%;
+  height: 25em;
+  opacity: 0.6;
+  /* margin-left: 5em; */
+  background-image: url(https://elintranews.com/wp-content/uploads/2019/08/CAMILA-CABELLO.jpeg);
+  background-repeat: no-repeat ;
+  /* background-position: center; */
+  background-size: cover;
+}
+.artist-information{
+  color: aliceblue;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-left: 5em;
+  margin-bottom: 2em;
+}

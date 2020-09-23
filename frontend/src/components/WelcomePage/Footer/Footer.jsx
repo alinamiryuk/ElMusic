@@ -7,28 +7,39 @@ import {
 	Divider,
 	ListItemText,
 	makeStyles,
+	ListItemAvatar,
+	Avatar,
 } from '@material-ui/core'
+import { Link } from 'react-router-dom'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const useStyles = makeStyles((theme) => ({
-	root: {
-		display: 'flex',
-		flexWrap: 'wrap',
-		justifyContent: 'space-around',
-		overflow: 'hidden',
-		backgroundColor: theme.palette.background.paper,
-		flexGrow: 1,
-	},
-	gridList: {
-		width: 600,
-		height: 450,
-	},
-
-	control: {
-		padding: theme.spacing(20),
-	},
 	fontSize: {
-		font: 100,
+		fontSize: '0.7em',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    paddingRight: '2em',
 	},
+	large: {
+		width: theme.spacing(6),
+		height: theme.spacing(6),
+	},
+	socialMediaLinks: {
+    fontSize: '2em',
+    margin: '0.2em'
+	},
+	footerGrid: {
+		direction: 'row',
+		justify: 'center',
+		alignItems: 'center',
+	},
+	footerList: {
+    display: 'flex'
+  },
+  listItemWidth: {
+    width: '5em',
+  }
 }))
 
 export const Footer = () => {
@@ -37,35 +48,42 @@ export const Footer = () => {
 	return (
 		<>
 			<div className="whole-footer">
-				<Grid
-					container
-					direction="column"
-					justify="flex-start"
-					alignItems="flex-start"
-				>
-					<div className="list-footer">
-						<List component="nav" aria-label="main mailbox folders">
-							<ListItem button>
-								<ListItemText primary="" />
-								LOGO
-							</ListItem>
-							<ListItem button>
-								<ListItemText primary="" />
-								All about us
-							</ListItem>
-						</List>
-						<Divider />
-						<List
-							component="nav"
-							className={classes.fontSize}
-							aria-label="secondary mailbox folders"
-						>
-							<ListItem button>
-								<ListItemText primary="" />
-								Social Network
-							</ListItem>
-						</List>
-					</div>
+				{/* <Grid container className="footerGrid"> */}
+					<List className={classes.footerList}>
+						<ListItem button>
+							<ListItemAvatar>
+								<Avatar
+									alt="El music"
+									src="/images/logo-192x192.png"
+									className={classes.large}
+								/>
+							</ListItemAvatar>
+							<a href="/" className={classes.listItemWidth}>
+                
+                El music</a>
+						</ListItem>
+
+						<ListItem button>
+							<a href="/about-us" className={classes.listItemWidth}>About us</a>
+						</ListItem>
+
+						<ListItem>
+							<a className={classes.socialMediaLinks} href="/">
+								<i class="fab fa-facebook"></i>
+							</a>
+							<ListItemText primary="" />
+							<a className={classes.socialMediaLinks} href="/">
+								<i class="fab fa-instagram"></i>
+							</a>
+							<ListItemText primary="" />
+							<a className={classes.socialMediaLinks} href="/">
+								<i class="fab fa-vk"></i>
+							</a>
+						</ListItem>
+					</List>
+				{/* </Grid> */}
+				<Grid className={classes.fontSize} container>
+					<div>© 2020 El music</div>
 				</Grid>
 			</div>
 		</>
