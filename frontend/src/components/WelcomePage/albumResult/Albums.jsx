@@ -45,7 +45,8 @@ export const Albums = () => {
 									alt="Fallout boy"
 									height="140"
 									image="https://tabs.do.am/oblogka/cent.jpg"
-									title="Fallout boy"
+                  title="Fallout boy"
+                  onClick={()=>{console.log('it clicked');}}
 								/>
 							</CardActionArea>
 						</Card>

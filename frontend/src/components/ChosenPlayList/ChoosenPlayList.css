@@ -1,4 +1,4 @@
-.main-view-playing{
+/* .main-view-playing{
   display: flex;
   flex-wrap: wrap;
   height: 94vh;
@@ -10,5 +10,5 @@
 }
 
 .list-songs{
-  /* justify-content: space-around; */
-}
+  /* justify-content: space-around; 
+} */
