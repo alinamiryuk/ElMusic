@@ -6,6 +6,7 @@ import Player from './playerBar/PlayerBar'
 import {useDispatch, useSelector} from 'react-redux'
 import {useParams} from 'react-router-dom'
 import {fetchMusic} from '../../redux/actionType'
+import { SongsContext } from './Context/SongsContext'
 
 export const ChosenPlayList = () => {
   const [state, setState] = useState()
@@ -18,54 +19,38 @@ export const ChosenPlayList = () => {
   const songs = playlist[params]?.songs || playlist[params]?.music
   const audio = document.getElementById('player-main-main')
 
-  // useEffect(() => {
-	// 	const audio = document.getElementById('player-main-main')
-	// 	console.log(toggle)
-	// 	if (toggle) {
-	// 		audio.play()
-	// 	} else {
-	// 		audio.pause()
-	// 	}
-	// 	// audio.play()
-	// }, [toggle])
-	// console.log('toggle>>>>', toggle)
-  
+
   useEffect(() => {
     setState(music[id])
   }, [music])
+ 
 
-  const shuffledSongs = (array) => {
-    let i = array.length - 1;
-    for (; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    return array
-  }
   return (
       <>
+      <SongsContext.Provider value={songs}>
         <div className="main-view-playing">
-          <HeaderPlay/>
+          <HeaderPlay playlist={playlist[params]?.type} id={id} />
           <div className="playlist-songs">
+            {console.log('songs array',songs)}
             <ul className="table-songs">
-              {songs ? shuffledSongs(songs).map((song, i) => (
-                  <div className="list-songs" key={song._id}>
+              {songs ? songs.map((song, i) => (
+                <div className="list-songs" key={song._id}>
                     {i + 1}. Author: {song.author} {'  '}
                     Genre: {song.genre}
                     Song: {song.song_name}
-                    <Button onClick={() => {
+                    <Button style={{  opacity: "0.6"}}  onClick={() => {
                       dispatch(fetchMusic(song._id, song.genre))
                       setToggle(() => !toggle)
                       setId(song._id)
-                    }} variant='contained'>Play</Button>
+                    }} variant='outlined'>Play</Button>
                   </div>
               )) : null}
             </ul>
           </div>
         </div>
         <Player toggle={toggle} id={state}/>
+              </SongsContext.Provider> 
+
       </>
   )
 
