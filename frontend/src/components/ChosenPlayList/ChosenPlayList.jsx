@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import './ChoosenPlayList.css'
+import './ChosenPlayList.css'
 import { HeaderPlay } from './header/HeaderChoosenPlay'
 import { avatar } from '../WelcomeListOfArtists/AvatarList/AvatarList'
 import { Button } from '@material-ui/core'
 import { Deck } from '../CardAnimation'
 import Player from './playerBar/PlayerBar'
 
-export const ChoosenPlayList = () => {
+export const ChosenPlayList = () => {
 	const [state, setState] = useState('11')
 	const [toggle, setToggle] = useState(false)
   
