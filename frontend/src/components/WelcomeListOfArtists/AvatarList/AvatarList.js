@@ -25,6 +25,7 @@ export const avatar = [
     hide: true,
   },
   {
+    
     author: "zivert",
     genre: "pop",
     sub_genre: "pop-pop",
