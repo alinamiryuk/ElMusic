@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './ChoosenPlayList.css'
 import { HeaderPlay } from './header/HeaderChoosenPlay'
 import { avatar } from '../WelcomeListOfArtists/AvatarList/AvatarList'
@@ -9,10 +9,17 @@ import Player from './playerBar/PlayerBar'
 export const ChosenPlayList = () => {
 	const [state, setState] = useState('')
 	const [toggle, setToggle] = useState(false)
-
-	console.log('toggle>>>>', toggle)
-  const audio = document.getElementById('player-main-main')
-  if (toggle) { audio.play() } 
+	// useEffect(() => {
+	// 	const audio = document.getElementById('player-main-main')
+	// 	console.log(toggle)
+	// 	if (toggle) {
+	// 		audio.play()
+	// 	} else {
+	// 		audio.pause()
+	// 	}
+	// 	// audio.play()
+	// }, [toggle])
+	// console.log('toggle>>>>', toggle)
 
 	return (
 		<>
@@ -27,7 +34,7 @@ export const ChosenPlayList = () => {
 								Song {song.sub_genre}
 								<Button
 									onClick={() => {
-										setToggle(!toggle)
+										setToggle(() => !toggle)
 										setState(song.song)
 									}}
 									variant="contained"
@@ -40,7 +47,12 @@ export const ChosenPlayList = () => {
 					</ul>
 				</div>
 			</div>
+      {/* Player starts here */}
 			<Player state={state} toggle={toggle} />
+		
+      {/* Player ends here */}
+
+
 		</>
 	)
 }
