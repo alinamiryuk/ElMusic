@@ -4,16 +4,17 @@ import './PlayerBar.css'
 
 
 
+
 export default function Player({music}) {
 	return (
 		<>
     <div className="player-audio">
 
-			<audio onClick={()=>(console.log('audio'))}
+			<audio id="player-main-main" onClick={()=>(console.log('audio'))}
         className="audio"
         autoplay
-				// controls
-				src="https://cdndl.zaycev.net/track/17897115/7CNHd5sc2BQgY3jShGFJP843jpCZxUXmqN8ogb7o1EXbdFyLUvGKDExGcKFGKvqS1w8uQz8xsvJUgS7QBeYnpoJzZ9G3DRkdRK3bxRNfFXPQSqwRPrDYaC5sHPx7gXpxmFTgULH7gWEe9RYVXT2bxf7CaqUTFhZyJggUGeKsR1ARTnveQLz6cUgSu1dZP7wJLfQeHjZVm2DCssvpXEWEketR9tbZLJb8Gz6zbUo7ngmFZaSxH44TxfpeEwaePap4vdsZNnXyuMbV4sCYEoivKMcEjfad3uzxJYdCv59NKGsyJxiebCtxHsNarhL75C1jMu6rJbacqFbmvtBn3tzS26jgyaqda6eEULu4gMLG6p2f9FKzqp1X"
+				controls
+				src="https://cdndl.zaycev.net/track/5966522/5S7mmVyZ9RcMyk3J6Wn9DXrkgnFGuhRyHP9BzisZZYuaXkJ4mk3PKCoGVnhBph9zsdtr1U1wdrqXXoLTq7U3kvZo9VVj1UxciceorbNP8RjDCFp4kw9hG6XkUc56LLvuQAY8u53d66XBrbEpw2nxjPQJKBhFTqJbbsnrqAeJRRFPuavTxdo911CrXgv15gV5YjsYRfv6GpLUYE89zUxifuhFC6eyH7mgdnpA8bUqchqGShkdUeoy8bzBs3FmFPThmJK2byDqi4gyixcmQm6JZKEfm9bAedw243QtfJQhKp1gAjsJrasDmz7uk66QFUuWNza1b4SYYpFe8a8NA2JwhqSih5PcBXKzPtsb2fWeSVRkLSE5Mpbo"
         >
 				Your browser does not support the
 				<code>audio</code> element.

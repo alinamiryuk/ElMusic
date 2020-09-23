@@ -1,34 +1,39 @@
-import React  from 'react'
+import React, { useState } from 'react'
 import './ChoosenPlayList.css'
-import {useParams} from 'react-router-dom'
 import { HeaderPlay } from './header/HeaderChoosenPlay'
+import { avatar } from '../WelcomeListOfArtists/AvatarList/AvatarList'
+import { Button } from '@material-ui/core'
+import { Deck } from '../CardAnimation'
 import Player from './playerBar/PlayerBar'
-import { Music } from './playSong'
-import {useSelector} from 'react-redux'
 
-export const ChosenPlayList = () => {
-	const params = useParams().id
-	const playlist = useSelector(state => state.playlists)
+export const ChoosenPlayList = () => {
+	const [state, setState] = useState('11')
+	const [toggle, setToggle] = useState(false)
+  
+  console.log('toggle>>>>',toggle);
 
-	const songs = playlist[params].songs
+  const audio = document.getElementById('player-main-main')
+
+  if (toggle) { audio.play() } 
+
 	return (
 		<>
 			<div className="main-view-playing">
 				<HeaderPlay />
 				<div className="playlist-songs">
 					<ul className="table-songs">
-						{songs.map((song, i) => (
+						{avatar.map((song, i) => (
 							<div className="list-songs">
-								{i + 1}. Artist {song.author} {'  '}
+								{i + 1}. Author {song.author} {'  '}
 								Genre {song.genre}
 								Song {song.sub_genre}
-                <Music/>
-							</div>
+							<Button onClick={()=>(setToggle(!toggle))} variant='contained'> Play</Button>
+              </div>
 						))}
 					</ul>
 				</div>
 			</div>
-        <Player />
+        <Player toggle={toggle} />
 		</>
 	)
 }
