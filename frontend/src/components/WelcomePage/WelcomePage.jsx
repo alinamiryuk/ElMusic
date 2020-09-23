@@ -27,7 +27,7 @@ export const WelcomePage = (params) => {
 					</div>
 				</div>
 			</section>
-			<section className="Footer">
+			<section className="footer">
 				<Footer />
 			</section>
 		</>
