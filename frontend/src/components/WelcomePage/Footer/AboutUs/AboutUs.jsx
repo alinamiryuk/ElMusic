@@ -7,8 +7,10 @@ import {
 	CardMedia,
 	CardContent,
 	Typography,
-	Divider,
+  Divider,
+  Avatar,
 } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -55,8 +57,11 @@ export const AboutUs = () => {
 								/>
 								<CardContent>
 									<Typography gutterBottom variant="h3" component="h2">
-										ALINA <Divider />	MIRYUK
+										ALINA <Divider /> MIRYUK
 									</Typography>
+									<Link to="https://github.com/alinamiryuk">
+										<Avatar alt="GH" src="/images/GH.png" />
+									</Link>
 								</CardContent>
 							</CardActionArea>
 						</Card>
@@ -72,7 +77,8 @@ export const AboutUs = () => {
 								/>
 								<CardContent>
 									<Typography gutterBottom variant="h3" component="h2">
-										VLADIMIR <Divider />CHERNITSYN
+										VLADIMIR <Divider />
+										CHERNITSYN
 									</Typography>
 								</CardContent>
 							</CardActionArea>
