@@ -102,7 +102,11 @@ export const Footer = () => {
 						</List>
 					</div>
 				</Grid>
-				<ListItemText primary=" © 2020 El music" />
+				<Grid container
+					justify="center"
+					alignItems="center">
+					<ListItemText primary=" © 2020 El music" />
+				</Grid>
 			</div>
 		</>
 	)
