@@ -16,7 +16,6 @@ const errorHandler = require('../utils/errorHandler')
 
 module.exports.createPlayList = async function(req, res) {
   const {likedAuthorsArray} = req.body
-  console.log()
   try {
     const authorPlayLists = {
       type: 'authorPL',
@@ -29,10 +28,16 @@ module.exports.createPlayList = async function(req, res) {
 
     const moodPlaylist = {
       type: 'moodPL',
-      playlists: {
-        chillPlaylist,
-        hardPlaylist,
-      },
+      playlists: [
+        {
+          type: 'Chill Playlist',
+          songs: chillPlaylist
+        },
+        {
+          type: 'Hard Playlist',
+          songs: hardPlaylist
+        },
+      ],
     }
 
     const maybeInterestedPlaylists = {
@@ -41,7 +46,10 @@ module.exports.createPlayList = async function(req, res) {
           eliminated),
     }
 
-    const genrePlaylists = await generateGenrePlaylists(likedAuthorsArray)
+    const genrePlaylists = {
+      type: 'genre',
+      playlists: await generateGenrePlaylists(likedAuthorsArray)
+    }
     const user = await User.findOne({_id: req.user._id}, {playlists: 1})
     user.playlists.push(moodPlaylist, authorPlayLists, maybeInterestedPlaylists, genrePlaylists)
     await user.save()
@@ -61,5 +69,10 @@ module.exports.createPlayList = async function(req, res) {
 module.exports.getAuthors = async function(req, res){
   const authors = await Author.find({})
   res.status(200).json(authors)
+}
+
+module.exports.getUserPlayLists = async function(req, res) {
+  const playlists = await User.findOne({_id: req.user._id}, {playlists: 1})
+  res.status(200).json(playlists)
 }
 

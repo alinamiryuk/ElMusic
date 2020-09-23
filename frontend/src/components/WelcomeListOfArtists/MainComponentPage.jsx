@@ -10,7 +10,6 @@ export const MainComponentPage = () => {
   const dispatch = useDispatch()
   const history = useHistory()
   const authors = useSelector(state => state.authors)
-  const playlists = useSelector(state => state.playlists)
   const [loading, setLoading] = useState(false)
   const [counter, setCounter] = useState(0)
   useEffect(() => {
@@ -26,11 +25,13 @@ export const MainComponentPage = () => {
             Help us to create a perfect playlist just for you!
           </h3>
           <div className="onboarding-screen-artists-sub-title">
-            Who would you like most? Choose at least 3 artists to get your first
+            Who would you like most? Choose at least 3 artists to get your first playlist:
           </div>
           {loading ?
               <>
-                <div className={'onboarding-screen-artists-sub-title'} style={{fontSize: 30, marginBottom: 100}}> Данные подгружаются !</div>
+                <div className={'onboarding-screen-artists-sub-title'}
+                     style={{fontSize: 30, marginBottom: 100}}> Loading!
+                </div>
                 <div className={'onboarding-screen-grid'}>
                   <CircularProgress size={120} color={'secondary'}/>
                 </div>
@@ -47,11 +48,7 @@ export const MainComponentPage = () => {
                   e.preventDefault()
                   const selected = authors.filter(element => !element.hide)
                   dispatch(fetchGeneratePlaylists(selected))
-                  if (Object.keys(playlists).length !== 0) {
-                    history.push('/MainPlayList')
-                  } else {
-                    console.log('error')
-                  }
+                  history.push('/main')
                 }}>
                   Let's start
                 </button>

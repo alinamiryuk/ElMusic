@@ -10,7 +10,7 @@
 	justify-content: center;
 }
 .row {
-	height: 600px;
+	/* height: 600px; */
 }
 .row-white {
 	display: flex;
