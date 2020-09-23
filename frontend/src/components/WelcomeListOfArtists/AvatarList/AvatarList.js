@@ -5,7 +5,7 @@ export const avatar = [
     genre: "pop",
     sub_genre: "pop-pop",
     img: "https://images-na.ssl-images-amazon.com/images/I/61uoEbq4viL._AC_.jpg",
-    song: "https://cdndl.zaycev.net/track/2440475/6oYDTtLSuwTmSyYEDtiCMgJvQiDLqHtrj99qFvA59uGsrqw6F1J6fLzaE1AkxaUwAVSpc6aZN38JejQdtu7a8Kv3H2WirYRXDeT6U9GjrvtJpnxCUNnfQPTcZQWZWS4UniEfkSjYkDGcrcCknwnWnDvwKqxAakboFwRsWa1yCoyxYw4CterkcAd67gsmBoTPsLwKzUr4DfmzY9tbDVPTEnyW9LQVX2mN4RRbMf8n2CQHS5gNsxshFx6c4Hui98DknUt8wwkhcFcH1tr4RARdDBJ8T3fDthDshU7q6ZPSGwaa8oZcSbFzyceuTmUcvzdxtHzv5i2iEvgYfvZ2ksx4Tx8GAuMLGXwgEzrHi6M5oqpz1vVdQv4F",
+    song: "https://cdndl.zaycev.net/track/17897115/7CNHd5sc2BQgY3jShGFJP82xo5HBM7HemJh3nUdW9qcZwDXt8fhyBXZVEFUQShJVpqASqoFAX3KF4fsuXhbAGUFzMZpMFszEaxjWVFtNryTq7cyfsr7YiyNZXYhEQPrw7aTParKPErve6GocviSoC6bXg3i2G9ES5GoG1nr12bxeuEDjjrH5mfiw3qn4fd2yKfztdoZCc296XCRQQgLsf6WeJRQ9iiRLK76QdhXGVCoh7aZxkexqtnyD6xvLnX5EGTC5opHvwg5pZVwJuUAXNKAMHQLUSrQmx2U6QgMzyEFGtbww2XHSnMD9jcCyYFCqsi677VSrenk9PUZWfDBCH6GqmJimacU8ZxNJAFANbdhYQBWKA6ik",
     hide: true,
   },
   {
@@ -25,7 +25,7 @@ export const avatar = [
     hide: true,
   },
   {
-    
+
     author: "zivert",
     genre: "pop",
     sub_genre: "pop-pop",

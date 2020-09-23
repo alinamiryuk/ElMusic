@@ -35,10 +35,9 @@
 	justify-content: center;
 }
 .row {
-	/*  2 last strings from sp*/
-	/* height: 600px; */
-	margin-left: -15px;
-	margin-right: -15px;
+  /*  2 last strings from spotify*/
+  margin-left: -15px;
+  margin-right: -15px;
 }
 .row-white {
 	display: flex;
@@ -291,18 +290,18 @@
 	white-space: nowrap;
 }
 h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
+  font-size: 2em;
+  margin: 0.67em 0;
 }
-.h1 {
-	font-family: inherit;
-	font-weight: 900;
-	line-height: 1.1;
-	color: inherit;
-}
-.lead {
-	margin-bottom: 24px;
-	font-size: 18px;
-	font-weight: 300;
-	line-height: 1.4;
+.h1
+{
+  font-family: inherit;
+  font-weight: 900;
+  line-height: 1.1;
+  color: inherit;
+}.lead {
+  margin-bottom: 24px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
 }
