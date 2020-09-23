@@ -13,6 +13,7 @@ const generateGenrePlaylists = require(
 const Author = require('../models/Author')
 const User = require('../models/User')
 const errorHandler = require('../utils/errorHandler')
+const {rockModel, metalModel, popModel, jazzModel} = require('../models/Music')
 
 module.exports.createPlayList = async function(req, res) {
   const {likedAuthorsArray} = req.body
@@ -31,11 +32,11 @@ module.exports.createPlayList = async function(req, res) {
       playlists: [
         {
           type: 'Chill Playlist',
-          songs: chillPlaylist
+          songs: chillPlaylist,
         },
         {
           type: 'Hard Playlist',
-          songs: hardPlaylist
+          songs: hardPlaylist,
         },
       ],
     }
@@ -48,10 +49,11 @@ module.exports.createPlayList = async function(req, res) {
 
     const genrePlaylists = {
       type: 'genre',
-      playlists: await generateGenrePlaylists(likedAuthorsArray)
+      playlists: await generateGenrePlaylists(likedAuthorsArray),
     }
     const user = await User.findOne({_id: req.user._id}, {playlists: 1})
-    user.playlists.push(moodPlaylist, authorPlayLists, maybeInterestedPlaylists, genrePlaylists)
+    user.playlists.push(moodPlaylist, authorPlayLists, maybeInterestedPlaylists,
+        genrePlaylists)
     await user.save()
 
     res.status(200).
@@ -66,7 +68,7 @@ module.exports.createPlayList = async function(req, res) {
   }
 }
 
-module.exports.getAuthors = async function(req, res){
+module.exports.getAuthors = async function(req, res) {
   const authors = await Author.find({})
   res.status(200).json(authors)
 }
@@ -74,5 +76,28 @@ module.exports.getAuthors = async function(req, res){
 module.exports.getUserPlayLists = async function(req, res) {
   const playlists = await User.findOne({_id: req.user._id}, {playlists: 1})
   res.status(200).json(playlists)
+}
+
+module.exports.getMusic = async function(req, res) {
+  const {id} = req.params
+  const {genre} = req.query
+  let songBuffer
+  switch (genre) {
+    case 'Jazz':
+      songBuffer = await jazzModel.findOne({_id: id})
+      break
+    case 'Rock':
+      songBuffer = await rockModel.findOne({_id: id})
+      break
+    case 'Pop':
+      songBuffer = await popModel.findOne({_id: id})
+      break
+    case 'Metal':
+      songBuffer = await metalModel.findOne({_id: id})
+      break
+  }
+  const songBase64 = songBuffer.data.toString('base64')
+  res.json(songBase64)
+
 }
 

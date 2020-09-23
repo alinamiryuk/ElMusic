@@ -8,7 +8,11 @@ import {
 	CardContent,
 	Typography,
 	Divider,
+  Avatar,
+  IconButton,
 } from '@material-ui/core'
+import { Link } from 'react-router-dom'
+import GitHubIcon from '@material-ui/icons/GitHub'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -17,24 +21,24 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'space-around',
 		overflow: 'hidden',
 		backgroundColor: theme.palette.background.paper,
-		flexGrow: 1,
+		// flexGrow: 1,
 		maxWidth: 265,
 		maxHeight: 500,
 	},
-	gridList: {
-		width: 600,
-		height: 450,
-	},
-	paper: {
-		height: 140,
-		width: 100,
-	},
-	control: {
-		padding: theme.spacing(20),
-	},
-	icon: {
-		color: 'rgba(255, 255, 255, 0.54)',
-	},
+	// gridList: {
+	// 	width: 600,
+	// 	height: 450,
+	// },
+	// paper: {
+	// 	height: 140,
+	// 	width: 100,
+	// },
+	// control: {
+	// 	padding: theme.spacing(20),
+	// },
+	// icon: {
+	// 	color: 'rgba(255, 255, 255, 0.54)',
+	// },
 }))
 
 export const AboutUs = () => {
@@ -44,8 +48,9 @@ export const AboutUs = () => {
 		<>
 			<div className="about-us">
 				<Grid container direction="row" justify="center" alignItems="center">
-					<div className="card-free-album">
+					<div>
 						<Card className={classes.root}>
+              
 							<CardActionArea>
 								<CardMedia
 									component="img"
@@ -54,14 +59,20 @@ export const AboutUs = () => {
 									title="ALINA MIRYUK"
 								/>
 								<CardContent>
-									<Typography gutterBottom variant="h3" component="h2">
-										ALINA <Divider />	MIRYUK
+
+                 <Link to="https://github.com/alinamiryuk"> 
+										<GitHubIcon fontSize="large" />
+									</Link>
+
+									<Typography gutterBottom variant="h3" component="h2"  >
+										ALINA <Divider /> MIRYUK
 									</Typography>
+									
 								</CardContent>
 							</CardActionArea>
 						</Card>
 					</div>
-					<div className="card-free-album">
+					<div>
 						<Card className={classes.root}>
 							<CardActionArea>
 								<CardMedia
@@ -72,13 +83,16 @@ export const AboutUs = () => {
 								/>
 								<CardContent>
 									<Typography gutterBottom variant="h3" component="h2">
-										VLADIMIR <Divider />CHERNITSYN
+										VLADIMIR <Link to="https://github.com/Flunt1k">
+										<GitHubIcon fontSize="large" />
+									</Link><Divider />
+										CHERNITSYN
 									</Typography>
 								</CardContent>
 							</CardActionArea>
 						</Card>
 					</div>
-					<div className="card-free-album">
+					<div>
 						<Card className={classes.root}>
 							<CardActionArea>
 								<CardMedia
@@ -89,7 +103,9 @@ export const AboutUs = () => {
 								/>
 								<CardContent>
 									<Typography gutterBottom variant="h3" component="h2">
-										BORIS <Divider /> MESHERYAKOV
+										BORIS <Link to="https://github.com/meshbor">
+										<GitHubIcon fontSize="large" />
+									</Link><Divider /> MESHERYAKOV
 									</Typography>
 								</CardContent>
 							</CardActionArea>
