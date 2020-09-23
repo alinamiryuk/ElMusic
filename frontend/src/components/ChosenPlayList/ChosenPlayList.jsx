@@ -6,11 +6,13 @@ import { Button } from '@material-ui/core'
 import { Deck } from '../CardAnimation'
 import Player from './playerBar/PlayerBar'
 
-export const ChoosenPlayList = () => {
+export const ChosenPlayList = () => {
 	const [state, setState] = useState('')
 	const [toggle, setToggle] = useState(false)
 
 	console.log('toggle>>>>', toggle)
+  const audio = document.getElementById('player-main-main')
+  if (toggle) { audio.play() } 
 
 	return (
 		<>
@@ -26,7 +28,7 @@ export const ChoosenPlayList = () => {
 								<Button
 									onClick={() => {
 										setToggle(!toggle)
-										// setState(song.song)
+										setState(song.song)
 									}}
 									variant="contained"
 								>

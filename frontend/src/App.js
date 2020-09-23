@@ -6,11 +6,7 @@ import {AboutUs} from './components/WelcomePage/Footer/AboutUs/AboutUs'
 import {MainComponentPage} from './components/WelcomeListOfArtists/MainComponentPage'
 import {MainPlayList} from './components/MainPlayList/MainPlayList'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-<<<<<<< HEAD
-import {ChoosenPlayList} from './components/ChoosenPlayList/ChosenPlayList'
-=======
-import {ChosenPlayList} from './components/ChoosenPlayList/ChosenPlayList'
->>>>>>> 82b91ee33fe275e2720e03af97f1e6515a51d7b6
+import {ChosenPlayList} from './components/ChosenPlayList/ChosenPlayList'
 import ProtectedRouter from './components/shared/ProtectedRouter'
 
 function App() {
