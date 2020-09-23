@@ -16,20 +16,7 @@ export const ChosenPlayList = () => {
   const music = useSelector(state => state.music)
   const playlist = useSelector(state => state.playlists)
   const songs = playlist[params]?.songs || playlist[params]?.music
-  const audio = document.getElementById('player-main-main')
 
-  // useEffect(() => {
-	// 	const audio = document.getElementById('player-main-main')
-	// 	console.log(toggle)
-	// 	if (toggle) {
-	// 		audio.play()
-	// 	} else {
-	// 		audio.pause()
-	// 	}
-	// 	// audio.play()
-	// }, [toggle])
-	// console.log('toggle>>>>', toggle)
-  
   useEffect(() => {
     setState(music[id])
   }, [music])
@@ -50,7 +37,7 @@ export const ChosenPlayList = () => {
           <HeaderPlay/>
           <div className="playlist-songs">
             <ul className="table-songs">
-              {songs ? shuffledSongs(songs).map((song, i) => (
+              {songs ? songs.map((song, i) => (
                   <div className="list-songs" key={song._id}>
                     {i + 1}. Author: {song.author} {'  '}
                     Genre: {song.genre}
