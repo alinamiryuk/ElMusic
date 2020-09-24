@@ -20,5 +20,5 @@
   /* justify-content: flex-start; */
 }
 .playlist-songs{
-  min-height: inherit;
+  min-height: 700px;
 }

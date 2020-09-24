@@ -43,8 +43,8 @@ export const ChosenPlayList = () => {
 			flex: '1 0 auto',
 		},
 		cover: {
-			marginLeft: '20%',
-			width: 151,
+			// marginLeft: '20%',
+			width: "auto",
 		},
 		controls: {
 			display: 'flex',
