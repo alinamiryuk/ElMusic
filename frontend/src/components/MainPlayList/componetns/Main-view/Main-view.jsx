@@ -12,11 +12,12 @@ export const MainView = () => {
   useEffect(() => {
     dispatch(fetchUserPlaylists())
   }, [])
+  console.log('playlists>>>>>',playlists);
   return (
       <div>
         {playlists?.playlists ? playlists.playlists[0].playlists.length !== 0 ?
             <div>
-              <div className="Information">Don't miss top playlists</div>
+              <div className="Information">We created some awesome playlists for you</div>
               <div className="albumsWantsTo">
                 <Grid
                     container
