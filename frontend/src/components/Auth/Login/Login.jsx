@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import useForm from '../../../hooks/useForm'
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,9 +8,13 @@ import { Grid } from '@material-ui/core'
 
 export const Login = () => {
 	const [state, setState] = useForm({ userName: '', password: '' })
-	const user = useSelector((state) => state.user)
+	const status = useSelector((state) => state.user?.success)
 	const history = useHistory()
 	const dispatch = useDispatch()
+
+	useEffect(() => {
+		if (status) history.push('/main')
+	}, [status])
 
 	return (
 		<>
@@ -38,9 +42,6 @@ export const Login = () => {
 					onClick={(e) => {
 						e.preventDefault()
 						dispatch(fetchUserLogin(state))
-						if (user.success) {
-							history.push('/main')
-						}
 					}}
 				>
 					LOG IN

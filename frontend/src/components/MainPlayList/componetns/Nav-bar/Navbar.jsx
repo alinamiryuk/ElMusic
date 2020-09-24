@@ -1,16 +1,15 @@
 import React from 'react'
 import './Navbar.css'
-import { useSelector } from 'react-redux'
 import {
-	Grid,
 	List,
 	ListItem,
-	ListItemText,
 	makeStyles,
 	ListItemAvatar,
 	Avatar,
 } from '@material-ui/core'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
+import {logoutUser} from '../../../../redux/actionType'
 
 const useStyles = makeStyles((theme) => ({
 	fontSize: {
@@ -24,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	listItemWidthNav: {
 		width: '10em',
+    padding: '0.2em',
 	},
 	large: {
 		width: theme.spacing(6),
@@ -33,11 +33,15 @@ const useStyles = makeStyles((theme) => ({
 
 export const NavBar = () => {
 	const classes = useStyles()
-	const userCheck = useSelector((state) => state)
-	// const userCheck = useSelector((state) => state.username)
-	const successCheck = useSelector((state) => state.user.success)
+	const username = useSelector(state => state.user.username)
+	const history = useHistory()
+	const dispatch = useDispatch()
 
-	if (successCheck === true) {
+	const logOutUser = () => {
+		dispatch(logoutUser())
+		localStorage.removeItem('user')
+		history.push('/login')
+	}
 		return (
 			<>
 				<div className="navbar">
@@ -57,40 +61,13 @@ export const NavBar = () => {
 						<ListItem className={classes.listItemWidthNav}>
 							<Link to="/main">home</Link>
 						</ListItem>
-						<ListItem className={classes.listItemWidthNav}>username</ListItem>
-						<ListItem className={classes.listItemWidthNav}>
+						<ListItem className={classes.listItemWidthNav} style={{cursor: 'pointer'}}>{username}</ListItem>
+						<ListItem className={classes.listItemWidthNav} style={{cursor: 'pointer'}} onClick={() => logOutUser()}>
 							<i className="fas fa-sign-out-alt"/>Log Out
 						</ListItem>
 					</List>
 				</div>
 			</>
 		)
-	} else {
-		return (
-			<>
-				<div className="navbar">
-					<List className={classes.navList}>
-						<ListItem>
-							<ListItemAvatar>
-								<Avatar
-									alt="El music"
-									src="/images/logo-192x192.png"
-									className={classes.large}
-								/>
-							</ListItemAvatar>
-							<Link to="/" className={classes.listItemWidth}>
-								El music
-							</Link>
-						</ListItem>
-						<ListItem className={classes.listItemWidthNav}>
-							<Link to="/signup">signup</Link>
-						</ListItem>
-						<ListItem className={classes.listItemWidthNav}>
-							<Link to="/login">login</Link>
-						</ListItem>
-					</List>
-				</div>
-			</>
-		)
 	}
-}
+

@@ -1,16 +1,16 @@
 import {
-  ADD_PLAYLIST_REDUCER,
+  ADD_PLAYLIST_REDUCER, END_FETCHING,
   GENERATE_PLAYLISTS, GET_MUSIC, GET_USER_PLAYLISTS,
-  LOG_IN_USER,
+  LOG_IN_USER, LOG_OUT_USER,
   REGISTER_USER,
-  SHOW_AUTHORS,
+  SHOW_AUTHORS, START_FETCHING,
 } from './action'
 
 export const loginUser = (result) => ({
   type: LOG_IN_USER,
   payload: {
     success: result.success,
-    user: result.token
+    user: result
   }
 })
 
@@ -18,8 +18,13 @@ export const registerUser = (result) => ({
   type: REGISTER_USER,
   payload: {
     success: result.success,
-    user: result.token
+    user: result
   }
+})
+
+export const logoutUser = () => ({
+  type: LOG_OUT_USER,
+  payload: null
 })
 
 export const showAuthors = (authors) => ({
@@ -48,6 +53,16 @@ export const addPlaylist = (playlist) => ({
 export const getMusic = (id) => ({
   type: GET_MUSIC,
   payload: id
+})
+
+export const startFetching = () => ({
+  type: START_FETCHING,
+  payload: true,
+})
+
+export const endFetching = () => ({
+  type: END_FETCHING,
+  payload: false
 })
 
 export const fetchUserLogin = (body) => async (dispatch) => {
@@ -112,6 +127,7 @@ export const fetchGeneratePlaylists = (likedAuthorsArray) => async (dispatch) =>
 }
 
 export const fetchUserPlaylists = () => async (dispatch) => {
+  dispatch(startFetching())
   const token = JSON.parse(localStorage.getItem('user')).token
   const response = await fetch('/api/playlist', {
     method: 'GET',
@@ -120,10 +136,12 @@ export const fetchUserPlaylists = () => async (dispatch) => {
     }
   })
   const playlists = await response.json()
+  dispatch(endFetching())
   dispatch(showUserPlaylist(playlists))
 }
 
 export const fetchMusic = (id, genre) => async (dispatch) => {
+  dispatch(startFetching())
   const token = JSON.parse(localStorage.getItem('user')).token
   const response = await fetch(`/api/playlist/${id}?genre=${genre}`, {
     method: 'GET',
@@ -132,5 +150,6 @@ export const fetchMusic = (id, genre) => async (dispatch) => {
     }
   })
   const music = await response.json()
+  dispatch(endFetching())
   dispatch(getMusic(id))
 }
