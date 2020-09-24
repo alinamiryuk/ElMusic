@@ -10,7 +10,6 @@ export const MainPlayList = () => {
     <>
       <div className="play-list">
         <NavBar/>
-        <ToolBar/>
         <MainView/>
       </div>
     </>

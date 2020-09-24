@@ -7,7 +7,7 @@
   height: 350px;
 	opacity: 0.6;
 	/* margin-left: 5em; */
-	background-image: url(https://i.pinimg.com/originals/80/5f/57/805f5790e8a4e70fe7a3d8ddcd043453.jpg);
+
 	background-repeat: no-repeat;
 	/* background-position: center; */
 	background-size: cover;
@@ -29,6 +29,6 @@
 	font-weight: 900;
 	letter-spacing: -0.04em;
 	line-height: 1.15;
-	margin-left: 5em;
+	margin-left: 95px;
 	margin-bottom: 15px;
 }
