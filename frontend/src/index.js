@@ -11,7 +11,7 @@ const checkTokenExpirationMiddleware = store => next => action => {
   const token =
       JSON.parse(localStorage.getItem("user")) &&
       JSON.parse(localStorage.getItem("user"))["token"];
-  const data = atob(token.token.replace('Bearer ', '').split('.')[1])
+  const data = atob(token.replace('Bearer ', '').split('.')[1])
   if (new Date(JSON.parse(data).exp * 1000) < Date.now()) {
     next(action);
     localStorage.clear();
