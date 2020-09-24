@@ -17,8 +17,8 @@ export default function Player({id, toggle, setToggleEq, setId}) {
   }, [toggle])
 
   useEffect(() => {
-    audio.current.addEventListener('pause', () => {setToggleEq(state => !state)})
-    audio.current.addEventListener('play', () => {setToggleEq(state => !state)})
+    audio.current.addEventListener('pause', () => setToggleEq(state => !state))
+    audio.current.addEventListener('play', () => setToggleEq(state => !state))
   }, [])
 
   return (

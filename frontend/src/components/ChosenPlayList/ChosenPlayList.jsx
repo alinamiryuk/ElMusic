@@ -104,8 +104,6 @@ export const ChosenPlayList = () => {
 																						dispatch(fetchMusic(song._id, song.genre))
 																						setId(song._id)
 																						setToggle(() => !toggle)
-																						// setToggleEq(() => !toggleEq)
-
 																					}}
 																					variant="outlined"
 																	>
