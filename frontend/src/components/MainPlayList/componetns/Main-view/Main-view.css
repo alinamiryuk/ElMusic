@@ -22,13 +22,13 @@
     margin-left: 8%;
 }
 
-.Information {
-    margin: 20px 0px 20px 100px;
-    font-family: spotify-circular, spotify-circular-cyrillic, spotify-circular-arabic, spotify-circular-hebrew, "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS Gothic", sans-serif;
-    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-    font-size: x-large;
-    color: aliceblue;
-    font-weight: 400;
+.Information{
+  margin: 10px 0px 10px 100px;
+  font-family: spotify-circular, spotify-circular-cyrillic, spotify-circular-arabic, spotify-circular-hebrew, "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS Gothic", sans-serif;
+ /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-size: x-large;
+  color: aliceblue;
+  font-weight: 400;
 }
 
 .albumsWantsTo {
