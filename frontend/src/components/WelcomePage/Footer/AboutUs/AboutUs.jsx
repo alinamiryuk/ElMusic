@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 		maxWidth: 265,
 		maxHeight: 500,
     fontFamily: 'Circular, Helvetica, Arial, sans-serif, IosFix',
-    
+
 	},
 	// gridList: {
 	// 	width: 600,
@@ -49,8 +49,8 @@ export const AboutUs = () => {
 
 	return (
 		<>
-			<div className="about-us">
-				<Grid container direction="row" justify="center" alignItems="center">
+			<div className="about-us" style={{width: '90vw', margin: '40px auto'}}>
+				<Grid container direction="row" justify="space-around" alignItems="center">
 					<div>
 						<Card className={classes.root}>
 							<CardActionArea>
@@ -116,7 +116,7 @@ export const AboutUs = () => {
 										<a
 											href="https://github.com/meshbor"
 											target="_blank"
-											
+
 										>
 											<GitHubIcon fontSize="large" />
 										</a>
@@ -128,7 +128,7 @@ export const AboutUs = () => {
 					</div>
 				</Grid>
 			</div>
-      <section className="footerUs">
+      <section className="footerUs" style={{position:'absolute', bottom: 0, width: '100%'}}>
       <Footer />
       </section>
 		</>
