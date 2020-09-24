@@ -64,7 +64,7 @@ export const ChosenPlayList = () => {
       <>
         <SongsContext.Provider value={songs}>
           <Container disableGutters={true} maxWidth={false} direction="column"
-                     justify="space-between">
+                    justify="space-between">
             <Grid>
               <div className="main-view-playing">
                 <HeaderPlay
