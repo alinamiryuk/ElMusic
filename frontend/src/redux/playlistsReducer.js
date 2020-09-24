@@ -13,7 +13,6 @@ const initialState = {
 const playlistsReducer = (state = initialState, action) => {
   switch (action.type){
     case GENERATE_PLAYLISTS:
-      // console.log(action.payload)
         const keys = Object.keys(action.payload);
         const arr = keys.map(key => action.payload[key])
       return {...state, playlists: arr}

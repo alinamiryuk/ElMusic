@@ -13,7 +13,6 @@ export const MainView = () => {
   useEffect(() => {
     if (!playlists.playlists.length) dispatch(fetchUserPlaylists())
   }, [])
-  console.log('playlists>>>>>',playlists);
   return (
       <div>
 
