@@ -13,7 +13,8 @@ export const HeaderPlay = ({ toggleEq, playlist, id, toggle }) => {
 			songs.map((el) =>
 				el._id === id ? (setArtist(el.author), setSong(el.song_name)) : null
 			)
-	}, [id])
+  }, [id])
+  
 
 	const checker = (genre) => {
 		switch (genre) {
