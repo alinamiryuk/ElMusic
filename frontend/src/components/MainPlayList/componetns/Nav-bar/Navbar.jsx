@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	listItemWidthNav: {
 		width: '10em',
+    padding: '0.2em',
 	},
 	large: {
 		width: theme.spacing(6),
