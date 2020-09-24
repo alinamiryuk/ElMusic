@@ -11,9 +11,6 @@ export const WelcomePage = (params) => {
   
 	return (
 		<>
-			<section>
-				<NavBar />
-			</section>
 			<OrangeSpace />
 			<section className="album-results-free">
 				<div className="container center-white">
