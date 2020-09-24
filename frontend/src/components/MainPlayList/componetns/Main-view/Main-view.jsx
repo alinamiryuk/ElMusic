@@ -14,7 +14,7 @@ export const MainView = () => {
   }, [])
   return (
       <div>
-        {playlists.playlists ? playlists.playlists[0].playlists.length !== 0 ?
+        {playlists?.playlists ? playlists.playlists[0].playlists.length !== 0 ?
             <div>
               <div className="Information">Don't miss top playlists</div>
               <div className="albumsWantsTo">
@@ -30,7 +30,7 @@ export const MainView = () => {
                 </Grid>
               </div>
             </div> : null : null}
-        {playlists.playlists ? playlists.playlists[2].playlists.length !== 0 ?
+        {playlists?.playlists ? playlists.playlists[2].playlists.length !== 0 ?
             <div>
               <div className="Information">Recommended for you</div>
               <div className="albumsWantsTo">
@@ -46,7 +46,7 @@ export const MainView = () => {
                 </Grid>
               </div>
             </div> : null : null}
-        {playlists.playlists ? playlists.playlists[3].playlists.length !== 0 ?
+        {playlists?.playlists ? playlists.playlists[3].playlists.length !== 0 ?
             <div>
               <div className="Information">Genres</div>
               <div className="albumsWantsTo">
@@ -62,7 +62,7 @@ export const MainView = () => {
                 </Grid>
               </div>
             </div> : null : null}
-        {playlists.playlists ? playlists.playlists[1].playlists.length !== 0 ?
+        {playlists?.playlists ? playlists.playlists[1].playlists.length !== 0 ?
             <div>
               <div className="Information">Artists</div>
               <div className="albumsWantsTo">

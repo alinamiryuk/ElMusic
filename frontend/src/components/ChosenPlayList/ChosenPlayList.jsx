@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './ChosenPlayList.css'
 import { HeaderPlay } from './header/HeaderChoosenPlay'
-import { Button, Grid } from '@material-ui/core'
+import {Button, Container, Grid} from '@material-ui/core'
 import Player from './playerBar/PlayerBar'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
@@ -67,61 +67,65 @@ export const ChosenPlayList = () => {
 	return (
 		<>
 			<SongsContext.Provider value={songs}>
-				<Grid direction="column" justify="space-between">
-					<div className="main-view-playing">
-						<HeaderPlay
-							playlist={playlist[params]?.type}
-							toggleEq={toggleEq}
-              id={id}
-              toggle={toggle}
-						/>
-						<div className="playlist-songs">
-							<Grid
-								container
-								direction="row"
-								justify="flex-start"
-								alignItems="center"
-							>
-								{songs
-									? songs.map((song, i) => (
-                    
-											<Card className={classes.root}>
-												<div className={classes.details}>
-													<CardContent className={classes.content}>
-														<Typography component="h5" variant="h5">
-															{song.song_name}
-														</Typography>
-														<Typography variant="h5" color="textSecondary">
-															{song.author}
-														</Typography>
-													</CardContent>
-													<div className={classes.controls}>
-														<Button className={i}
-															style={{ opacity: '0.6' }}
-															onClick={() => {
-																dispatch(fetchMusic(song._id, song.genre))
-																setId(song._id)
-																setToggle(() => !toggle)
-                                setToggleEq(() => !toggleEq)
-                                
-															}}
-															variant="outlined"
-														>
-															Play
-														</Button>
-													</div>
-												</div>
-											</Card>
-									  ))
-									: null}
-							</Grid>
-						</div>
-					</div>
+				<Container disableGutters={true} maxWidth={false} direction="column" justify="space-between">
+					<Grid>
+						<div className="main-view-playing">
+							<HeaderPlay
+									playlist={playlist[params]?.type}
+									toggleEq={toggleEq}
+									id={id}
+									toggle={toggle}
+							/>
+							<div className="playlist-songs">
+								<Container disableGutters={true} maxWidth={false}>
+									<Grid
+											container
+											direction="row"
+											justify="flex-start"
+											alignItems="center"
+									>
+										{songs
+												? songs.map((song, i) => (
 
-					<div>
-						<Player toggle={toggle} id={state} />
-					</div>
-				</Grid>
+														<Card className={classes.root} key={song._id}>
+															<div className={classes.details}>
+																<CardContent className={classes.content}>
+																	<Typography component="h5" variant="h5">
+																		{song.song_name}
+																	</Typography>
+																	<Typography variant="h5" color="textSecondary">
+																		{song.author}
+																	</Typography>
+																</CardContent>
+																<div className={classes.controls}>
+																	<Button className={i.toString()}
+																					style={{ opacity: '0.6' }}
+																					onClick={() => {
+																						dispatch(fetchMusic(song._id, song.genre))
+																						setId(song._id)
+																						setToggle(() => !toggle)
+																						// setToggleEq(() => !toggleEq)
+
+																					}}
+																					variant="outlined"
+																	>
+																		Play
+																	</Button>
+																</div>
+															</div>
+														</Card>
+												))
+												: null}
+									</Grid>
+								</Container>
+							</div>
+						</div>
+
+						<div>
+							<Player toggle={toggle} id={state} setId={setId} setToggleEq={setToggleEq} />
+						</div>
+					</Grid>
+				</Container>
 			</SongsContext.Provider>
 		</>
 	)
