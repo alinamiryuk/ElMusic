@@ -14,9 +14,9 @@ export const MainView = () => {
     if (!playlists.playlists.length) dispatch(fetchUserPlaylists())
   }, [])
   return (
-      <div>
+      <div style={{height: document.body.clientHeight}}>
 
-        {fetching ? <CircularProgress/> : <div>
+        {fetching ? <CircularProgress size={200} style={{color: '#63e35d'}}/> : <div>
           {playlists?.playlists ? playlists?.playlists[0]?.playlists?.length !== 0
               ?
               <div>

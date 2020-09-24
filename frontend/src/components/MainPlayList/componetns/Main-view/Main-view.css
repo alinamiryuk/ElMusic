@@ -1,37 +1,46 @@
-.play-list{
-  background-color: rgba(0,0,0,0.8);
-  width: 100%;
+.play-list {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
-.card-play-list{
-  margin-left: 5%;
-  width: 10%;
-  height: 10em;
+.card-play-list {
+    margin-left: 5%;
+    width: 10%;
+    height: 10em;
 }
 
-.albumsRecommend{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin-left: 8%;
-}
-.Information{
-  margin: 20px 0px 20px 100px;
-  font-family: spotify-circular, spotify-circular-cyrillic, spotify-circular-arabic, spotify-circular-hebrew, "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS Gothic", sans-serif;
- /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-  font-size: x-large;
-  color: aliceblue;
-  font-weight: 400;
-}
-.albumsWantsTo{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin-left: 80px;
+.albumsRecommend {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 8%;
 }
 
-.cardPreview{
-  /* border: 1px solid white; */
+.Information {
+    margin: 20px 0px 20px 100px;
+    font-family: spotify-circular, spotify-circular-cyrillic, spotify-circular-arabic, spotify-circular-hebrew, "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS Gothic", sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-size: x-large;
+    color: aliceblue;
+    font-weight: 400;
+}
+
+.albumsWantsTo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 80px;
+}
+
+.cardPreview {
+    /* border: 1px solid white; */
 
 
 }
