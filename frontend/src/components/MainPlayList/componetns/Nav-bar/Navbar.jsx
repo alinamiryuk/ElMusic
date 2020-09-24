@@ -39,7 +39,6 @@ export const NavBar = () => {
 	const successCheck = useSelector((state) => state.user.success)
 	console.log('11', successCheck)
 
-	if (successCheck === true) {
 		return (
 			<>
 				<div className="navbar">
@@ -67,32 +66,5 @@ export const NavBar = () => {
 				</div>
 			</>
 		)
-	} else {
-		return (
-			<>
-				<div className="navbar">
-					<List className={classes.navList}>
-						<ListItem>
-							<ListItemAvatar>
-								<Avatar
-									alt="El music"
-									src="/images/logo-192x192.png"
-									className={classes.large}
-								/>
-							</ListItemAvatar>
-							<Link to="/" className={classes.listItemWidth}>
-								El music
-							</Link>
-						</ListItem>
-						<ListItem className={classes.listItemWidthNav}>
-							<Link to="/signup">signup</Link>
-						</ListItem>
-						<ListItem className={classes.listItemWidthNav}>
-							<Link to="/login">login</Link>
-						</ListItem>
-					</List>
-				</div>
-			</>
-		)
 	}
-}
+
