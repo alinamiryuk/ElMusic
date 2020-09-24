@@ -1,6 +1,5 @@
 import React, { useEffect,useState,useContext } from 'react'
 import './HeaderChoosenPlay.css'
-import { avatar } from '../../WelcomeListOfArtists/AvatarList/AvatarList'
 import { SongsContext } from '../Context/SongsContext'
 export const HeaderPlay = ({playlist,id}) => {
 
@@ -12,10 +11,8 @@ export const HeaderPlay = ({playlist,id}) => {
 
 
   useEffect(()=>{
-    songs.map(el=> el._id === id ? ( (setArtist(el.author),setSong(el.song_name))) : null) 
+    songs.map(el=> el._id === id ? ( (setArtist(el.author),setSong(el.song_name))) : null)
   },[id])
-  console.log('header info ',songs);
-  console.log('song info ',song);
 
 	return (
 		<>

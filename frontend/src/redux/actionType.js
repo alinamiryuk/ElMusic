@@ -72,7 +72,6 @@ export const fetchUserRegistration = (body) => async (dispatch) => {
     body: JSON.stringify(body)
   })
   const result = await response.json()
-  console.log(result)
   localStorage.setItem('user', JSON.stringify(result))
   if (result.success) dispatch(registerUser(result))
 }
@@ -121,13 +120,11 @@ export const fetchUserPlaylists = () => async (dispatch) => {
     }
   })
   const playlists = await response.json()
-  console.log(playlists)
   dispatch(showUserPlaylist(playlists))
 }
 
 export const fetchMusic = (id, genre) => async (dispatch) => {
   const token = JSON.parse(localStorage.getItem('user')).token
-  console.log(id, genre)
   const response = await fetch(`/api/playlist/${id}?genre=${genre}`, {
     method: 'GET',
     headers: {

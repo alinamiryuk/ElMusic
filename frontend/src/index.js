@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import { Provider } from 'react-redux'
-import {useHistory} from 'react-router-dom'
 import {applyMiddleware, createStore} from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { rootReducer } from './redux/rootReducer'
@@ -12,8 +11,8 @@ const checkTokenExpirationMiddleware = store => next => action => {
   const token =
       JSON.parse(localStorage.getItem("user")) &&
       JSON.parse(localStorage.getItem("user"))["token"];
-  console.log(token, '>>>>>>>>')
-  if (false) {
+  const data = atob(token.token.replace('Bearer ', '').split('.')[1])
+  if (new Date(JSON.parse(data).exp * 1000) < Date.now()) {
     next(action);
     localStorage.clear();
   }
