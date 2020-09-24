@@ -3,6 +3,7 @@ import '../../components/WelcomePage/WelcomePage.css'
 import { Albums } from './albumResult/Albums'
 import { Footer } from './Footer/Footer'
 import { OrangeSpace } from './OrangeSpace/OrangeSpace'
+import { NavBar } from '../MainPlayList/componetns/Nav-bar/Navbar'
 import { Link } from 'react-router-dom'
 
 export const WelcomePage = (params) => {
@@ -10,6 +11,9 @@ export const WelcomePage = (params) => {
   
 	return (
 		<>
+			<section>
+				<NavBar />
+			</section>
 			<OrangeSpace />
 			<section className="album-results-free">
 				<div className="container center-white">

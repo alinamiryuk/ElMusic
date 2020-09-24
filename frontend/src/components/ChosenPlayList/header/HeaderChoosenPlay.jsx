@@ -17,7 +17,9 @@ export const HeaderPlay = ({ toggleEq, playlist, id, toggle }) => {
 	console.log('header info ', songs)
 	console.log('song info ', song)
 
-
+  useEffect(()=>{
+    songs.map(el=> el._id === id ? ( (setArtist(el.author),setSong(el.song_name))) : null)
+  },[id])
 
 	return (
 		<>

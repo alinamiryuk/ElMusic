@@ -1,6 +1,6 @@
 .full-screen-for-choose-artists {
   background-color: #121212;
-  height: 100em;
+  padding: 0 0 2em 0;
 }
 .full-screen-header {
   color: white;
@@ -30,20 +30,18 @@
   margin-top: 3em;
   margin-left: 10%;
   margin-right: 10%;
-  margin-bottom: 3em;
 }
 .artistAvatar {
   display: inline-block;
   align-items: center;
   width: 150px;
   height: 150px;
-  margin-top: 3em;
-  margin-left: 3em;
-  margin-right: 3em;
-  margin-bottom: 0em;
+  margin: 2em;
   position: relative;
 }
 .artist {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 0.5px solid grey;
 }
@@ -51,13 +49,15 @@
   border-radius: 50%;
   border: 0.5px solid grey;
   color: aliceblue;
-  image-rendering: rgba(0, 0, 0, 0.5);
+  /*image-rendering: rgba(0, 0, 0, 0.5);*/
   opacity: 0.2;
 }
 
 .artistName {
   text-align: center;
   color: white;
+  margin-top: 10px;
+  line-height: 20px;
 }
 
 .artistAvatar:hover .dark-hover{
@@ -65,7 +65,7 @@
   color: white;
   border-radius: 50%;
   border: 0.5px solid grey;
-  width: 150px; 
+  width: 150px;
   height: 150px;
   text-align: center;
   padding-top: 4em;
@@ -74,7 +74,24 @@
 
 .dark-hover{
   color:#121212 ;
-} 
+}
+/*.dark-hover:after {*/
+/*  position:absolute;*/
+/*  height: 20px;*/
+/*  width: 20px;*/
+/*  content: '❤';*/
+/*  color: white;*/
+/*  display: none;*/
+/*}*/
+
+/*.dark-hover:hover:after {*/
+/*  position:absolute;*/
+/*  height: 20px;*/
+/*  width: 20px;*/
+/*  content: '❤';*/
+/*  color: white;*/
+/*}*/
+
 .choosenList{
   font-weight: 300;
   margin-top: 10%;

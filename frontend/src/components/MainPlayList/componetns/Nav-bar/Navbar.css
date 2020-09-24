@@ -1,8 +1,8 @@
 .navbar{
-  background-color: black;
-  color: white;
-  height: 5%;
+  background-color: rgb(97,70,33);
+  color:white;
+  height: 5em;
   width: 100%;
   /* position: fixed; */
-  opacity: 0.2;
+  opacity: 0.5;
 }

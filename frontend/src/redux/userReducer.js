@@ -8,9 +8,9 @@ const initialState = JSON.parse(localStorage.getItem('user')) || {
 const userReducer = (state = initialState, action) => {
   switch (action.type){
     case LOG_IN_USER:
-      return {...state, ...action.payload, registered: true}
+      return {...state, token: action.payload.user, registered: action.payload.success, success: action.payload.success}
     case REGISTER_USER:
-      return {...state, registered: action.payload.status}
+      return {...state, registered: action.payload.success,  token: action.payload.user, success: action.payload.success}
     default:
       return state
   }

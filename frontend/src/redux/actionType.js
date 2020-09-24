@@ -6,14 +6,20 @@ import {
   SHOW_AUTHORS,
 } from './action'
 
-export const loginUser = (user) => ({
+export const loginUser = (result) => ({
   type: LOG_IN_USER,
-  payload: user
+  payload: {
+    success: result.success,
+    user: result.token
+  }
 })
 
-export const registerUser = (status) => ({
+export const registerUser = (result) => ({
   type: REGISTER_USER,
-  payload: status
+  payload: {
+    success: result.success,
+    user: result.token
+  }
 })
 
 export const showAuthors = (authors) => ({
@@ -54,7 +60,6 @@ export const fetchUserLogin = (body) => async (dispatch) => {
   })
   const user = await response.json()
   localStorage.setItem('user', JSON.stringify(user))
-  console.log(user)
   dispatch(loginUser(user))
 }
 
@@ -67,7 +72,8 @@ export const fetchUserRegistration = (body) => async (dispatch) => {
     body: JSON.stringify(body)
   })
   const result = await response.json()
-  dispatch(registerUser(result.success))
+  localStorage.setItem('user', JSON.stringify(result))
+  if (result.success) dispatch(registerUser(result))
 }
 
 export const fetchAuthors = () => async (dispatch) => {
@@ -114,13 +120,11 @@ export const fetchUserPlaylists = () => async (dispatch) => {
     }
   })
   const playlists = await response.json()
-  console.log(playlists)
   dispatch(showUserPlaylist(playlists))
 }
 
 export const fetchMusic = (id, genre) => async (dispatch) => {
   const token = JSON.parse(localStorage.getItem('user')).token
-  console.log(id, genre)
   const response = await fetch(`/api/playlist/${id}?genre=${genre}`, {
     method: 'GET',
     headers: {
