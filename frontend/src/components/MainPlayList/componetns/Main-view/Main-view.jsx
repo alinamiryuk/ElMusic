@@ -11,10 +11,13 @@ export const MainView = () => {
   const dispatch = useDispatch()
   const playlists = useSelector(state => state.playlists)
   useEffect(() => {
-    if (!playlists.playlists.length) dispatch(fetchUserPlaylists())
+    window.scrollTo(0, 0)
+    if (!playlists.playlists.length && !fetching) {
+      dispatch(fetchUserPlaylists())
+    }
   }, [])
   return (
-      <div style={{height: document.body.clientHeight}}>
+      <div style={fetching ? {height: document.body.clientHeight} : null}>
 
         {fetching ? <CircularProgress size={200} style={{color: '#63e35d'}}/> : <div>
           {playlists?.playlists ? playlists?.playlists[0]?.playlists?.length !== 0
