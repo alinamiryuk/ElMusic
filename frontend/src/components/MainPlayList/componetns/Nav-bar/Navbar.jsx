@@ -8,7 +8,8 @@ import {
 	Avatar,
 } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom'
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import {logoutUser} from '../../../../redux/actionType'
 
 const useStyles = makeStyles((theme) => ({
 	fontSize: {
@@ -33,8 +34,10 @@ export const NavBar = () => {
 	const classes = useStyles()
 	const username = useSelector(state => state.user.username)
 	const history = useHistory()
+	const dispatch = useDispatch()
 
 	const logOutUser = () => {
+		dispatch(logoutUser())
 		localStorage.removeItem('user')
 		history.push('/login')
 	}

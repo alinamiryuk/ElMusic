@@ -1,7 +1,7 @@
 import {
   ADD_PLAYLIST_REDUCER, END_FETCHING,
   GENERATE_PLAYLISTS, GET_MUSIC, GET_USER_PLAYLISTS,
-  LOG_IN_USER,
+  LOG_IN_USER, LOG_OUT_USER,
   REGISTER_USER,
   SHOW_AUTHORS, START_FETCHING,
 } from './action'
@@ -10,7 +10,7 @@ export const loginUser = (result) => ({
   type: LOG_IN_USER,
   payload: {
     success: result.success,
-    user: result.token
+    user: result
   }
 })
 
@@ -18,8 +18,13 @@ export const registerUser = (result) => ({
   type: REGISTER_USER,
   payload: {
     success: result.success,
-    user: result.token
+    user: result
   }
+})
+
+export const logoutUser = () => ({
+  type: LOG_OUT_USER,
+  payload: null
 })
 
 export const showAuthors = (authors) => ({
@@ -122,6 +127,7 @@ export const fetchGeneratePlaylists = (likedAuthorsArray) => async (dispatch) =>
 }
 
 export const fetchUserPlaylists = () => async (dispatch) => {
+  dispatch(startFetching())
   const token = JSON.parse(localStorage.getItem('user')).token
   const response = await fetch('/api/playlist', {
     method: 'GET',
@@ -130,6 +136,7 @@ export const fetchUserPlaylists = () => async (dispatch) => {
     }
   })
   const playlists = await response.json()
+  dispatch(endFetching())
   dispatch(showUserPlaylist(playlists))
 }
 
