@@ -27,7 +27,7 @@ const SongCard = ({song, classes, setId, setToggle, toggle, i}) => {
           <div className={classes.controls}>
             {
               fetching ?
-                  <CircularProgress/>
+                  <CircularProgress style={{color: '#63e35d'}}/>
                   :
                   <Button className={i.toString()}
                           style={{opacity: '0.6'}}

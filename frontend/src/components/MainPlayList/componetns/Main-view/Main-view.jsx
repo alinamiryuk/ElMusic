@@ -11,14 +11,16 @@ export const MainView = () => {
   const dispatch = useDispatch()
   const playlists = useSelector(state => state.playlists)
   useEffect(() => {
-    dispatch(fetchUserPlaylists())
+    window.scrollTo(0, 0)
+    if (!playlists.playlists.length && !fetching) {
+      dispatch(fetchUserPlaylists())
+    }
   }, [])
-  console.log('playlists>>>>>',playlists);
   return (
-      <div>
+      <div style={fetching ? {height: document.body.clientHeight} : null}>
 
-        {fetching ? <CircularProgress/> : <div>
-          {playlists?.playlists ? playlists.playlists[0].playlists.length !== 0
+        {fetching ? <CircularProgress size={200} style={{color: '#63e35d'}}/> : <div>
+          {playlists?.playlists ? playlists?.playlists[0]?.playlists?.length !== 0
               ?
               <div>
                 <div className="Information">Don't miss top playlists</div>
@@ -36,7 +38,7 @@ export const MainView = () => {
                 </div>
               </div>
               : null : null}
-          {playlists?.playlists ? playlists.playlists[2].playlists.length !== 0
+          {playlists?.playlists ? playlists?.playlists[2]?.playlists?.length !== 0
               ?
               <div>
                 <div className="Information">Recommended for you</div>
@@ -54,7 +56,7 @@ export const MainView = () => {
                 </div>
               </div>
               : null : null}
-          {playlists?.playlists ? playlists.playlists[3].playlists.length !== 0
+          {playlists?.playlists ? playlists?.playlists[3]?.playlists?.length !== 0
               ?
               <div>
                 <div className="Information">Genres</div>
@@ -72,7 +74,7 @@ export const MainView = () => {
                 </div>
               </div>
               : null : null}
-          {playlists?.playlists ? playlists.playlists[1].playlists.length !== 0
+          {playlists?.playlists ? playlists?.playlists[1]?.playlists?.length !== 0
               ?
               <div>
                 <div className="Information">Artists</div>
