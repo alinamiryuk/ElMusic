@@ -26,6 +26,7 @@ module.exports.signup = async function(req, res) {
       await user.save()
       const token = issueJWT(user)
 			res.status(200).json({
+        username: userName,
 				success: true,
 				token: token.token
 			})
@@ -47,6 +48,7 @@ module.exports.login = async function(req, res) {
       if (bcrypt.compareSync(password, user.password)) {
         const tokenObject = issueJWT(user)
         res.status(200).json({
+          username: userName,
           success: true,
           token: tokenObject.token,
         })

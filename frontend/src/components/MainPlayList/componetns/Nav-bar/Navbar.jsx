@@ -1,16 +1,14 @@
 import React from 'react'
 import './Navbar.css'
-import { useSelector } from 'react-redux'
 import {
-	Grid,
 	List,
 	ListItem,
-	ListItemText,
 	makeStyles,
 	ListItemAvatar,
 	Avatar,
 } from '@material-ui/core'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 const useStyles = makeStyles((theme) => ({
 	fontSize: {
@@ -34,36 +32,39 @@ const useStyles = makeStyles((theme) => ({
 
 export const NavBar = () => {
 	const classes = useStyles()
-	const userCheck = useSelector((state) => state)
-	// const userCheck = useSelector((state) => state.username)
-	const successCheck = useSelector((state) => state.user.success)
+	const username = useSelector(state => state.user.username)
+	const history = useHistory()
 
-	return (
-		<>
-			<div className="navbar">
-				<List className={classes.navList}>
-					<ListItem>
-						<ListItemAvatar>
-							<Avatar
-								alt="El music"
-								src="/images/logo-192x192.png"
-								className={classes.large}
-							/>
-						</ListItemAvatar>
-					</ListItem>
-					<ListItem className={classes.listItemWidthNav}>
-						<Link to="/main">home</Link>
-					</ListItem>
-					<ListItem className={classes.listItemWidthNav}>username</ListItem>
-					<ListItem className={classes.listItemWidthNav}>
-						<i
-							className="fas fa-sign-out-alt"
-							style={{ marginRight: '0.3em' }}
-						/>
-						Logout
-					</ListItem>
-				</List>
-			</div>
-		</>
-	)
-}
+	const logOutUser = () => {
+		localStorage.removeItem('user')
+		history.push('/login')
+	}
+		return (
+			<>
+				<div className="navbar">
+					<List className={classes.navList}>
+						<ListItem>
+							<ListItemAvatar>
+								<Avatar
+									alt="El music"
+									src="/images/logo-192x192.png"
+									className={classes.large}
+								/>
+							</ListItemAvatar>
+							<a href="/" className={classes.listItemWidth}>
+								El music
+							</a>
+						</ListItem>
+						<ListItem className={classes.listItemWidthNav}>
+							<Link to="/main">home</Link>
+						</ListItem>
+						<ListItem className={classes.listItemWidthNav} style={{cursor: 'pointer'}}>{username}</ListItem>
+						<ListItem className={classes.listItemWidthNav} style={{cursor: 'pointer'}} onClick={() => logOutUser()}>
+							<i className="fas fa-sign-out-alt"/>Log Out
+						</ListItem>
+					</List>
+				</div>
+			</>
+		)
+	}
+

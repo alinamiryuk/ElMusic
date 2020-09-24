@@ -9,6 +9,7 @@ import {
 	ListItemAvatar,
 	Avatar,
 } from '@material-ui/core'
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
 	fontSize: {
@@ -53,15 +54,15 @@ export const Footer = () => {
 								className={classes.large}
 							/>
 						</ListItemAvatar>
-						<a href="/" className={classes.listItemWidth}>
+						<Link to={'/'} className={classes.listItemWidth}>
 							El music
-						</a>
+						</Link>
 					</ListItem>
 
 					<ListItem button>
-						<a href="/about-us" className={classes.listItemWidth}>
+						<Link to="/about-us" className={classes.listItemWidth}>
 							About us
-						</a>
+						</Link>
 					</ListItem>
 
 					<ListItem>
@@ -70,7 +71,7 @@ export const Footer = () => {
 							href="https://www.facebook.com/elbrusbootcamp"
 							target="_blank"
 						>
-							<i class="fab fa-facebook"></i>
+							<i className="fab fa-facebook"/>
 						</a>
 						<ListItemText primary="" />
 						<a
@@ -78,7 +79,7 @@ export const Footer = () => {
 							href="https://www.instagram.com/elbrus.bootcamp/"
 							target="_blank"
 						>
-							<i class="fab fa-instagram"></i>
+							<i className="fab fa-instagram"/>
 						</a>
 						<ListItemText primary="" />
 						<a
@@ -86,7 +87,7 @@ export const Footer = () => {
 							href="https://vk.com/elbrusbootcamp"
 							target="_blank"
 						>
-							<i class="fab fa-vk"></i>
+							<i className="fab fa-vk"/>
 						</a>
 					</ListItem>
 				</List>
