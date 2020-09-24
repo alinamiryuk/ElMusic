@@ -1,16 +1,20 @@
-import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import React, {useEffect} from 'react'
+import {Link, useHistory} from 'react-router-dom'
 import useForm from '../../../hooks/useForm'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchUserRegistration } from '../../../redux/actionType'
+import {useDispatch, useSelector} from 'react-redux'
+import {fetchUserRegistration} from '../../../redux/actionType'
 import '../SignUp/SignUp.css'
-import { Grid } from '@material-ui/core'
+import {Grid} from '@material-ui/core'
 
 export const SignUp = () => {
-	const status = useSelector((state) => state.user.registered)
 	const history = useHistory()
+	const status = useSelector(state => state.user.success)
 	const [state, useState] = useForm({ email: '', password: '', userName: '' })
 	const dispatch = useDispatch()
+
+	useEffect(() => {
+		if (status) history.push('/choose-artists-first')
+	}, [status])
 	return (
 		<>
 			<Grid class="signup-collumn" container>
@@ -47,9 +51,6 @@ export const SignUp = () => {
 					onClick={(e) => {
 						e.preventDefault()
 						dispatch(fetchUserRegistration(state))
-						if (status) {
-							history.push('/choose-artists-first')
-						}
 					}}
 				>
 					Sign up

@@ -4,30 +4,27 @@ import {
 	Grid,
 	List,
 	ListItem,
-	Divider,
 	ListItemText,
 	makeStyles,
 	ListItemAvatar,
 	Avatar,
 } from '@material-ui/core'
-import { Link } from 'react-router-dom'
-// import { fab } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
 	fontSize: {
 		fontSize: '0.7em',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    paddingRight: '2em',
+		alignItems: 'center',
+		justifyContent: 'flex-end',
+		paddingRight: '2em',
 	},
 	large: {
 		width: theme.spacing(6),
 		height: theme.spacing(6),
 	},
 	socialMediaLinks: {
-    fontSize: '2em',
-    margin: '0.2em'
+		fontSize: '2em',
+		margin: '0.2em',
 	},
 	footerGrid: {
 		direction: 'row',
@@ -35,11 +32,11 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: 'center',
 	},
 	footerList: {
-    display: 'flex'
-  },
-  listItemWidth: {
-    width: '5em',
-  }
+		display: 'flex',
+	},
+	listItemWidth: {
+		width: '5em',
+	},
 }))
 
 export const Footer = () => {
@@ -48,40 +45,52 @@ export const Footer = () => {
 	return (
 		<>
 			<div className="whole-footer">
-				{/* <Grid container className="footerGrid"> */}
-					<List className={classes.footerList}>
-						<ListItem button>
-							<ListItemAvatar>
-								<Avatar
-									alt="El music"
-									src="/images/logo-192x192.png"
-									className={classes.large}
-								/>
-							</ListItemAvatar>
-							<a href="/" className={classes.listItemWidth}>
-                
-                El music</a>
-						</ListItem>
+				<List className={classes.footerList}>
+					<ListItem button>
+						<ListItemAvatar>
+							<Avatar
+								alt="El music"
+								src="/images/logo-192x192.png"
+								className={classes.large}
+							/>
+						</ListItemAvatar>
+						<Link to={'/'} className={classes.listItemWidth}>
+							El music
+						</Link>
+					</ListItem>
 
-						<ListItem button>
-							<a href="/about-us" className={classes.listItemWidth}>About us</a>
-						</ListItem>
+					<ListItem button>
+						<Link to="/about-us" className={classes.listItemWidth}>
+							About us
+						</Link>
+					</ListItem>
 
-						<ListItem>
-							<a className={classes.socialMediaLinks} href="/">
-								<i class="fab fa-facebook"></i>
-							</a>
-							<ListItemText primary="" />
-							<a className={classes.socialMediaLinks} href="/">
-								<i class="fab fa-instagram"></i>
-							</a>
-							<ListItemText primary="" />
-							<a className={classes.socialMediaLinks} href="/">
-								<i class="fab fa-vk"></i>
-							</a>
-						</ListItem>
-					</List>
-				{/* </Grid> */}
+					<ListItem>
+						<a
+							className={classes.socialMediaLinks}
+							href="https://www.facebook.com/elbrusbootcamp"
+							target="_blank"
+						>
+							<i className="fab fa-facebook"/>
+						</a>
+						<ListItemText primary="" />
+						<a
+							className={classes.socialMediaLinks}
+							href="https://www.instagram.com/elbrus.bootcamp/"
+							target="_blank"
+						>
+							<i className="fab fa-instagram"/>
+						</a>
+						<ListItemText primary="" />
+						<a
+							className={classes.socialMediaLinks}
+							href="https://vk.com/elbrusbootcamp"
+							target="_blank"
+						>
+							<i className="fab fa-vk"/>
+						</a>
+					</ListItem>
+				</List>
 				<Grid className={classes.fontSize} container>
 					<div>© 2020 El music</div>
 				</Grid>

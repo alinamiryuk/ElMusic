@@ -76,6 +76,7 @@ module.exports.getAuthors = async function(req, res) {
 }
 
 module.exports.getUserPlayLists = async function(req, res) {
+  console.log(req.user)
   const playlists = await User.findOne({_id: req.user._id}, {playlists: 1})
   res.status(200).json(playlists)
 }

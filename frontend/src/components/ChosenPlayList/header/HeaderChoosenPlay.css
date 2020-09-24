@@ -1,24 +1,39 @@
-.header-play{
-  
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  background-color: rgb(65, 61, 61);
-  width: 100%;
-  height: 25em;
-  opacity: 0.6;
-  /* margin-left: 5em; */
-  background-image: url(https://elintranews.com/wp-content/uploads/2019/08/CAMILA-CABELLO.jpeg);
-  background-repeat: no-repeat ;
-  /* background-position: center; */
-  background-size: cover;
+.header-play {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	background-color: rgb(65, 61, 61);
+	width: 100%;
+  height: 350px;
+	opacity: 0.6;
+	/* margin-left: 5em; */
+
+	background-repeat: no-repeat;
+	/* background-position: center; */
+	background-size: cover;
+  overflow: hidden;
 }
-.artist-information{
-  color: aliceblue;
-  font-size: 48px;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  line-height: 1.15;
-  margin-left: 5em;
-  margin-bottom: 2em;
+
+/*  jazz ->  https://i.pinimg.com/originals/80/5f/57/805f5790e8a4e70fe7a3d8ddcd043453.jpg */
+  /* piano works https://i.pinimg.com/originals/e7/44/5d/e7445d0eb3cce95d6d8cf62597f72129.jpg */
+/* guitar works https://img1.goodfon.ru/original/1920x1200/d/b3/gitara-muzyka-makro-216.jpg */
+  /* micro works https://pbs.twimg.com/profile_banners/121364613/1412268836/1500x500  */
+
+  
+/* metallica
+ https://c4.wallpaperflare.com/wallpaper/154/747/720/metal-metal-music-metallica-logo-wallpaper-thumb.jpg */
+
+
+
+.artist-information {
+	color: aliceblue;
+	font-size: 48px;
+	font-weight: 900;
+	letter-spacing: -0.04em;
+	line-height: 1.15;
+	margin-left: 95px;
+	margin-bottom: 15px;
+}
+.equa{
+  opacity: 0.9;
 }

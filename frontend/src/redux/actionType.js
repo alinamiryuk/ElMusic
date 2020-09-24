@@ -1,19 +1,30 @@
 import {
-  ADD_PLAYLIST_REDUCER,
+  ADD_PLAYLIST_REDUCER, END_FETCHING,
   GENERATE_PLAYLISTS, GET_MUSIC, GET_USER_PLAYLISTS,
-  LOG_IN_USER,
+  LOG_IN_USER, LOG_OUT_USER,
   REGISTER_USER,
-  SHOW_AUTHORS,
+  SHOW_AUTHORS, START_FETCHING,
 } from './action'
 
-export const loginUser = (user) => ({
+export const loginUser = (result) => ({
   type: LOG_IN_USER,
-  payload: user
+  payload: {
+    success: result.success,
+    user: result
+  }
 })
 
-export const registerUser = (status) => ({
+export const registerUser = (result) => ({
   type: REGISTER_USER,
-  payload: status
+  payload: {
+    success: result.success,
+    user: result
+  }
+})
+
+export const logoutUser = () => ({
+  type: LOG_OUT_USER,
+  payload: null
 })
 
 export const showAuthors = (authors) => ({
@@ -44,6 +55,16 @@ export const getMusic = (id) => ({
   payload: id
 })
 
+export const startFetching = () => ({
+  type: START_FETCHING,
+  payload: true,
+})
+
+export const endFetching = () => ({
+  type: END_FETCHING,
+  payload: false
+})
+
 export const fetchUserLogin = (body) => async (dispatch) => {
   const response = await fetch('/api/auth/login', {
     method: 'POST',
@@ -54,7 +75,6 @@ export const fetchUserLogin = (body) => async (dispatch) => {
   })
   const user = await response.json()
   localStorage.setItem('user', JSON.stringify(user))
-  console.log(user)
   dispatch(loginUser(user))
 }
 
@@ -67,7 +87,8 @@ export const fetchUserRegistration = (body) => async (dispatch) => {
     body: JSON.stringify(body)
   })
   const result = await response.json()
-  dispatch(registerUser(result.success))
+  localStorage.setItem('user', JSON.stringify(result))
+  if (result.success) dispatch(registerUser(result))
 }
 
 export const fetchAuthors = () => async (dispatch) => {
@@ -106,6 +127,7 @@ export const fetchGeneratePlaylists = (likedAuthorsArray) => async (dispatch) =>
 }
 
 export const fetchUserPlaylists = () => async (dispatch) => {
+  dispatch(startFetching())
   const token = JSON.parse(localStorage.getItem('user')).token
   const response = await fetch('/api/playlist', {
     method: 'GET',
@@ -114,13 +136,13 @@ export const fetchUserPlaylists = () => async (dispatch) => {
     }
   })
   const playlists = await response.json()
-  console.log(playlists)
+  dispatch(endFetching())
   dispatch(showUserPlaylist(playlists))
 }
 
 export const fetchMusic = (id, genre) => async (dispatch) => {
+  dispatch(startFetching())
   const token = JSON.parse(localStorage.getItem('user')).token
-  console.log(id, genre)
   const response = await fetch(`/api/playlist/${id}?genre=${genre}`, {
     method: 'GET',
     headers: {
@@ -128,5 +150,6 @@ export const fetchMusic = (id, genre) => async (dispatch) => {
     }
   })
   const music = await response.json()
+  dispatch(endFetching())
   dispatch(getMusic(id))
 }

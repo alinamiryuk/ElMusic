@@ -34,7 +34,6 @@ export const MainComponentPage = () => {
 							className={'onboarding-screen-artists-sub-title'}
 							style={{ fontSize: 30, marginBottom: 100 }}
 						>
-							{' '}
 							Loading!
 						</div>
 						<div className={'onboarding-screen-grid'}>

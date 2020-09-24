@@ -1,36 +1,43 @@
-import React, {useEffect} from 'react'
-
+import React, {useEffect, useRef} from 'react'
 import './PlayerBar.css'
+import CssBaseline from '@material-ui/core/CssBaseline'
 
-export default function Player({id, toggle}) {
+export default function Player({id, toggle, setToggleEq, setId}) {
+
+
+
+  const audio = useRef()
   useEffect(() => {
-		const audio = document.getElementById('player-main-main')
-		console.log(toggle)
-		if (toggle) {
-			audio.play()
-		} else {
-			audio.pause()
-		}
+    if (toggle) {
+      audio.current.play()
+    } else {
+      setId('')
+      audio.current.pause()
+    }
   }, [toggle])
 
-	console.log('toggle>>>>', toggle)
+  useEffect(() => {
+    audio.current.addEventListener('pause', () => setToggleEq(state => !state))
+    audio.current.addEventListener('play', () => setToggleEq(state => !state))
+  }, [])
+
   return (
       <>
-        <div className="player-audio">
-
-          <audio id="player-main-main" onClick={() => (console.log('audio'))}
-                 className="audio"
-                 autoPlay
-                 controls
-                 src={id ? `/music/${id}.mp3` : null}
-        // src="https://cdndl.zaycev.net/track/2440475/6oYDTtLSuwTmSyYEDtiCMgJvQiDLqHtrj99qFvA59uGsrqw6F1J6fLzaE1AkxaUwAVSpc6aZN38JejQdtu7a8Kv3H2WirYRXDeT6U9GjrvtJpnxCUNnfQPTcZQWZWS4UniEfkSjYkDGcrcCknwnWnDvwKqxAakboFwRsWa1yCoyxYw4CterkcAd67gsmBoTPsLwKzUr4DfmzY9tbDVPTEnyW9LQVX2mN4RRbMf8n2CQHS5gNsxshFx6c4Hui98DknUt8wwkhcFcH1tr4RARdDBJ8T3fDthDshU7q6ZPSGwaa8oZcSbFzyceuTmUcvzdxtHzv5i2iEvgYfvZ2ksx4Tx8GAuMLGXwgEzrHi6M5oqpz1vVdQv4F"
-
+        <div className="player-div">
+          <CssBaseline/>
+          <audio
+              ref={audio}
+              id="player-main-main"
+              className="audio"
+              autoPlay
+              controls
+              src={id ? `/music/${id}.mp3` : null}
           >
             Your browser does not support the
             <code>audio</code> element.
           </audio>
         </div>
+
       </>
   )
-
 }
