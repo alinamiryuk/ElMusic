@@ -15,14 +15,16 @@
 }
 
 /*  jazz ->  https://i.pinimg.com/originals/80/5f/57/805f5790e8a4e70fe7a3d8ddcd043453.jpg */
-/* Стиль навигационной панели */
+  /* piano works https://i.pinimg.com/originals/e7/44/5d/e7445d0eb3cce95d6d8cf62597f72129.jpg */
+/* guitar works https://img1.goodfon.ru/original/1920x1200/d/b3/gitara-muzyka-makro-216.jpg */
+  /* micro works https://pbs.twimg.com/profile_banners/121364613/1412268836/1500x500  */
+
+  
+/* metallica
+ https://c4.wallpaperflare.com/wallpaper/154/747/720/metal-metal-music-metallica-logo-wallpaper-thumb.jpg */
 
 
 
-/* Добавить некоторые верхние отступы к содержимому страницы для предотвращения внезапного быстрого перемещения (поскольку панель навигации получает новое положение в верхней части страницы (position:fixed and top:0) */
-/* .sticky + .content {
-	padding-top: 60px;
-} */
 .artist-information {
 	color: aliceblue;
 	font-size: 48px;
@@ -31,4 +33,7 @@
 	line-height: 1.15;
 	margin-left: 95px;
 	margin-bottom: 15px;
+}
+.equa{
+  opacity: 0.9;
 }

@@ -21,6 +21,7 @@ const useStyles = makeStyles({
 const PlayListCard = ({playlist}) => {
   const dispatch = useDispatch()
   const classes = useStyles()
+  console.log('what is play list>>',playlist);
   return(
       <Card className={classes.root}>
         <CardContent>
@@ -35,7 +36,7 @@ const PlayListCard = ({playlist}) => {
           {playlist.type || playlist.author}
         </CardContent>
         <CardActions>
-          <Button size="small" color="secondary" onClick={() => dispatch(addPlaylist(playlist))}>
+          <Button size="medium" color="secondary" onClick={() => dispatch(addPlaylist(playlist))}>
             <Link to={`/playlist/${playlist.id}`}>
               play
             </Link>
@@ -46,3 +47,8 @@ const PlayListCard = ({playlist}) => {
 }
 
 export default PlayListCard
+
+// moodPL
+//authorPL
+//"maybeInterested"
+//genre
