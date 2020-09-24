@@ -43,8 +43,8 @@ export const ChosenPlayList = () => {
 			flex: '1 0 auto',
 		},
 		cover: {
-			marginLeft: '20%',
-			width: 151,
+			// marginLeft: '20%',
+			width: "auto",
 		},
 		controls: {
 			display: 'flex',
@@ -72,8 +72,8 @@ export const ChosenPlayList = () => {
 						<HeaderPlay
 							playlist={playlist[params]?.type}
 							toggleEq={toggleEq}
-              id={id}
-              toggle={toggle}
+							id={id}
+							toggle={toggle}
 						/>
 						<div className="playlist-songs">
 							<Grid
@@ -84,7 +84,6 @@ export const ChosenPlayList = () => {
 							>
 								{songs
 									? songs.map((song, i) => (
-                    
 											<Card className={classes.root}>
 												<div className={classes.details}>
 													<CardContent className={classes.content}>
@@ -95,15 +94,20 @@ export const ChosenPlayList = () => {
 															{song.author}
 														</Typography>
 													</CardContent>
+													<CardMedia
+														className={classes.cover}
+														image="/static/images/cards/live-from-space.jpg"
+														title="Live from space album cover"
+													/>
 													<div className={classes.controls}>
-														<Button className={i}
+														<Button
+															className={i}
 															style={{ opacity: '0.6' }}
 															onClick={() => {
 																dispatch(fetchMusic(song._id, song.genre))
 																setId(song._id)
 																setToggle(() => !toggle)
-                                setToggleEq(() => !toggleEq)
-                                
+																setToggleEq(() => !toggleEq)
 															}}
 															variant="outlined"
 														>

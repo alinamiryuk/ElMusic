@@ -30,7 +30,7 @@ export const MainView = () => {
                 </Grid>
               </div>
             </div> : null : null}
-        {playlists.playlists ? playlists.playlists[2].playlists.length !== 0 ?
+        {playlists?.playlists ? playlists.playlists[2].playlists.length !== 0 ?
             <div>
               <div className="Information">Recommended for you</div>
               <div className="albumsWantsTo">
