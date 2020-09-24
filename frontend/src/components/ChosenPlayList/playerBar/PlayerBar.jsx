@@ -4,7 +4,6 @@ import './PlayerBar.css'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 export default function Player({ id, toggle }) {
-	// const audio = document.getElementById('player-main-main')
 
 	useEffect(() => {
 		const audio = document.getElementById('player-main-main')
@@ -20,8 +19,6 @@ export default function Player({ id, toggle }) {
 		<>
 			<div className="player-div">
 				<CssBaseline />
-				<AppBar color="transparent" position="sticky">
-					<Toolbar>
 						<audio
 							id="player-main-main"
 							className="audio"
@@ -33,8 +30,6 @@ export default function Player({ id, toggle }) {
 							Your browser does not support the
 							<code>audio</code> element.
 						</audio>
-					</Toolbar>
-				</AppBar>
 			</div>
 		</>
 	)

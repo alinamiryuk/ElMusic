@@ -4,7 +4,7 @@
 	align-items: flex-end;
 	background-color: rgb(65, 61, 61);
 	width: 100%;
-	height: 25em;
+  height: 350px;
 	opacity: 0.6;
 	/* margin-left: 5em; */
 	background-image: url(https://i.pinimg.com/originals/80/5f/57/805f5790e8a4e70fe7a3d8ddcd043453.jpg);
@@ -16,36 +16,13 @@
 
 /*  jazz ->  https://i.pinimg.com/originals/80/5f/57/805f5790e8a4e70fe7a3d8ddcd043453.jpg */
 /* Стиль навигационной панели */
-#navbar {
-	background-color: #333;
-}
 
-/* Ссылки навигационной панели */
-#navbar a {
-	float: left;
-	display: block;
-	color: #f2f2f2;
-	text-align: center;
-	padding: 14px;
-	text-decoration: none;
-}
 
-/* Содержимое страницы */
-.content {
-	padding: 16px;
-}
-
-/* Класс sticky добавляется в навигационную панель с помощью JS, когда он достигает своей позиции прокрутки */
-.sticky {
-	position: fixed;
-	top: 0;
-	width: 100%;
-}
 
 /* Добавить некоторые верхние отступы к содержимому страницы для предотвращения внезапного быстрого перемещения (поскольку панель навигации получает новое положение в верхней части страницы (position:fixed and top:0) */
-.sticky + .content {
+/* .sticky + .content {
 	padding-top: 60px;
-}
+} */
 .artist-information {
 	color: aliceblue;
 	font-size: 48px;
@@ -53,5 +30,5 @@
 	letter-spacing: -0.04em;
 	line-height: 1.15;
 	margin-left: 5em;
-	margin-bottom: 2em;
+	margin-bottom: 15px;
 }

@@ -8,7 +8,6 @@ import { useParams } from 'react-router-dom'
 import { fetchMusic } from '../../redux/actionType'
 import { SongsContext } from './Context/SongsContext'
 import { makeStyles } from '@material-ui/core/styles'
-import ResponsiveDrawer from './panel'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
@@ -25,7 +24,6 @@ export const ChosenPlayList = () => {
 	const music = useSelector((state) => state.music)
 	const playlist = useSelector((state) => state.playlists)
 	const songs = playlist[params]?.songs || playlist[params]?.music
-	const [eq, setEq] = useState(false)
 
 	const useStyles = makeStyles((theme) => ({
 		root: {
@@ -33,10 +31,9 @@ export const ChosenPlayList = () => {
 			margin: '2em',
 			minWidth: '300px',
 			maxWidth: '300px',
-			minHeight: '110px',
-			maxHeight: '110px',
+			minHeight: '120px',
+			maxHeight: '120px',
 			opacity: 0.9,
-			backgroundColor: '',
 		},
 		details: {
 			display: 'flex',
@@ -75,7 +72,8 @@ export const ChosenPlayList = () => {
 						<HeaderPlay
 							playlist={playlist[params]?.type}
 							toggleEq={toggleEq}
-							id={id}
+              id={id}
+              toggle={toggle}
 						/>
 						<div className="playlist-songs">
 							<Grid
@@ -86,6 +84,7 @@ export const ChosenPlayList = () => {
 							>
 								{songs
 									? songs.map((song, i) => (
+                    
 											<Card className={classes.root}>
 												<div className={classes.details}>
 													<CardContent className={classes.content}>
@@ -97,13 +96,14 @@ export const ChosenPlayList = () => {
 														</Typography>
 													</CardContent>
 													<div className={classes.controls}>
-														<Button
+														<Button className={i}
 															style={{ opacity: '0.6' }}
 															onClick={() => {
 																dispatch(fetchMusic(song._id, song.genre))
 																setId(song._id)
 																setToggle(() => !toggle)
-																setToggleEq(() => !toggleEq)
+                                setToggleEq(() => !toggleEq)
+                                
 															}}
 															variant="outlined"
 														>

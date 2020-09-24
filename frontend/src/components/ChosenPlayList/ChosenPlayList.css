@@ -1,14 +1,14 @@
 .main-view-playing{
-  /* display: flex;
-  flex-wrap: wrap; */
+  display: flex;
+  flex-wrap: wrap; 
   /* height: 94vh; */
-  /* width: 100%; */
+  width: 100%; 
   color: white;
   background: linear-gradient(to bottom, #020000e3,rgba(243, 234, 234, 0.904));
 }
 
 .list-songs{
-  display: flex;
+  /* display: flex; */
   color: black;
   width: 60vw;
   justify-content: space-around;
@@ -18,4 +18,7 @@
 .table-songs{
   /* display: flex; */
   /* justify-content: flex-start; */
+}
+.playlist-songs{
+  min-height: inherit;
 }
