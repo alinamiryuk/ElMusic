@@ -13,8 +13,10 @@ export const MainView = () => {
   useEffect(() => {
     if (!playlists.playlists.length) dispatch(fetchUserPlaylists())
   }, [])
+  console.log('playlists>>>>>',playlists);
   return (
       <div>
+
         {fetching ? <CircularProgress/> : <div>
           {playlists?.playlists ? playlists?.playlists[0]?.playlists?.length !== 0
               ?
