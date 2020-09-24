@@ -35,9 +35,7 @@ export const NavBar = () => {
 	const classes = useStyles()
 	const userCheck = useSelector((state) => state)
 	// const userCheck = useSelector((state) => state.username)
-	console.log('>', userCheck)
 	const successCheck = useSelector((state) => state.user.success)
-	console.log('11', successCheck)
 
 	if (successCheck === true) {
 		return (
@@ -61,7 +59,7 @@ export const NavBar = () => {
 						</ListItem>
 						<ListItem className={classes.listItemWidthNav}>username</ListItem>
 						<ListItem className={classes.listItemWidthNav}>
-							<i class="fas fa-sign-out-alt"></i>Log Out
+							<i className="fas fa-sign-out-alt"/>Log Out
 						</ListItem>
 					</List>
 				</div>

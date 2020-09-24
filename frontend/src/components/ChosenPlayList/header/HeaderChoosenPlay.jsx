@@ -9,17 +9,10 @@ export const HeaderPlay = ({ toggleEq, playlist, id, toggle }) => {
 	const [song, setSong] = useState()
 
 	useEffect(() => {
-		songs.map((el) =>
-			el._id === id ? (setArtist(el.author), setSong(el.song_name)) : null
-		)
-	}, [id])
-	console.log('header info ', songs)
-	console.log('song info ', song)
 
-	useEffect(() => {songs ?
-		songs.map((el) =>
+    if (songs) songs.map((el) =>
 			el._id === id ? (setArtist(el.author), setSong(el.song_name)) : null
-		): 'null'
+	)
 	}, [id])
 
 	return (
@@ -33,6 +26,7 @@ export const HeaderPlay = ({ toggleEq, playlist, id, toggle }) => {
 			>
 				<br />
 				<div className="artist-information">
+
 					{playlist ? playlist : null}
 					<br />
 					<div style={{ fontSize: '40px' }}>
@@ -48,6 +42,7 @@ export const HeaderPlay = ({ toggleEq, playlist, id, toggle }) => {
 							src="https://cdn.orangeable.com/img/javascript-equalizer.gif"
 						/>
 					) : null}
+
 				</div>
 			</div>
 		</>
