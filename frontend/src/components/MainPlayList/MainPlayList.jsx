@@ -4,6 +4,7 @@ import { NavBar } from "./componetns/Nav-bar/Navbar"
 
 export const MainPlayList = () => {
 
+
   return (
     <>
       <div className="play-list">
