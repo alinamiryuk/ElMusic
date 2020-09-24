@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: theme.palette.background.paper,
 		// flexGrow: 1,
 		maxWidth: 265,
-		maxHeight: 500,
-    fontFamily: 'Circular, Helvetica, Arial, sans-serif, IosFix',
+    maxHeight: 500,
+        fontFamily: 'Circular, Helvetica, Arial, sans-serif, IosFix',
     
 	},
 	// gridList: {
