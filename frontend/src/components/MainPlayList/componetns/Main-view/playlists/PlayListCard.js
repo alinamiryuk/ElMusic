@@ -7,42 +7,123 @@ import {
   makeStyles,
 } from '@material-ui/core'
 import CardActions from '@material-ui/core/CardActions'
-import {Link} from 'react-router-dom'
-import {useDispatch} from 'react-redux'
-import {addPlaylist} from '../../../../../redux/actionType'
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addPlaylist } from '../../../../../redux/actionType'
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 160,
-    margin: '1em',
+    maxWidth: 170,
+    minWidth: 170,
+    minHeight: 220,
+    maxHeight: 223,
+    margin: '30px 0px 50px 30px',
   },
+  img: {
+    height: 138,
+  },
+
 })
 
-const PlayListCard = ({playlist}) => {
+
+const PlayListCard = ({ playlist }) => {
   const dispatch = useDispatch()
+  // const [img,setImg]=useState('https://e-cdns-images.dzcdn.net/images/artist/4ee6e8e0dcdece98291101f73f1b1a38/242x242-000000-80-0-0.jpg')
   const classes = useStyles()
-  console.log('what is play list>>',playlist);
-  return(
-      <Card className={classes.root}>
-        <CardContent>
-          <CardMedia
-              style={{marginBottom: 20}}
-              component="img"
-              alt="Contemplative Reptile"
-              height="20"
-              image="https://cdn1.ozone.ru/multimedia/1019138176.jpg"
-              title="Contemplative Reptile"
-          />
-          {playlist.type || playlist.author}
-        </CardContent>
-        <CardActions>
-          <Button size="medium" color="secondary" onClick={() => dispatch(addPlaylist(playlist))}>
-            <Link to={`/playlist/${playlist.id}`}>
-              play
+  console.log('what is play list>>', playlist);
+
+  let image = 'https://e-cdns-images.dzcdn.net/images/artist/4ee6e8e0dcdece98291101f73f1b1a38/242x242-000000-80-0-0.jpg'
+  const checkerOfTypes = () => {
+    if (playlist.type) {
+      switch (playlist.type) {
+        case 'Chill Playlist':
+          return image = '/images/chill.jpg'
+        case 'Hard Playlist':
+          return image = '/images/rockPlay.jpg'
+        case 'Rock':
+          return image = '/images/rocknroll.jpeg'
+        case 'Jazz':
+          return image = '/images/jazz.jpeg'
+        case 'Metal':
+          return image = '/images/hardRock.jpg'
+        case 'Pop':
+          return image = '/images/pop.jpeg'
+        default:
+          return image = '/images/smiledef.jpg';
+      }
+    } else {
+      switch (playlist.author) {
+        case "Виктор Цой":
+          return image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ96S0X32OzOHUcX99F5nfK4vvAtvo8AhfL7Q&usqp=CAU';
+        case 'Ella Fitzgerald':
+          return image = 'https://4.bp.blogspot.com/-rg8yhrSI6JI/WR73XMB17sI/AAAAAAAAEeA/5S9W6Ovlx4o6ma2F27usZQiXH1I9ZLf1QCLcB/s1600/Ella%2BFitzgerald%2B-%2BHello%2BLove.jpg'
+        case 'James Brown':
+          return image = '/images/jazz.jpeg'
+        case 'Jamiroquai':
+          return image = '/images/Jamiroquai.jpg'
+        case 'Клава Кока':
+          return image = '/images/coca.jpeg'
+        case 'Егор Крид':
+          return image = '/images/creed.jpeg'
+        case 'Руки Вверх':
+          return image = '/images/vverh.jpeg'
+        case 'Shawn Mendes':
+          return image = '/images/ShawnMendes.jpg'
+        case 'Jony':
+          return image = '/images/Jony.jpg'
+        case 'Annie Lennox':
+          return image = '/images/AnnieLennox.jpg'
+        case 'Modern Talking':
+          return image = '/images/Modern-Talking.jpg'
+        case 'Linkin Park':
+          return image = '/images/LinkinPark.jpeg'
+        case 'Nirvana':
+          return image = '/images/Nirvana.jpg'
+        case 'Scorpions':
+          return image = '/images/Scorpions.jpg'
+        case 'Би-2':
+          return image = '/images/2.jpg'
+        case 'Louis Armstrong':
+          return image = '/images/LouisArmstrong.jpeg'
+        case 'Frank Sinatra':
+          return image = '/images/FrankSinatra.jpg'
+        case 'Avenged':
+          return image = '/images/Avenged.jpg'
+        case 'A Day to Remember':
+          return image = '/images/adtr.jpg'
+        case 'Chelsea Grin':
+          return image = '/images/chelsea-grin.jpg'
+        case 'Metallica':
+          return image = '/images/metallica.jpg'
+          case 'Black Veil Brides':
+            return image = '/images/metallica.jpg'
+        default:
+          return image = '/images/smiledef.jpg';
+      }
+    }
+  }
+  return (
+    <Card className={classes.root}>
+      <CardContent>
+        <CardMedia
+          className={classes.img}
+          style={{ marginBottom: 10 }}
+          component="img"
+          alt="Contemplative Reptile"
+          // height="20"
+          image={playlist.type || playlist.author ? `${checkerOfTypes(playlist.type, playlist.author)}` : '/images/smiledef.jpg'}
+          title="Contemplative Reptile"
+        />
+        {playlist.type || playlist.author}
+      </CardContent>
+      <CardActions>
+        <Button size="medium" color="secondary" onClick={() => dispatch(addPlaylist(playlist))}>
+          <Link to={`/playlist/${playlist.id}`}>
+            play
             </Link>
-          </Button>
-        </CardActions>
-      </Card>
+        </Button>
+      </CardActions>
+    </Card>
   )
 }
 
@@ -52,3 +133,5 @@ export default PlayListCard
 //authorPL
 //"maybeInterested"
 //genre
+// Chill Playlist
+// Hard Playlist
