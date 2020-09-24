@@ -1,7 +1,13 @@
+.player-div{
+  height: 40px;
+  background-color: #f1f3f4;
+}
 .audio{
-  /* position: absolute; */
+  position: fixed;
+  bottom: 0; /* Положение сверху */
+  overflow: hidden;
   background:#f1f3f4;
   color: black;
-  /* height: 4em; */
   width: 100%;
 }
+

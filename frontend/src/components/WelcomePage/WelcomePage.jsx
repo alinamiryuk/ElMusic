@@ -7,6 +7,8 @@ import { NavBar } from '../MainPlayList/componetns/Nav-bar/Navbar'
 import { Link } from 'react-router-dom'
 
 export const WelcomePage = (params) => {
+  
+  
 	return (
 		<>
 			<section>

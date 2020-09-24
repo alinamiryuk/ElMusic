@@ -30,18 +30,18 @@ section,
 summary {
   display: block;
 }
-audio,
+/* audio,
 canvas,
 progress,
 video {
   display: inline-block;
   vertical-align: baseline;
-}
-audio:not([controls]) {
+} */
+/* audio:not([controls]) {
   display: none;
   height: 0;
 }
-[hidden],
+[hidden], */
 template {
   display: none;
 }
@@ -1077,6 +1077,7 @@ html {
 }
 body {
   font-family: Circular, Helvetica, Arial, sans-serif;
+  
   font-size: 16px;
   line-height: 0.2;
   color: #222326;
