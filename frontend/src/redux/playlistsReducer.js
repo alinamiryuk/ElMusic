@@ -6,12 +6,17 @@ import {
 import {v4 as uuidv4} from 'uuid'
 import {loginUser} from './actionType'
 
-const initialState = {}
+const initialState = {
+  playlists: []
+}
 
 const playlistsReducer = (state = initialState, action) => {
   switch (action.type){
     case GENERATE_PLAYLISTS:
-      return {...state, playlists: [...action.payload]}
+      // console.log(action.payload)
+        const keys = Object.keys(action.payload);
+        const arr = keys.map(key => action.payload[key])
+      return {...state, playlists: arr}
     case GET_USER_PLAYLISTS:
       const withId = action.payload.map(type => ({...type, playlists: type.playlists.map(item => ({...item, id: uuidv4()}))}))
       return {...state, playlists: withId}

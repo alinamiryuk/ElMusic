@@ -11,12 +11,12 @@ export const MainView = () => {
   const dispatch = useDispatch()
   const playlists = useSelector(state => state.playlists)
   useEffect(() => {
-    dispatch(fetchUserPlaylists())
+    if (!playlists.playlists.length) dispatch(fetchUserPlaylists())
   }, [])
   return (
       <div>
         {fetching ? <CircularProgress/> : <div>
-          {playlists?.playlists ? playlists.playlists[0].playlists.length !== 0
+          {playlists?.playlists ? playlists?.playlists[0]?.playlists?.length !== 0
               ?
               <div>
                 <div className="Information">Don't miss top playlists</div>
@@ -34,7 +34,7 @@ export const MainView = () => {
                 </div>
               </div>
               : null : null}
-          {playlists?.playlists ? playlists.playlists[2].playlists.length !== 0
+          {playlists?.playlists ? playlists?.playlists[2]?.playlists?.length !== 0
               ?
               <div>
                 <div className="Information">Recommended for you</div>
@@ -52,7 +52,7 @@ export const MainView = () => {
                 </div>
               </div>
               : null : null}
-          {playlists?.playlists ? playlists.playlists[3].playlists.length !== 0
+          {playlists?.playlists ? playlists?.playlists[3]?.playlists?.length !== 0
               ?
               <div>
                 <div className="Information">Genres</div>
@@ -70,7 +70,7 @@ export const MainView = () => {
                 </div>
               </div>
               : null : null}
-          {playlists?.playlists ? playlists.playlists[1].playlists.length !== 0
+          {playlists?.playlists ? playlists?.playlists[1]?.playlists?.length !== 0
               ?
               <div>
                 <div className="Information">Artists</div>

@@ -10,6 +10,8 @@ export const MainComponentPage = () => {
 	const dispatch = useDispatch()
 	const history = useHistory()
 	const authors = useSelector((state) => state.authors)
+	const playlists = useSelector((state) => state.playlists)
+	const fetching = useSelector(state => state.fetching)
 	const [loading, setLoading] = useState(false)
 	const [counter, setCounter] = useState(0)
 	useEffect(() => {
@@ -18,6 +20,11 @@ export const MainComponentPage = () => {
 	useEffect(() => {
 		setLoading((state) => !state)
 	}, [authors])
+	// useEffect(()=>{
+	// 	console.log(fetching,playlists)
+	// 	if (!fetching && playlists.playlists.length) {
+	// 		history.push('/main')}
+	// },[fetching])
 	return (
 		<>
 			<div className="full-screen-for-choose-artists">
