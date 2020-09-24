@@ -34,7 +34,7 @@ export const NavBar = () => {
 	const classes = useStyles()
 	const username = useSelector(state => state.user.username)
 	const history = useHistory()
-
+console.log(username);
 	const logOutUser = () => {
 		localStorage.removeItem('user')
 		history.push('/login')
