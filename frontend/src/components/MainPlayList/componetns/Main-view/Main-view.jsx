@@ -92,7 +92,7 @@ export const MainView = () => {
                 </div>
               </div>
               : null : null}
-        </div>}
+        1</div>}
       </div>
   )
 }

@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     minHeight: 220,
     maxHeight: 223,
     margin: '30px 0px 50px 30px',
-    background: `${classType}`
+    // background: `${classType}`
   },
   root2: {
     maxWidth: 170,
@@ -28,19 +28,22 @@ const useStyles = makeStyles({
     minHeight: 220,
     maxHeight: 223,
     margin: '30px 0px 50px 30px',
-    background: 'linear-gradient(to bottom right, white, #00000000)'
+    background: 'linear-gradient(45deg,#DBFDEC,#bcffa6)',
+    // background: 'linear-gradient(to bottom right, white, #00000000)'
   },
   img: {
     height: 138,
   },
   
   link: {
-    color: 'white',
+    color: 'black',
     opacity: '0.8'
   }
 
 })
 
+
+//linear-gradient(rgb(244, 191, 96), rgb(255, 195, 98))
 
 const PlayListCard = ({ playlist,types }) => {
   
