@@ -13,24 +13,25 @@ export const HeaderPlay = ({ toggleEq, playlist, id, toggle }) => {
 			songs.map((el) =>
 				el._id === id ? (setArtist(el.author), setSong(el.song_name)) : null
 			)
-	}, [id])
+  }, [id])
+  
 
 	const checker = (genre) => {
 		switch (genre) {
 			case 'Jazz':
-				return 'https://i.pinimg.com/originals/80/5f/57/805f5790e8a4e70fe7a3d8ddcd043453.jpg'
+				return '/images/JazzBg.jpg'
 
 			case 'Rock':
-				return 'https://pbs.twimg.com/profile_banners/121364613/1412268836/1500x500'
+				return '/images/rockConcert.jpg'
 
 			case 'Metal':
 				return '/images/bfmv.jpg'
 
 			case 'Pop':
-				return 'https://i.pinimg.com/originals/e7/44/5d/e7445d0eb3cce95d6d8cf62597f72129.jpg'
+				return '/images/popMusic.jpeg'
 
 			default:
-				return 'https://i.pinimg.com/originals/80/5f/57/805f5790e8a4e70fe7a3d8ddcd043453.jpg'
+				return '/images/JazzBg.jpg'
 		}
 	}
 	return (
@@ -50,7 +51,7 @@ export const HeaderPlay = ({ toggleEq, playlist, id, toggle }) => {
 					</div>
 					<br />
 					<div style={{ fontSize: '25px' }}>
-						{song ? `now playing :    ${song}` : ''}
+						{song && toggle ? `now playing :    ${song}` : ''}
 					</div>
 					{toggleEq && toggle ? (
 						<img

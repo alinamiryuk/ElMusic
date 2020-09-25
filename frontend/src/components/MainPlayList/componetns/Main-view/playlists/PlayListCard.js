@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Button,
   Card,
@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addPlaylist } from '../../../../../redux/actionType'
 
+let classType ='linear-gradient(to bottom right, #FFFFF0, #0000002e)'
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 170,
@@ -18,19 +20,38 @@ const useStyles = makeStyles({
     minHeight: 220,
     maxHeight: 223,
     margin: '30px 0px 50px 30px',
+    background: `${classType}`
+  },
+  root2: {
+    maxWidth: 170,
+    minWidth: 170,
+    minHeight: 220,
+    maxHeight: 223,
+    margin: '30px 0px 50px 30px',
+    background: 'linear-gradient(to bottom right, white, #00000000)'
   },
   img: {
     height: 138,
   },
+  
+  link: {
+    color: 'white',
+    opacity: '0.8'
+  }
 
 })
 
 
-const PlayListCard = ({ playlist }) => {
+const PlayListCard = ({ playlist,types }) => {
+  
   const dispatch = useDispatch()
   // const [img,setImg]=useState('https://e-cdns-images.dzcdn.net/images/artist/4ee6e8e0dcdece98291101f73f1b1a38/242x242-000000-80-0-0.jpg')
   const classes = useStyles()
-  console.log('what is play list>>', playlist);
+  // console.log('what is play list>>', playlist);
+      if (types === 'moodPL') {
+        classType = 'linear-gradient(to top, white, #0000002e)';
+      }
+  
 
   let image = 'https://e-cdns-images.dzcdn.net/images/artist/4ee6e8e0dcdece98291101f73f1b1a38/242x242-000000-80-0-0.jpg'
   const checkerOfTypes = () => {
@@ -78,7 +99,7 @@ const PlayListCard = ({ playlist }) => {
         case 'Linkin Park':
           return image = '/images/LinkinPark.jpeg'
         case 'Nirvana':
-          return image = '/images/Nirvana.jpg'
+          return image = '/images/curt.jpeg'
         case 'Scorpions':
           return image = '/images/Scorpions.jpg'
         case 'Би-2':
@@ -96,14 +117,14 @@ const PlayListCard = ({ playlist }) => {
         case 'Metallica':
           return image = '/images/metallica.jpg'
           case 'Black Veil Brides':
-            return image = '/images/metallica.jpg'
+            return image = '/images/black-veil-brides.jpg'
         default:
           return image = '/images/smiledef.jpg';
       }
     }
   }
   return (
-    <Card className={classes.root}>
+    <Card className={types !== 'authorPL' && types !== 'genre' ? classes.root : classes.root2}>
       <CardContent>
         <CardMedia
           className={classes.img}
@@ -118,7 +139,7 @@ const PlayListCard = ({ playlist }) => {
       </CardContent>
       <CardActions>
         <Button size="medium" color="secondary" onClick={() => dispatch(addPlaylist(playlist))}>
-          <Link to={`/playlist/${playlist.id}`}>
+          <Link className={classes.link} to={`/playlist/${playlist.id}`}>
             play
             </Link>
         </Button>

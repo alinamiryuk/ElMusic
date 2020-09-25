@@ -1,11 +1,12 @@
 import React from 'react'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
-import {Button} from '@material-ui/core'
+import {Button, CardMedia,makeStyles} from '@material-ui/core'
 import {fetchMusic} from '../../../redux/actionType'
 import Card from '@material-ui/core/Card'
 import {useDispatch, useSelector} from 'react-redux'
 import CircularProgress from '@material-ui/core/CircularProgress'
+
 
 const SongCard = ({song, classes, setId, setToggle, toggle, i}) => {
   const dispatch = useDispatch()
