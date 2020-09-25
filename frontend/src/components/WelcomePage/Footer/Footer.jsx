@@ -65,6 +65,13 @@ export const Footer = () => {
 						</Link>
 					</ListItem>
 
+					<ListItem button>
+						<Link to="/deck" className={classes.listItemWidth}>
+							Cards
+						</Link>
+					</ListItem>
+
+
 					<ListItem>
 						<a
 							className={classes.socialMediaLinks}
