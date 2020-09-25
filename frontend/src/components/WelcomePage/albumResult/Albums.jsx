@@ -84,10 +84,10 @@ export const Albums = () => {
 							<CardActionArea>
 								<CardMedia
 									component="img"
-									alt="Frank Sinatra"
+									alt="FEVER 333"
 									height="140"
-									image="https://img.discogs.com/Ax_H-IhiHl21_HUpZLXEGleVxSw=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4451445-1365253803-2034.jpeg.jpg"
-									title="Frank Sinatra"
+									image="https://avatars.yandex.net/get-music-content/163479/2c29fdd3.a.6646666-1/m1000x1000?webp=false"
+									title="FEVER 333"
 								/>
 							</CardActionArea>
 						</Card>
@@ -97,10 +97,10 @@ export const Albums = () => {
 							<CardActionArea>
 								<CardMedia
 									component="img"
-									alt="shawn Mendes"
-									height="40"
-									image="https://f4.bcbits.com/img/a2119552211_10.jpg"
-									title="shawn Mendes"
+									alt="a day to remember"
+									height="140"
+									image="https://images.genius.com/9489e9c9edac43e059de6511095f3f18.1000x1000x1.png"
+									title="a day to remember"
 								/>
 							</CardActionArea>
 						</Card>
@@ -110,10 +110,10 @@ export const Albums = () => {
 							<CardActionArea>
 								<CardMedia
 									component="img"
-									alt="metallica"
+									alt="shawn mendez"
 									height="140"
-									image="https://upload.wikimedia.org/wikipedia/ru/thumb/0/09/Metallica_Death_Magnetic.jpg/274px-Metallica_Death_Magnetic.jpg"
-									title="metallica"
+									image="https://pbs.twimg.com/media/EMfQ9M9WsAA95JC.jpg"
+									title="shawn mendez"
 								/>
 							</CardActionArea>
 						</Card>
