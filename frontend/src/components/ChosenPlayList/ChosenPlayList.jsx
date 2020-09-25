@@ -58,6 +58,7 @@ export const ChosenPlayList = () => {
     setState(music[id]);
   }, [music]);
 
+  window.scrollTo({top:0})
   const classes = useStyles();
 
   return (

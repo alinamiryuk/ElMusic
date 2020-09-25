@@ -15,9 +15,6 @@ function App() {
 		<>
 			<BrowserRouter>
 				<Switch>
-        {/* <Route path="/deck">
-						<Deck />
-					</Route> */}
 					<Route path="/signup">
 						<SignUp />
 					</Route>
