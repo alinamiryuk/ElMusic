@@ -1,20 +1,27 @@
-.play-list{
-  background-color: rgba(0,0,0,0.8);
-  width: 100%;
+.play-list {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+
 }
 
-.card-play-list{
-  margin-left: 5%;
-  width: 10%;
-  height: 10em;
+.card-play-list {
+    margin-left: 5%;
+    width: 10%;
+    height: 10em;
 }
 
-.albumsRecommend{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin-left: 8%;
+.albumsRecommend {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 8%;
 }
+
 .Information{
   margin: 10px 0px 10px 100px;
   font-family: spotify-circular, spotify-circular-cyrillic, spotify-circular-arabic, spotify-circular-hebrew, "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS Gothic", sans-serif;
@@ -23,15 +30,16 @@
   color: aliceblue;
   font-weight: 400;
 }
-.albumsWantsTo{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin-left: 80px;
+
+.albumsWantsTo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 80px;
 }
 
-.cardPreview{
-  /* border: 1px solid white; */
+.cardPreview {
+    /* border: 1px solid white; */
 
 
 }

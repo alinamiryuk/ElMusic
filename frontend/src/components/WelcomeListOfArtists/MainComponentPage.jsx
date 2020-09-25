@@ -37,7 +37,7 @@ export const MainComponentPage = () => {
 							Loading!
 						</div>
 						<div className={'onboarding-screen-grid'}>
-							<CircularProgress size={120} color={'secondary'} />
+							<CircularProgress size={120} style={{color: '#63e35d'}} />
 						</div>
 					</>
 				) : (

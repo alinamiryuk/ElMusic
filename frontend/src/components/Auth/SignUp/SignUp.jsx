@@ -8,7 +8,7 @@ import {Grid} from '@material-ui/core'
 
 export const SignUp = () => {
 	const history = useHistory()
-	const status = useSelector(state => state.user.success)
+	const status = useSelector(state => state.user?.success)
 	const [state, useState] = useForm({ email: '', password: '', userName: '' })
 	const dispatch = useDispatch()
 
