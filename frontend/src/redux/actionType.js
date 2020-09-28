@@ -111,6 +111,7 @@ export const fetchAuthors = () => async (dispatch) => {
 }
 
 export const fetchGeneratePlaylists = (likedAuthorsArray) => async (dispatch) => {
+  dispatch(startFetching())
   const token = JSON.parse(localStorage.getItem('user')).token
   const res = await fetch('/api/playlist', {
     method: 'POST',
@@ -123,11 +124,15 @@ export const fetchGeneratePlaylists = (likedAuthorsArray) => async (dispatch) =>
     })
   })
   const playlists = await res.json()
+  console.log('generated',[playlists])
+
   dispatch(generatedPlaylists(playlists))
+  dispatch(endFetching())
 }
 
 export const fetchUserPlaylists = () => async (dispatch) => {
   dispatch(startFetching())
+  console.log(123)
   const token = JSON.parse(localStorage.getItem('user')).token
   const response = await fetch('/api/playlist', {
     method: 'GET',
@@ -136,6 +141,7 @@ export const fetchUserPlaylists = () => async (dispatch) => {
     }
   })
   const playlists = await response.json()
+  console.log('getted')
   dispatch(endFetching())
   dispatch(showUserPlaylist(playlists))
 }
