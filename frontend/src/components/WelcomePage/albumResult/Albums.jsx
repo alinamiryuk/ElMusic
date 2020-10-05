@@ -38,13 +38,13 @@ export const Albums = () => {
 			<div className="album-results">
 				<Grid container direction="row" justify="center" alignItems="center">
 					<div className="card-free-album">
-						<Card className={classes.root}>
-							<CardActionArea>
-								<CardMedia
-									component="img"
-									alt="Fallout boy"
-									height="140"
-									image="https://tabs.do.am/oblogka/cent.jpg"
+          <Card className={classes.root}>
+       <CardActionArea>
+        <CardMedia
+         component="img"
+         alt="Fallout boy"
+         height="140"
+         image="https://tabs.do.am/oblogka/cent.jpg"
                   title="Fallout boy"
                   onClick={()=>{console.log('it clicked');}}
 								/>
@@ -117,6 +117,7 @@ export const Albums = () => {
 								/>
 							</CardActionArea>
 						</Card>
+
 					</div>
 				</Grid>
 			</div>
