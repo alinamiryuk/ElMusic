@@ -9,4 +9,4 @@
 
 # Внешний вид приложения
 
-![Иллюстрация к проекту](https://github.com/alinamiryuk/ElMusic/raw/Styles/ElMusic/frontend/imgRead/Снимок экрана от 2020-09-30 13-12-52.png)
+![Иллюстрация к проекту](https://github.com/alinamiryuk/ElMusic/raw/Styles/ElMusic/frontend/imgRead/1.png)
