@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchUserLogin } from '../../../redux/actionType'
 import '../Login/Login.css'
 import { Grid } from '@material-ui/core'
+import { Footer } from '../../WelcomePage/Footer/Footer'
+
 
 export const Login = () => {
 	const [state, setState] = useForm({ userName: '', password: '' })
@@ -49,6 +51,12 @@ export const Login = () => {
 				<label>Don't have an account?</label>
 				<Link className="btn btn-stroked-dark" to="/signup"> Sign Up for El Music</Link>
 			</Grid>
+      <section
+				className="footerUs"
+				style={{ position: 'absolute', bottom: 0, width: '100%' }}
+			>
+				<Footer />
+			</section>
 		</>
 	)
 }

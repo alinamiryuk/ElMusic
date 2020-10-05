@@ -15,16 +15,16 @@ let classType ='linear-gradient(to bottom right, #FFFFF0, #0000002e)'
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 170,
-    minWidth: 170,
+    maxWidth: 199,
+    minWidth: 199,
     minHeight: 220,
     maxHeight: 223,
     margin: '30px 0px 50px 30px',
     // background: `${classType}`
   },
   root2: {
-    maxWidth: 170,
-    minWidth: 170,
+    maxWidth: 199,
+    minWidth: 199,
     minHeight: 220,
     maxHeight: 223,
     margin: '30px 0px 50px 30px',
@@ -50,7 +50,6 @@ const PlayListCard = ({ playlist,types }) => {
   const dispatch = useDispatch()
   // const [img,setImg]=useState('https://e-cdns-images.dzcdn.net/images/artist/4ee6e8e0dcdece98291101f73f1b1a38/242x242-000000-80-0-0.jpg')
   const classes = useStyles()
-  // console.log('what is play list>>', playlist);
       if (types === 'moodPL') {
         classType = 'linear-gradient(to top, white, #0000002e)';
       }
