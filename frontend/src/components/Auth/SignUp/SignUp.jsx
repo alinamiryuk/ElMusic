@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {fetchUserRegistration} from '../../../redux/actionType'
 import '../SignUp/SignUp.css'
 import {Grid} from '@material-ui/core'
+import { Footer } from '../../WelcomePage/Footer/Footer'
 
 export const SignUp = () => {
 	const history = useHistory()
@@ -60,6 +61,12 @@ export const SignUp = () => {
 					<Link to="/login"> Log in</Link>
 				</label>
 			</Grid>
+      <section
+				className="footerUs"
+				style={{ position: 'absolute', bottom: 0, width: '100%' }}
+			>
+				<Footer />
+			</section>
 		</>
 	)
 }
