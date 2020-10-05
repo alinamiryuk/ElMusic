@@ -47,76 +47,77 @@ export const Albums = () => {
          image="https://tabs.do.am/oblogka/cent.jpg"
                   title="Fallout boy"
                   onClick={()=>{console.log('it clicked');}}
-        />
-       </CardActionArea>
-      </Card>
-     </div>
-     <div className="card-free-album">
-      <Card className={classes.root}>
-       <CardActionArea>
-        <CardMedia
-         component="img"
-         alt="Rihanna"
-         height="140"
-         image="https://i.pinimg.com/originals/dc/bf/18/dcbf18b7d7ce59389e97a3117df68a88.jpg"
-         title="Rihanna"
-        />
-       </CardActionArea>
-      </Card>
-     </div>
-     <div className="card-free-album">
-      <Card className={classes.root}>
-       <CardActionArea>
-        <CardMedia
-         component="img"
-         alt="NickelBack"
-         height="140"
-         image="https://upload.wikimedia.org/wikipedia/ru/4/4b/Nickelback_No_Fixed_Adress.jpg"
-         title="NickelBack"
-        />
-       </CardActionArea>
-      </Card>
-     </div>
-    </Grid>
-    <Grid container direction="row" justify="center" alignItems="center">
-     <div className="card-free-album">
-      <Card className={classes.root}>
-       <CardActionArea>
-        <CardMedia
-         component="img"
-         alt="FEVER 333"
-         height="140"
-         image="https://avatars.yandex.net/get-music-content/163479/2c29fdd3.a.6646666-1/m1000x1000?webp=false"
-         title="FEVER 333"
-        />
-       </CardActionArea>
-      </Card>
-     </div>
-     <div className="card-free-album">
-      <Card className={classes.root}>
-       <CardActionArea>
-        <CardMedia
-         component="img"
-         alt="a day to remember"
-         height="140"
-         image="https://images.genius.com/9489e9c9edac43e059de6511095f3f18.1000x1000x1.png"
-         title="a day to remember"
-        />
-       </CardActionArea>
-      </Card>
-     </div>
-     <div className="card-free-album">
-      <Card className={classes.root}>
-       <CardActionArea>
-        <CardMedia
-         component="img"
-         alt="shawn mendez"
-         height="140"
-         image="https://pbs.twimg.com/media/EMfQ9M9WsAA95JC.jpg"
-         title="shawn mendez"
-        />
-       </CardActionArea>
-      </Card>
+								/>
+							</CardActionArea>
+						</Card>
+					</div>
+					<div className="card-free-album">
+						<Card className={classes.root}>
+							<CardActionArea>
+								<CardMedia
+									component="img"
+									alt="Rihanna"
+									height="140"
+									image="https://i.pinimg.com/originals/dc/bf/18/dcbf18b7d7ce59389e97a3117df68a88.jpg"
+									title="Rihanna"
+								/>
+							</CardActionArea>
+						</Card>
+					</div>
+					<div className="card-free-album">
+						<Card className={classes.root}>
+							<CardActionArea>
+								<CardMedia
+									component="img"
+									alt="NickelBack"
+									height="140"
+									image="https://upload.wikimedia.org/wikipedia/ru/4/4b/Nickelback_No_Fixed_Adress.jpg"
+									title="NickelBack"
+								/>
+							</CardActionArea>
+						</Card>
+					</div>
+				</Grid>
+				<Grid container direction="row" justify="center" alignItems="center">
+					<div className="card-free-album">
+						<Card className={classes.root}>
+							<CardActionArea>
+								<CardMedia
+									component="img"
+									alt="FEVER 333"
+									height="140"
+									image="https://avatars.yandex.net/get-music-content/163479/2c29fdd3.a.6646666-1/m1000x1000?webp=false"
+									title="FEVER 333"
+								/>
+							</CardActionArea>
+						</Card>
+					</div>
+					<div className="card-free-album">
+						<Card className={classes.root}>
+							<CardActionArea>
+								<CardMedia
+									component="img"
+									alt="a day to remember"
+									height="140"
+									image="https://images.genius.com/9489e9c9edac43e059de6511095f3f18.1000x1000x1.png"
+									title="a day to remember"
+								/>
+							</CardActionArea>
+						</Card>
+					</div>
+					<div className="card-free-album">
+						<Card className={classes.root}>
+							<CardActionArea>
+								<CardMedia
+									component="img"
+									alt="shawn mendez"
+									height="140"
+									image="https://pbs.twimg.com/media/EMfQ9M9WsAA95JC.jpg"
+									title="shawn mendez"
+								/>
+							</CardActionArea>
+						</Card>
+
 					</div>
 				</Grid>
 			</div>
