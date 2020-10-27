@@ -20,4 +20,4 @@ MERN (MongoDB, Express, React, Node), Redux, Redux-Thunk, JWT, Material UI, CSS
 ## Playlists based on your listening habits
 ![screenshot](./frontend/public/images/playlists.jpg)
 ![screenshot](./frontend/public/images/hardpl.jpg)
-![screenshot](./frontend/public/images/altpl.jpg)
+![screenshot](./frontend/public/images/artpl.jpg)
