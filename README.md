@@ -1,14 +1,23 @@
-# Spotify
-Запуск : 
- в папке frontend :
-  npm install
+# ElMusic
+Spotify clone
 
-в папке server : 
- npm install 
- npm run dev
+## Stack
+MERN (MongoDB, Express, React, Node), Redux, Redux-Thunk, JWT, Material UI, CSS 
 
-# Внешний вид приложения
+## Welcome page
 
-![Иллюстрация к проекту](https://github.com/alinamiryuk/ElMusic/blob/Styles/ElMusic/frontend/imgRead/1.png)
+![screenshot](./frontend/public/images/welcomepage1.jpg)
+![screenshot](./frontend/public/images/welcomepage2.jpg)
 
-![image alt](https://github.com/alinamiryuk/ElMusic/blob/Styles/ElMusic/frontend/imgRead/2.png)
+## Authentification
+
+![screenshot](./frontend/public/images/login.jpg)
+![screenshot](./frontend/public/images/signup.jpg)
+
+## Choose artists for your personal playlists
+![screenshot](./frontend/public/images/artists.jpg)
+
+## Playlists based on your listening habits
+![screenshot](./frontend/public/images/playlists.jpg)
+![screenshot](./frontend/public/images/hardpl.jpg)
+![screenshot](./frontend/public/images/altpl.jpg)
